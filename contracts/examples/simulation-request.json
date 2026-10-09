@@ -1,0 +1,8 @@
+{
+  "overrides": {
+    "water_available_liters": 3000,
+    "expected_marketable_kg": 1800,
+    "sale_price_jod_per_kg": 0.55,
+    "additional_costs_jod": 75
+  }
+}

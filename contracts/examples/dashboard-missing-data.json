@@ -1,0 +1,88 @@
+{
+  "farm_id": "demo_farm_001",
+  "generated_at": "2026-10-10T08:30:00+03:00",
+  "is_sample": true,
+  "weather": {
+    "status": "unavailable",
+    "data_kind": "cached",
+    "source": {
+      "name": "Open-Meteo",
+      "reference": "https://open-meteo.com/",
+      "retrieved_at": null
+    },
+    "generated_at": "2026-10-10T08:30:00+03:00",
+    "missing_inputs": ["current weather forecast"],
+    "assumptions": [],
+    "warnings": ["No usable current weather forecast is available."],
+    "timezone": "Asia/Amman",
+    "forecast_generated_at": null,
+    "daily": []
+  },
+  "irrigation": {
+    "status": "unavailable",
+    "data_kind": "calculated",
+    "source": null,
+    "generated_at": "2026-10-10T08:30:00+03:00",
+    "missing_inputs": ["current weather forecast"],
+    "assumptions": [],
+    "warnings": ["Precise water demand was withheld because weather is unavailable."],
+    "period_days": null,
+    "period_start_date": null,
+    "period_end_date": null,
+    "water_required_liters": null,
+    "runtime_hours": null,
+    "calculator_version": "irrigation-fao56-demo-v1"
+  },
+  "water_budget": {
+    "status": "unavailable",
+    "data_kind": "calculated",
+    "source": null,
+    "generated_at": "2026-10-10T08:30:00+03:00",
+    "missing_inputs": ["water_required_liters"],
+    "assumptions": [],
+    "warnings": ["No sufficiency comparison was made."],
+    "water_required_liters": null,
+    "water_available_liters": 4000.0,
+    "water_shortage_liters": null,
+    "water_surplus_liters": null,
+    "coverage_percentage": null,
+    "water_status": "unavailable"
+  },
+  "finance": {
+    "status": "missing_data",
+    "data_kind": "calculated",
+    "source": {
+      "name": "Zar3ati finance calculator",
+      "reference": null,
+      "retrieved_at": null
+    },
+    "generated_at": "2026-10-10T08:30:00+03:00",
+    "missing_inputs": ["expected_marketable_kg", "sale_price_jod_per_kg"],
+    "assumptions": [],
+    "warnings": ["Cost per kilogram and projected profit are unavailable."],
+    "projected_total_cost_jod": 800.0,
+    "expected_marketable_kg": null,
+    "break_even_jod_per_kg": null,
+    "assumed_sale_price_jod_per_kg": null,
+    "projected_revenue_jod": null,
+    "projected_profit_jod": null,
+    "calculator_version": "finance-demo-v1"
+  },
+  "inspection": {
+    "status": "missing_data",
+    "data_kind": "calculated",
+    "source": null,
+    "generated_at": "2026-10-10T08:30:00+03:00",
+    "missing_inputs": ["temperature and humidity forecast"],
+    "assumptions": [],
+    "warnings": [],
+    "assessment": "cannot_assess",
+    "alerts": [],
+    "inspection_actions": ["Continue routine field inspection."],
+    "limitations": ["Missing weather data is not evidence of low disease risk."]
+  },
+  "actions": [
+    "Check weather availability before relying on a precise water estimate.",
+    "Enter expected marketable harvest and an assumed selling price."
+  ]
+}
