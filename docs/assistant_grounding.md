@@ -1,0 +1,10 @@
+# Assistant grounding and farm recommendations
+
+The assistant reads the current dashboard and retrieves reviewed passages by keyword in Arabic or English. A passage with retrieval score zero is **not** cited as relevant. If there is no relevant passage, the answer says so explicitly. When only a passage in the other language matches, the response prose is rendered in the requested language and the original source title remains visible.
+
+Groq keeps the configured model and short timeout. Its output is a JSON selection of a topic and one retrieved source ID, validated against the request and the actual retrieved set. The server renders the selected calculation from fixed bilingual templates; provider text, numerical claims, units, diagnoses, treatment instructions, and database commands are never copied into the answer. Invalid JSON, extra fields, wrong language, unsupported source/topic combinations, timeouts, and provider errors use the same deterministic fallback. The numeric checker accepts numbers only inside exact server-generated metric-and-unit statements. Prompt instructions guide the provider but are not the enforcement mechanism.
+
+The \`/api/ui/farms/{farm_id}/recommendations\` endpoint builds advisory cards from that farm's latest calculator results, forecast coverage and provenance, and active-season records. Each card has an action, reason, evidence, source when available, and limitation in Arabic and English. Missing water is shown as unknown, and seeded demonstration water is labeled. Weather cards distinguish incomplete, unavailable, and cached forecasts. The existing \`{farm_id}-review\` identifier remains for voice and UI compatibility. The service is read-only.
+
+The tests use isolated SQLite databases and mocked weather/Groq responses; no real farm database or live provider was used. Live Groq JSON-mode compatibility, real forecast quality, local agronomic validity, and PostgreSQL-specific behavior are not verified by these tests. Lexical retrieval may still miss paraphrases or rank a loosely related passage; the zero-score case is handled explicitly, but this is not a semantic relevance guarantee.
+

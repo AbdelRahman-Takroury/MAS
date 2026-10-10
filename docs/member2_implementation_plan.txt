@@ -1,0 +1,601 @@
+ZAR3ATI AI — MEMBER 2 IMPLEMENTATION PLAN
+==========================================
+
+Deadline: Saturday, October 10, 2026, 1:00 PM Asia/Amman
+Owner: Member 2 / Abdel_Rahman branch
+Infrastructure: FastAPI, PostgreSQL, Docker Compose
+AI provider: Groq, configured only on the server
+
+
+TARGET OUTCOME
+==============
+
+Member 2 must deliver a FastAPI backend that:
+
+- Persists the sample farm, season, expenses, and confirmed irrigation.
+- Uses PostgreSQL through Docker Compose.
+- Integrates Salah's weather, irrigation, water-budget, and finance engines.
+- Provides stable JSON contracts and fixtures to Member 1.
+- Supports non-persistent what-if simulations.
+- Implements lightweight cited RAG and a Groq-powered bilingual assistant.
+- Continues working when weather or Groq is unavailable.
+- Runs the complete demo journey reliably before submission.
+
+
+STEP 0 — FIX THE ENVIRONMENT
+============================
+
+Time limit: 15 minutes.
+
+Docker Desktop is running, but the current terminal cannot find the docker
+command. Resolve that first.
+
+Verify:
+
+    docker version
+    docker compose version
+
+Both commands must report client and server information. If they still fail:
+
+1. Restart the terminal after starting Docker Desktop.
+2. Check Docker Desktop's command-line-tools installation.
+3. Add Docker's resources/bin directory to PATH.
+4. Use Docker Desktop's repair/install option if the CLI was not installed.
+
+Gate: do not proceed until this works:
+
+    docker run --rm hello-world
+
+
+STEP 1 — PREPARE MEMBER 2'S BRANCH
+==================================
+
+Time limit: 15 minutes.
+
+Work on Abdel_Rahman, then integrate Salah's completed branch:
+
+    git switch Abdel_Rahman
+    git merge Salah
+
+Resolve only structural conflicts. Do not rewrite Salah's engine internals.
+
+Create the final structure:
+
+    backend/
+    |-- app/
+    |   |-- main.py
+    |   |-- config.py
+    |   |-- database.py
+    |   |-- models.py
+    |   |-- schemas/
+    |   |-- routes/
+    |   `-- services/
+    |-- engines/                  Salah's code
+    |-- services/weather.py       Salah's code
+    `-- rag/
+    contracts/examples/
+    data/knowledge/
+    tests/
+    Dockerfile
+    docker-compose.yml
+    alembic.ini
+    requirements.txt
+    .env.example
+
+Gate: Salah's existing 602 tests must still pass after merging.
+
+
+STEP 2 — LOCK THE SHARED CONTRACT
+=================================
+
+Time limit: 25 minutes.
+
+Pydantic schemas are the source of truth. FastAPI generates OpenAPI from them.
+Commit representative response fixtures under contracts/examples/.
+
+Canonical sample farm:
+
+    {
+      "farm_id": "demo_farm_001",
+      "location_name": "Jordan Valley - sample farm",
+      "latitude": 32.19,
+      "longitude": 35.62,
+      "timezone": "Asia/Amman",
+      "area_m2": 1000,
+      "crop": "tomato",
+      "establishment_date": "2026-09-01",
+      "establishment_method": "transplanted",
+      "crop_stage": "mid_season",
+      "irrigation_method": "drip",
+      "irrigation_efficiency": 0.9,
+      "effective_rain_fraction": 0.8,
+      "system_flow_liters_per_hour": null,
+      "preferred_language": "ar",
+      "is_sample": true
+    }
+
+Mark crop_stage, irrigation efficiency, and effective-rain fraction as
+demonstration assumptions.
+
+Dashboard-level status values:
+
+    ok | estimated | missing_data | unavailable | error
+
+Data origin values:
+
+    live | cached | simulated | calculated | user_entered
+
+Do not alter Salah's internal statuses. Translate them in a dashboard adapter:
+
+    Salah calculated  -> status estimated, data_kind calculated
+    Salah partial     -> status missing_data, data_kind calculated
+    Salah unavailable -> status unavailable
+
+Every module response must contain:
+
+    status
+    data_kind
+    source
+    generated_at
+    missing_inputs
+    assumptions
+    warnings
+
+Gate: Member 1 receives the contract fixtures and confirms that the UI will
+consume them without independently renaming fields.
+
+
+STEP 3 — START POSTGRESQL AND FASTAPI
+=====================================
+
+Time limit: 30 minutes.
+
+Use:
+
+- PostgreSQL 16
+- FastAPI
+- SQLAlchemy 2
+- Alembic
+- Psycopg
+- Pydantic Settings
+
+Docker Compose should define:
+
+    db  -> PostgreSQL with a health check and persistent volume
+    api -> FastAPI, dependent on a healthy db
+
+Environment variables:
+
+    DATABASE_URL=postgresql+psycopg://zar3ati:zar3ati@db:5432/zar3ati
+    GROQ_API_KEY=
+    GROQ_MODEL=llama-3.3-70b-versatile
+    CORS_ORIGINS=http://localhost:5173
+    WEATHER_SNAPSHOT_PATH=/app/data/sample_weather.json
+    DEMO_USER_ID=demo_user_001
+
+Never commit the real Groq key.
+
+Required checks:
+
+    GET /health/live
+    GET /health/ready
+    GET /docs
+
+The ready endpoint must verify the database connection.
+
+Gate: docker compose up --build starts both services from a clean checkout.
+
+
+STEP 4 — IMPLEMENT THE MINIMUM DATA MODEL
+=========================================
+
+Time limit: 35 minutes.
+
+Implement only:
+
+    User
+    Farm
+    Plot
+    CropSeason
+    Expense
+    IrrigationEvent
+
+Relationships:
+
+    User
+    `-- Farm
+        `-- Plot
+            `-- CropSeason
+                |-- Expense
+                `-- IrrigationEvent
+
+This preserves the SRS requirement that activities and costs belong to a
+plot-season.
+
+Important fields:
+
+- UUID/string identifiers.
+- Decimal JOD amounts.
+- Explicit units.
+- Asia/Amman-compatible timestamps.
+- idempotency_key with a unique constraint.
+- is_sample.
+- Created and updated timestamps.
+
+Create an Alembic migration and deterministic seed command for one user, farm,
+plot, and tomato season.
+
+Gate:
+
+1. Run migrations.
+2. Seed the demo.
+3. Restart containers.
+4. Confirm the farm still exists.
+
+
+STEP 5 — IMPLEMENT PERSISTENCE ENDPOINTS
+========================================
+
+Time limit: 35 minutes.
+
+Required routes:
+
+    POST /api/farms
+    GET  /api/farms/{farm_id}
+
+    POST /api/expenses
+    GET  /api/farms/{farm_id}/expenses
+
+    POST /api/irrigations
+    GET  /api/farms/{farm_id}/irrigations
+
+Rules:
+
+- Expenses attach to crop_season_id.
+- Irrigation events represent confirmed actions, not recommendations.
+- Duplicate idempotency_key submissions return the existing record.
+- Invalid units, negative amounts, and incompatible dates return 422.
+- Unknown resources return 404.
+
+Gate: an expense survives restart and later changes the dashboard's financial
+result.
+
+
+STEP 6 — BUILD THE SALAH INTEGRATION ADAPTER
+============================================
+
+Time limit: 40 minutes.
+
+Create:
+
+    backend/app/services/dashboard.py
+
+Its job is to:
+
+1. Load the farm and season.
+2. Call Salah's weather service.
+3. Call calculate_irrigation.
+4. Call calculate_water_budget.
+5. Convert database expenses into Salah's finance input.
+6. Call the finance engine.
+7. Normalize all engine results into the dashboard contract.
+8. Produce deterministic daily actions.
+
+Do not duplicate Salah's formulas.
+
+Critical integration rules:
+
+- Pass crop_stage.
+- Use 32.19, 35.62 for the sample farm.
+- Do not calculate runtime when flow is unknown.
+- Preserve live/cached weather provenance.
+- Preserve all warnings and assumptions.
+- Never treat null as zero.
+- Do not subtract confirmed irrigation from future demand. Salah deliberately
+  avoids this without a proper soil-water balance.
+- Never infer harvest reduction from water shortage.
+
+Implement:
+
+    GET /api/farms/{farm_id}/dashboard
+
+Gate: the dashboard returns weather, irrigation, water budget, finance,
+inspection, and actions in one response.
+
+
+STEP 7 — IMPLEMENT INSPECTION-STATE NORMALIZATION
+=================================================
+
+Time limit: 20 minutes.
+
+Salah's weather advisories need an application-level wrapper.
+
+Return one of:
+
+    assessment: favorable
+    assessment: not_favorable
+    assessment: cannot_assess
+
+For the hackathon, these are inspection conditions, not disease probabilities.
+
+If required weather fields are missing, return:
+
+    {
+      "status": "missing_data",
+      "assessment": "cannot_assess",
+      "alerts": [],
+      "missing_inputs": ["temperature or humidity data"],
+      "limitations": [
+        "Environmental conditions could not be fully assessed."
+      ]
+    }
+
+If weather is available but no rule fires, return not_favorable rather than
+cannot_assess.
+
+Gate: missing weather and safe-looking weather produce visibly different
+results.
+
+
+STEP 8 — IMPLEMENT THE SIMULATOR
+================================
+
+Time limit: 25 minutes.
+
+Endpoint:
+
+    POST /api/farms/{farm_id}/simulate
+
+Accepted overrides:
+
+    water_available_liters
+    expected_marketable_kg
+    sale_price_jod_per_kg
+    additional_costs_jod
+
+Rules:
+
+- Do not persist overrides.
+- Reuse Salah's calculators.
+- Return persisted: false.
+- State that no yield response to water shortage was modeled.
+- Reject zero/negative marketable harvest where a per-kilogram result is
+  requested.
+- Return unavailable break-even metrics rather than dividing by zero.
+
+Gate: changing a scenario modifies its result without changing the saved
+dashboard after refresh.
+
+
+STEP 9 — BUILD MINIMAL RAG
+==========================
+
+Time limit: 35 minutes.
+
+Do not introduce a vector database. Create:
+
+    data/knowledge/tomato_guidance.json
+
+Each chunk should contain:
+
+    id
+    title
+    source_url
+    section
+    language
+    text
+    keywords_ar
+    keywords_en
+    status
+    limitations
+
+Include only a few reviewed passages:
+
+- Understanding the irrigation estimate.
+- Water-shortage limitations.
+- Tomato inspection guidance.
+- One or two tomato disease-information passages.
+- Financial break-even explanation.
+
+Implement deterministic keyword scoring over Arabic and English terms and
+return the best two or three passages.
+
+The retriever must always expose the selected sources, even if Groq fails.
+
+Gate: an Arabic tomato-health question retrieves a relevant cited passage
+without calling Groq.
+
+
+STEP 10 — ADD THE GROQ ASSISTANT
+================================
+
+Time limit: 35 minutes.
+
+Use Groq's Python SDK and Chat Completions API. Keep GROQ_API_KEY server-side.
+Use llama-3.3-70b-versatile by default, but make it configurable through
+GROQ_MODEL.
+
+Official documentation:
+
+    https://console.groq.com/docs/models
+    https://console.groq.com/docs/libraries
+    https://console.groq.com/docs/api-reference
+
+Endpoint:
+
+    POST /api/assistant
+
+Request:
+
+    {
+      "farm_id": "demo_farm_001",
+      "language": "ar",
+      "question": "لماذا يوجد عجز في المياه؟"
+    }
+
+The backend, not the browser, must retrieve:
+
+- Current calculator outputs.
+- Missing inputs and warnings.
+- Relevant knowledge passages.
+
+System rules:
+
+- Respond in the requested language.
+- Only repeat numeric values present in engine results.
+- Never diagnose infection.
+- Never prescribe pesticide treatment.
+- Cite retrieved source titles.
+- State limitations.
+- Do not perform database writes.
+
+Use a short timeout. If Groq fails, return a deterministic template explanation
+using the same engine results and retrieved citations.
+
+Gate:
+
+- Arabic explanation is consistent with the dashboard.
+- English response works.
+- Removing GROQ_API_KEY still returns a useful fallback.
+- No secret appears in frontend code or API output.
+
+
+STEP 11 — INTEGRATE WITH MEMBER 1
+=================================
+
+Time limit: 30 minutes.
+
+Provide Member 1 with:
+
+- Backend base URL.
+- /docs.
+- Sample farm ID.
+- Contract fixtures.
+- Exact CORS origin.
+- Error-response structure.
+- Reset/seed command.
+
+Recommended integration order:
+
+1. GET /api/farms/{id}
+2. GET /api/farms/{id}/dashboard
+3. POST /api/expenses
+4. POST /api/farms/{id}/simulate
+5. POST /api/assistant
+
+Do not wait for the complete UI before testing. Use Swagger or curl for every
+route first.
+
+Gate: the UI can save an expense, refresh, and observe a changed financial
+dashboard value.
+
+
+STEP 12 — END-TO-END VERIFICATION
+=================================
+
+Feature freeze: no later than 11:00 AM.
+
+Required automated tests:
+
+- Database readiness.
+- Farm retrieval.
+- Expense persistence.
+- Duplicate idempotency key.
+- Confirmed irrigation persistence.
+- Dashboard happy path.
+- Cached-weather fallback.
+- Missing-weather response.
+- Zero/unknown harvest.
+- Simulator does not persist.
+- Inspection cannot_assess.
+- Assistant with mocked Groq.
+- Assistant fallback without Groq.
+- Arabic Unicode JSON serialization.
+
+Required manual demo:
+
+1. Load the seeded tomato farm.
+2. Display weather source and freshness.
+3. Show estimated water demand and shortage.
+4. Add an expense.
+5. Refresh and show changed financial results.
+6. Change simulator inputs.
+7. Confirm saved data was not changed.
+8. Ask an Arabic water question.
+9. Show cited explanation.
+10. Demonstrate either cached weather or AI fallback.
+
+Run this complete path twice.
+
+
+STEP 13 — PACKAGE AND SUBMIT
+============================
+
+Target: 12:30 PM, leaving 30 minutes of buffer.
+
+README must contain:
+
+- Prerequisites.
+- Environment variables.
+- Docker startup command.
+- Migration/seed command.
+- Frontend/backend URLs.
+- Sample login/farm information.
+- Test command.
+- Demo sequence.
+- Known limitations.
+- Agronomic and data sources.
+
+Final commands should be approximately:
+
+    Copy-Item .env.example .env
+    docker compose up --build -d
+    docker compose exec api alembic upgrade head
+    docker compose exec api python -m backend.app.seed
+    docker compose exec api pytest -q
+
+
+HARD SCOPE LIMITS
+=================
+
+Do not add:
+
+- Production authentication.
+- Offline synchronization.
+- Background workers.
+- Automatic notifications.
+- Market scraping.
+- Fertilizer optimization.
+- Photo diagnosis.
+- Pump control.
+- Vector databases.
+- General multi-crop support.
+- A full soil-water balance.
+
+If time becomes tight, reduce features in this order:
+
+1. Remove conversation history.
+2. Reduce RAG to three curated passages.
+3. Remove irrigation-list retrieval, but keep creation.
+4. Remove nonessential database fields.
+5. Use only the deterministic assistant fallback.
+
+Do not remove:
+
+- PostgreSQL persistence.
+- Expense-to-finance recalculation.
+- Water-budget integration.
+- Missing-data handling.
+- Arabic explanation.
+- Source citations.
+- Groq failure fallback.
+- Clearly labeled sample/simulated data.
+
+
+FINAL SUCCESS CONDITION
+=======================
+
+From a clean checkout, the team can start PostgreSQL and the API, migrate and
+seed the database, load the sample farm, persist an expense, calculate water and
+financial results through Salah's engines, run a non-persistent scenario, and
+receive an Arabic source-backed explanation with a working Groq fallback.

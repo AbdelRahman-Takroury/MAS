@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Smart Farm AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Manrope:wght@400;500;600;800&display=swap">
+<style>
+:root{--ink:#0b0c0a;--leaf:#6fae45;--leaf-d:#4f8a2e;--cream:#f3f1e4;--olive:#2f3a22;--glass:rgba(48,64,36,.38);--tilt:-7deg;--fx:1;
+ font-family:'Manrope','Cairo',system-ui,sans-serif;box-sizing:border-box;
+ padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html[lang=ar]{--tilt:7deg;--fx:-1;font-family:'Cairo','Manrope',system-ui,sans-serif}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html,body{margin:0;min-height:100%}
+body{background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:clamp(8px,2vw,28px);overflow-x:hidden}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:2px solid #bfe58f;outline-offset:2px}
+.frame{position:relative;width:min(1280px,100%);min-height:min(760px,calc(100vh - 40px));border-radius:30px;overflow:hidden;border:1px solid rgba(255,255,255,.14);box-shadow:0 40px 90px rgba(0,0,0,.6);isolation:isolate;display:flex;flex-direction:column;padding:clamp(12px,2vw,22px) clamp(14px,3vw,40px) 0}
+/* landscape */
+.bg{position:absolute;inset:-30px;z-index:-2;filter:blur(7px) saturate(1.05);background:
+ radial-gradient(circle at 78% 18%,#fff3c4 0,rgba(255,226,150,.7) 8%,transparent 30%),
+ linear-gradient(#e9dcae 0,#c9cf9b 26%,#8fae62 40%,#5d8a38 55%,#3f6a26 100%)}
+.bg svg{position:absolute;left:0;bottom:0;width:100%;height:78%}
+.shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(18,28,12,.62),rgba(18,28,12,.22) 60%,rgba(18,28,12,.35)),linear-gradient(rgba(0,0,0,.1),rgba(10,16,6,.55))}
+html[dir=rtl] .shade{transform:scaleX(-1)}
+/* nav */
+nav{display:flex;align-items:center;justify-content:space-between;gap:12px;background:rgba(243,241,228,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:#1f2a16;border-radius:999px;padding:8px 10px 8px 18px;border:1px solid rgba(255,255,255,.5);animation:in .8s both}
+html[dir=rtl] nav{padding:8px 18px 8px 10px}
+.brand{display:flex;align-items:center;gap:9px;font-weight:800;font-size:15px;white-space:nowrap}
+.links{display:flex;gap:clamp(14px,2.4vw,34px);list-style:none;margin:0;padding:0;font-size:13px;font-weight:600}
+.links a{color:#2f3a22;text-decoration:none;opacity:.8;transition:opacity .2s}
+.links a:hover{opacity:1}
+.nav-r{display:flex;align-items:center;gap:8px}
+.lang{background:transparent;border:1px solid rgba(47,58,34,.3);color:#2f3a22;border-radius:999px;min-height:40px;padding:0 14px;font-size:13px;font-weight:700;transition:background .2s}
+.lang:hover{background:rgba(47,58,34,.1)}
+.btn{background:var(--leaf);color:#102008;border:0;border-radius:999px;min-height:40px;padding:0 20px;font-weight:800;font-size:13px;transition:transform .2s,background .2s,box-shadow .2s}
+.btn:hover{background:#82c255;transform:translateY(-1px);box-shadow:0 8px 20px rgba(111,174,69,.35)}
+.btn.big{min-height:52px;padding:0 34px;font-size:16px}
+/* hero */
+.hero{flex:1;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:20px;padding:clamp(20px,4vw,40px) 0 0}
+.copy{position:relative;z-index:2;max-width:560px;padding-bottom:clamp(20px,4vw,50px)}
+.badge{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.06em;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:999px;padding:7px 14px;margin-bottom:22px}
+html[lang=ar] .badge{letter-spacing:0}
+h1{font-size:clamp(36px,5.4vw,68px);line-height:1.06;font-weight:800;margin:0 0 20px;letter-spacing:-.02em;text-shadow:0 2px 24px rgba(0,0,0,.3)}
+html[lang=ar] h1{line-height:1.3;letter-spacing:0;font-size:clamp(34px,4.8vw,58px)}
+p.sub{font-size:clamp(14px,1.35vw,17px);line-height:1.65;color:rgba(255,255,255,.88);margin:0 0 28px;max-width:480px}
+.row{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.pill{display:inline-flex;align-items:center;gap:9px;background:var(--glass);border:1px solid rgba(255,255,255,.25);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-radius:999px;padding:10px 16px;font-size:13px;font-weight:600}
+/* phone */
+.stage{position:relative;display:flex;justify-content:center;align-self:end;min-height:540px}
+.float{animation:float 6s ease-in-out infinite}
+.phone{position:relative;width:min(300px,64vw);aspect-ratio:300/610;background:#101311;border-radius:46px;padding:9px;transform:rotate(var(--tilt));box-shadow:0 0 0 2px #2b302b,0 40px 80px rgba(0,0,0,.55),inset 0 0 0 2px #3a403a;margin-bottom:-90px}
+.notch{position:absolute;top:17px;left:50%;transform:translateX(-50%);width:84px;height:24px;background:#000;border-radius:20px;z-index:3}
+.screen{height:100%;border-radius:38px;background:linear-gradient(#f4f6ea,#e8efd6);color:#18230f;padding:44px 14px 14px;overflow:hidden;font-size:11px;display:flex;flex-direction:column;gap:9px}
+.s-head{display:flex;align-items:center;justify-content:space-between}
+.s-brand{display:flex;align-items:center;gap:6px;font-weight:800;font-size:11px}
+.loc{font-size:9px;background:#fff;border-radius:99px;padding:3px 8px;font-weight:600;color:#4f6b36}
+.hello{font-size:19px;font-weight:800;line-height:1.15;margin:2px 0 0}
+.wx{background:linear-gradient(135deg,#4f8a2e,#2f5a1c);color:#fff;border-radius:18px;padding:11px 12px;display:flex;align-items:center;gap:10px;position:relative}
+.wx .t{font-size:26px;font-weight:800;line-height:1}
+.wx small{display:block;font-size:9px;opacity:.85;margin-top:2px}
+.wx .demo{position:absolute;top:6px;inset-inline-end:10px;font-size:8px;opacity:.7}
+.wx .rain{margin-inline-start:auto;text-align:end;font-size:10px;font-weight:700;padding-top:8px}
+.ov{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.ov div{background:#fff;border-radius:13px;padding:8px 6px;text-align:center;font-weight:700;font-size:9.5px;box-shadow:0 2px 8px rgba(40,60,20,.08)}
+.ov b{display:block;font-size:15px;color:var(--leaf-d);margin-bottom:2px}
+h4{margin:2px 0 0;font-size:11.5px;font-weight:800}
+.rec{background:#fff;border-radius:14px;padding:8px 10px;display:flex;gap:9px;align-items:center;box-shadow:0 2px 8px rgba(40,60,20,.08)}
+.rec i{flex:none;width:28px;height:28px;border-radius:9px;background:#e3efcf;display:grid;place-items:center;font-style:normal;font-size:14px}
+.rec b{display:block;font-size:10.5px}
+.rec span{font-size:9px;color:#5b6b4a}
+.chip{position:absolute;z-index:4;background:rgba(243,241,228,.92);color:#1f2a16;border-radius:14px;padding:8px 12px;font-size:11px;font-weight:700;box-shadow:0 12px 30px rgba(0,0,0,.3);top:26%;inset-inline-start:2%;animation:float 7s -2s ease-in-out infinite}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:#f3f1e4;color:#1f2a16;padding:11px 18px;border-radius:99px;font-weight:700;font-size:13px;opacity:0;pointer-events:none;transition:.3s;z-index:9}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.sw{transition:opacity .25s}
+.sw.out{opacity:0}
+@keyframes in{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes float{50%{transform:translateY(-12px)}}
+.copy>*{animation:in .9s both}
+.copy>:nth-child(2){animation-delay:.12s}.copy>:nth-child(3){animation-delay:.24s}.copy>:nth-child(4){animation-delay:.36s}
+.stage{animation:in 1.1s .3s both}
+@media (max-width:900px){
+ .links{display:none}
+ .hero{grid-template-columns:1fr;text-align:start;padding-top:28px}
+ .stage{min-height:0;align-self:center}
+ .phone{margin-bottom:-120px;width:min(270px,70vw)}
+ .chip{display:none}
+ .frame{min-height:auto}
+}
+@media (max-width:480px){
+ .brand span{font-size:14px}
+ nav .btn{padding:0 14px}
+ .btn.big{width:100%}
+ .pill{font-size:12px}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="frame">
+ <div class="bg" aria-hidden="true">
+  <svg viewBox="0 0 1200 600" preserveAspectRatio="xMidYMax slice">
+   <defs><pattern id="rows" width="22" height="600" patternUnits="userSpaceOnUse" patternTransform="skewX(-14)"><rect width="22" height="600" fill="#5b8c33"/><rect width="9" height="600" fill="#3f7424"/></pattern></defs>
+   <path d="M0 150 Q200 70 420 130 T800 110 T1200 140 V260 H0Z" fill="#9fb877" opacity=".7"/>
+   <path d="M0 210 Q300 130 640 200 T1200 190 V300 H0Z" fill="#7fa04f" opacity=".85"/>
+   <path d="M0 270 H1200 V600 H0Z" fill="#6c9a3e"/>
+   <path d="M380 290 H820 L1200 600 H0Z" fill="url(#rows)" opacity=".8"/>
+   <path d="M0 330 Q250 300 520 340 T1200 320 V420 H0Z" fill="#a88a4a" opacity=".35"/>
+   <path d="M0 500 H1200 V600 H0Z" fill="#2e4d1a" opacity=".6"/>
+  </svg>
+ </div>
+ <div class="shade"></div>
+
+ <nav aria-label="Main">
+  <div class="brand">
+   <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#4f8a2e"/><path d="M9 21c0-7 5-11 14-12 0 8-4 13-11 13l-3 3" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="12" r="1.6" fill="#d8f2b5"/><circle cx="15" cy="16" r="1.3" fill="#d8f2b5"/><path d="M20 12l-5 4" stroke="#d8f2b5" stroke-width="1"/></svg>
+   <span>Smart Farm AI</span>
+  </div>
+  <ul class="links sw">
+   <li><a href="#" data-i18n="n1">Features</a></li><li><a href="#" data-i18n="n2">How It Works</a></li><li><a href="#" data-i18n="n3">Benefits</a></li><li><a href="#" data-i18n="n4">About</a></li>
+  </ul>
+  <div class="nav-r">
+   <button class="lang" id="lang" type="button" aria-label="Switch language">العربية</button>
+   <button class="btn sw js-start" type="button" data-i18n="cta">Get Started</button>
+  </div>
+ </nav>
+
+ <section class="hero">
+  <div class="copy sw">
+   <div class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bfe58f" stroke-width="2" stroke-linecap="round"><path d="M5 19c0-8 5-13 15-14 0 9-5 14-12 14l-3 3"/></svg><span data-i18n="badge">AI-POWERED AGRICULTURE</span></div>
+   <h1 data-i18n="h1" data-html>Grow Smarter<br>with AI-Powered<br>Farming</h1>
+   <p class="sub" data-i18n="sub">Make better farming decisions with weather-aware irrigation guidance, smarter fertilizer planning, crop-risk alerts, and clear insights into your farm's costs and profitability.</p>
+   <div class="row">
+    <button class="btn big js-start" type="button" data-i18n="cta">Get Started</button>
+    <span class="pill"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e9f6c9" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M5 19l1.5-1.5M17.5 6.5L19 5"/></svg><span data-i18n="ind">Your Farm, Smarter Every Day</span></span>
+   </div>
+  </div>
+
+  <div class="stage" aria-label="Smart Farm AI app preview">
+   <div class="chip sw"><span data-i18n="chip">Demo preview</span></div>
+   <div class="float">
+    <div class="phone">
+     <div class="notch"></div>
+     <div class="screen sw">
+      <div class="s-head">
+       <div class="s-brand"><svg width="18" height="18" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#4f8a2e"/><path d="M9 21c0-7 5-11 14-12 0 8-4 13-11 13l-3 3" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg>Smart Farm AI</div>
+       <span class="loc">📍 <span data-i18n="loc">Jordan Valley</span></span>
+      </div>
+      <p class="hello" data-i18n="hello" data-html>Welcome to<br>Your Farm</p>
+      <div class="wx">
+       <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#ffe9a0" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.5" fill="#ffd966" stroke="none"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M5 5l1.8 1.8M17.2 17.2L19 19M5 19l1.8-1.8M17.2 6.8L19 5"/></svg>
+       <div><span class="t">26°C</span><small data-i18n="wxt">Weather at Your Farm</small><small data-i18n="wxc">Clear and sunny</small></div>
+       <div class="rain"><span data-i18n="rain">Rain: 0%</span></div>
+       <span class="demo" data-i18n="demo">Sample data</span>
+      </div>
+      <div class="ov">
+       <div><b>3</b><span data-i18n="f1">My Fields</span></div>
+       <div><b>💧</b><span data-i18n="f2">Irrigation</span></div>
+       <div><b>JD</b><span data-i18n="f3">Farm Budget</span></div>
+      </div>
+      <h4 data-i18n="rt">Today's Recommendations</h4>
+      <div class="rec"><i>💧</i><div><b data-i18n="r1">Review Today's Irrigation</b><span data-i18n="r1s">Based on weather and soil</span></div></div>
+      <div class="rec"><i>🌱</i><div><b data-i18n="r2">Check Crop Conditions</b><span data-i18n="r2s">Look for early risk signs</span></div></div>
+      <div class="rec"><i>🧾</i><div><b data-i18n="r3">Review Fertilizer Costs</b><span data-i18n="r3s">Plan the next application</span></div></div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </section>
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const T={
+en:{n1:'Features',n2:'How It Works',n3:'Benefits',n4:'About',cta:'Get Started',badge:'AI-POWERED AGRICULTURE',
+h1:'Grow Smarter<br>with AI-Powered<br>Farming',
+sub:"Make better farming decisions with weather-aware irrigation guidance, smarter fertilizer planning, crop-risk alerts, and clear insights into your farm's costs and profitability.",
+ind:'Your Farm, Smarter Every Day',chip:'Demo preview',loc:'Jordan Valley',hello:'Welcome to<br>Your Farm',wxt:'Weather at Your Farm',wxc:'Clear and sunny',rain:'Rain: 0%',demo:'Sample data',
+f1:'My Fields',f2:'Irrigation',f3:'Farm Budget',rt:"Today's Recommendations",
+r1:"Review Today's Irrigation",r1s:'Based on weather and soil',r2:'Check Crop Conditions',r2s:'Look for early risk signs',r3:'Review Fertilizer Costs',r3s:'Plan the next application',
+lang:'العربية',soon:'Get Started will connect to the app soon.'},
+ar:{n1:'المميزات',n2:'كيف يعمل',n3:'الفوائد',n4:'عن المشروع',cta:'ابدأ الآن',badge:'زراعة ذكية بالذكاء الاصطناعي',
+h1:'ازرع بذكاء<br>مع مساعدك الزراعي<br>الذكي',
+sub:'اتخذ قرارات زراعية أفضل من خلال إرشادات الري المرتبطة بالطقس، وتخطيط الأسمدة، والتنبيهات المبكرة لمخاطر المحاصيل، وتحليل تكاليف مزرعتك وربحيتها.',
+ind:'مزرعتك بذكاء، كل يوم',chip:'معاينة تجريبية',loc:'غور الأردن',hello:'أهلاً بك<br>في مزرعتك',wxt:'الطقس في مزرعتك',wxc:'صافٍ ومشمس',rain:'المطر: 0%',demo:'بيانات تجريبية',
+f1:'حقولي',f2:'الري',f3:'ميزانية المزرعة',rt:'توصيات اليوم',
+r1:'راجع احتياجات الري اليوم',r1s:'حسب الطقس وحالة التربة',r2:'تابع حالة المحاصيل',r2s:'ابحث عن علامات الخطر المبكرة',r3:'راجع تكاليف الأسمدة',r3s:'خطّط للتسميدة القادمة',
+lang:'English',soon:'سيتم ربط زر ابدأ الآن بالتطبيق قريباً.'}};
+let cur='en';
+function apply(l){
+ cur=l;const d=T[l],h=document.documentElement;
+ h.lang=l;h.dir=l==='ar'?'rtl':'ltr';
+ document.querySelectorAll('[data-i18n]').forEach(e=>{const v=d[e.dataset.i18n];if(v==null)return;e.hasAttribute('data-html')?e.innerHTML=v:e.textContent=v});
+ document.getElementById('lang').textContent=d.lang;
+ try{localStorage.setItem('sfa-lang',l)}catch(e){}
+}
+function swap(l){
+ const els=document.querySelectorAll('.sw');els.forEach(e=>e.classList.add('out'));
+ setTimeout(()=>{apply(l);els.forEach(e=>e.classList.remove('out'))},220);
+}
+document.getElementById('lang').addEventListener('click',()=>swap(cur==='en'?'ar':'en'));
+document.querySelectorAll('.links a').forEach(a=>a.addEventListener('click',e=>e.preventDefault()));
+/* Placeholder entry point: replace the body of onGetStarted with navigation to the app. */
+function onGetStarted(){
+ document.dispatchEvent(new CustomEvent('smartfarm:get-started',{detail:{lang:cur}}));
+ try{localStorage.setItem('sfa-lang',cur)}catch(e){} location.href='dashboard.html?lang='+cur; return;
+ clearTimeout(onGetStarted._t);onGetStarted._t=setTimeout(()=>t.classList.remove('on'),2600);
+}
+document.querySelectorAll('.js-start').forEach(b=>b.addEventListener('click',onGetStarted));
+try{const s=localStorage.getItem('sfa-lang');if(s==='ar')apply('ar')}catch(e){}
+</script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "irrigation-estimate-en",
+    "title": "Understanding the irrigation estimate",
+    "source_url": "https://www.fao.org/4/X0490E/x0490e0a.htm",
+    "section": "Crop evapotranspiration estimate",
+    "language": "en",
+    "text": "The dashboard estimates crop evapotranspiration from reference evapotranspiration and a crop-stage coefficient. The supplied-water estimate also depends on effective rainfall, cultivated area, and the explicitly entered irrigation efficiency.",
+    "keywords_ar": ["تقدير الري", "احتياج المياه", "البخر النتح", "معامل المحصول", "مرحلة المحصول"],
+    "keywords_en": ["irrigation estimate", "water requirement", "crop evapotranspiration", "crop coefficient", "crop stage", "eto", "kc"],
+    "status": "reviewed",
+    "limitations": [
+      "The result is a planning estimate rather than a soil-moisture measurement.",
+      "The demonstration holds the crop-stage coefficient constant over the assessed period."
+    ]
+  },
+  {
+    "id": "water-shortage-limitations-ar",
+    "title": "فهم عجز المياه",
+    "source_url": "https://www.fao.org/4/X0490E/x0490e0e.htm",
+    "section": "حدود مقارنة المياه المتاحة",
+    "language": "ar",
+    "text": "عجز المياه في لوحة المعلومات هو الفرق الحسابي بين الاحتياج التقديري للري والمياه المتاحة للفترة نفسها. لا يحسب هذا النموذج توازن رطوبة التربة، ولا يتنبأ بانخفاض المحصول أو يوصي بري ناقص.",
+    "keywords_ar": ["عجز المياه", "نقص المياه", "المياه المتاحة", "احتياج الري", "شح المياه", "توازن رطوبة التربة", "انخفاض المحصول"],
+    "keywords_en": ["water shortage", "water deficit", "available water", "irrigation demand", "soil water balance", "yield reduction"],
+    "status": "reviewed",
+    "limitations": [
+      "No crop-yield response to water shortage is modeled.",
+      "Available water must refer to the same period as estimated demand."
+    ]
+  },
+  {
+    "id": "tomato-inspection-general-ar",
+    "title": "إرشادات فحص نباتات الطماطم",
+    "source_url": "https://ipm.ucanr.edu/agriculture/tomato/",
+    "section": "الفحص الحقلي",
+    "language": "ar",
+    "text": "افحص نباتات الطماطم بانتظام وسجل مكان وتاريخ الأعراض على الأوراق والسيقان والثمار. قارن عدة نباتات ومناطق في الحقل، لأن المظهر وحده قد يتشابه بين مرض وآفة ونقص غذائي أو إجهاد مائي. اطلب مراجعة مختص قبل اختيار أي معاملة.",
+    "keywords_ar": ["فحص الطماطم", "فحص البندورة", "صحة النبات", "اعراض مرضية", "بقع الاوراق", "اصفرار الاوراق", "ذبول", "مرض الطماطم"],
+    "keywords_en": ["inspect tomato", "tomato health", "plant symptoms", "leaf spots", "yellow leaves", "wilting", "tomato disease"],
+    "status": "reviewed",
+    "limitations": [
+      "Visual inspection does not by itself diagnose a disease.",
+      "The cited UC guidance was developed outside Jordan and requires local agronomic review."
+    ]
+  },
+  {
+    "id": "tomato-early-blight-ar",
+    "title": "علامات تستدعي فحص اللفحة المبكرة",
+    "source_url": "https://ipm.ucanr.edu/agriculture/tomato/early-blight/",
+    "section": "معلومات مرضية للمراجعة",
+    "language": "ar",
+    "text": "تذكر إرشادات جامعة كاليفورنيا أن اللفحة المبكرة قد تظهر كبقع سوداء أو بنية على الأوراق والسيقان والثمار، وقد تكون لبقع الأوراق حلقات متداخلة وتبدأ غالبا على الأوراق الأكبر عمرا. هذه العلامات سبب للفحص وليست تشخيصا مؤكدا.",
+    "keywords_ar": ["اللفحة المبكرة", "بقع سوداء", "بقع بنية", "حلقات متداخلة", "الاوراق القديمة", "مرض البندورة", "مرض الطماطم"],
+    "keywords_en": ["early blight", "black spots", "brown spots", "concentric rings", "older leaves", "tomato disease"],
+    "status": "reviewed",
+    "limitations": [
+      "Similar symptoms can have other causes; this passage is not a diagnosis.",
+      "Do not select a pesticide treatment from this retrieval result."
+    ]
+  },
+  {
+    "id": "tomato-late-blight-en",
+    "title": "Late blight signs for inspection",
+    "source_url": "https://ipm.ucanr.edu/home-and-landscape/late-blight/",
+    "section": "Tomato disease information",
+    "language": "en",
+    "text": "UC IPM describes late blight leaf lesions as initially irregular water-soaked pale-to-dark green spots that can expand and turn brown to purplish black. Humid conditions can be favorable, but weather and appearance alone do not confirm infection.",
+    "keywords_ar": ["اللفحة المتاخرة", "بقع مائية", "رطوبة عالية", "بقع بنية", "فحص الطماطم"],
+    "keywords_en": ["late blight", "water soaked spots", "high humidity", "brown lesions", "inspect tomato", "tomato disease"],
+    "status": "reviewed",
+    "limitations": [
+      "Weather favorability is not an infection probability or diagnosis.",
+      "The cited guidance is not a pesticide prescription."
+    ]
+  },
+  {
+    "id": "financial-break-even-en",
+    "title": "Understanding break-even price",
+    "source_url": "https://extension.psu.edu/budgeting-for-agricultural-decision-making",
+    "section": "Financial break-even explanation",
+    "language": "en",
+    "text": "Break-even price per kilogram is projected total cost divided by expected marketable kilograms. It is unavailable when marketable quantity is zero or unknown. It is a scenario threshold, not a guaranteed market price or profit forecast.",
+    "keywords_ar": ["سعر التعادل", "نقطة التعادل", "التكلفة لكل كيلو", "الربح", "السعر", "المحصول المتوقع"],
+    "keywords_en": ["break even price", "break-even", "cost per kilogram", "profit", "projected total cost", "expected yield", "marketable kilograms"],
+    "status": "reviewed",
+    "limitations": [
+      "The calculation is only as complete as the declared costs and expected marketable quantity.",
+      "It does not guarantee an attainable selling price or profit."
+    ]
+  }
+]

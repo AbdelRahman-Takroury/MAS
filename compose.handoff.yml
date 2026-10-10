@@ -1,0 +1,29 @@
+# Explicitly disposable, provider-isolated QA; always use -p mas_handoff_UNIQUE.
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: mas_handoff_qa
+      POSTGRES_USER: mas_handoff
+      POSTGRES_PASSWORD: local-qa-only
+    volumes:
+      - qa_postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U mas_handoff -d mas_handoff_qa']
+      interval: 3s
+      timeout: 3s
+      retries: 20
+  api:
+    build: .
+    command: [python, tests/handoff_server.py, --database-url, 'postgresql+psycopg://mas_handoff:local-qa-only@db:5432/mas_handoff_qa', --port, '8891', --host, '0.0.0.0']
+    environment:
+      GROQ_API_KEY: ''
+      AZURE_SPEECH_KEY: ''
+      AZURE_SPEECH_REGION: ''
+    ports:
+      - '127.0.0.1:8891:8891'
+    depends_on:
+      db:
+        condition: service_healthy
+volumes:
+  qa_postgres:

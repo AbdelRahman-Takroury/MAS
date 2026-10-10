@@ -1,0 +1,570 @@
+{
+  "strict_engine": {
+    "request": {
+      "recorded_costs": [
+        {
+          "id": "incurred",
+          "amount_jod": "500"
+        }
+      ],
+      "projected_costs": [
+        {
+          "id": "remaining",
+          "amount_jod": "300"
+        }
+      ],
+      "actual_sales": [],
+      "future_sales": [
+        {
+          "id": "unsold",
+          "quantity_kg": "2000",
+          "price_jod_per_kg": "0.600"
+        }
+      ]
+    },
+    "response": {
+      "status": "calculated",
+      "recorded_costs_jod": "500",
+      "projected_additional_costs_jod": "300",
+      "projected_total_costs_jod": "800",
+      "actual_sold_kg": "0",
+      "future_sale_kg": "2000",
+      "total_marketable_quantity_kg": "2000",
+      "actual_revenue_jod": "0",
+      "projected_future_revenue_jod": "1200",
+      "projected_total_revenue_jod": "1200",
+      "projected_cost_per_kg_jod": "0.4",
+      "break_even_price_jod_per_kg": "0.4",
+      "required_future_break_even_price_jod_per_kg": "0.4",
+      "projected_profit_jod": "400",
+      "metric_explanations": {
+        "projected_cost_per_kg_jod": "Projected total costs divided by total marketable quantity (JOD/kg).",
+        "break_even_price_jod_per_kg": "Average full-season selling price needed to cover projected total costs (JOD/kg).",
+        "required_future_break_even_price_jod_per_kg": "Remaining uncovered projected costs divided by future sale quantity (JOD/kg)."
+      },
+      "warnings": [],
+      "assumptions": [
+        "Projected costs are additional future costs and exclude recorded costs.",
+        "Future sales contain only remaining unsold marketable quantities and exclude actual sales.",
+        "Unique IDs cannot establish whether physical harvest quantities overlap; the caller must verify this.",
+        "Total marketable quantity is actual sold quantity plus forecast future sales, not a validated biological yield.",
+        "All supplied costs and revenues use JOD; quantities use kg. Only declared entries are included."
+      ]
+    }
+  },
+  "farmer_price": {
+    "request": {
+      "financial_inputs": {
+        "recorded_costs": [
+          {
+            "id": "incurred",
+            "amount_jod": "500"
+          }
+        ],
+        "projected_costs": [
+          {
+            "id": "remaining",
+            "amount_jod": "300"
+          }
+        ],
+        "actual_sales": [],
+        "future_sales": [
+          {
+            "id": "unsold",
+            "quantity_kg": "2000"
+          }
+        ]
+      },
+      "farmer_price": "0.600",
+      "market_records": [
+        {
+          "date": "2026-10-05",
+          "crop": "tomato",
+          "market": "Amman Central Market",
+          "price_jod_per_kg": "0.150",
+          "source_url": "https://moa.gov.jo/ebv4.0/root_storage/ar/eb_list_page/5-10-2026.pdf",
+          "data_type": "verified_wholesale"
+        },
+        {
+          "date": "2026-10-06",
+          "crop": "tomato",
+          "market": "Amman Central Market",
+          "price_jod_per_kg": "0.150",
+          "source_url": "https://moa.gov.jo/ebv4.0/root_storage/ar/eb_list_page/6-10-2026.pdf",
+          "data_type": "verified_wholesale"
+        },
+        {
+          "date": "2026-10-07",
+          "crop": "tomato",
+          "market": "Amman Central Market",
+          "price_jod_per_kg": "0.150",
+          "source_url": "https://moa.gov.jo/ebv4.0/root_storage/ar/eb_list_page/7-10-2026.pdf",
+          "data_type": "verified_wholesale"
+        }
+      ],
+      "reference_date": "2026-10-09"
+    },
+    "response": {
+      "status": "calculated",
+      "prepared_inputs": {
+        "recorded_costs": [
+          {
+            "id": "incurred",
+            "amount_jod": "500"
+          }
+        ],
+        "projected_costs": [
+          {
+            "id": "remaining",
+            "amount_jod": "300"
+          }
+        ],
+        "actual_sales": [],
+        "future_sales": [
+          {
+            "id": "unsold",
+            "quantity_kg": "2000",
+            "price_jod_per_kg": "0.6"
+          }
+        ]
+      },
+      "financials": {
+        "status": "calculated",
+        "recorded_costs_jod": "500",
+        "projected_additional_costs_jod": "300",
+        "projected_total_costs_jod": "800",
+        "actual_sold_kg": "0",
+        "future_sale_kg": "2000",
+        "total_marketable_quantity_kg": "2000",
+        "actual_revenue_jod": "0",
+        "projected_future_revenue_jod": "1200",
+        "projected_total_revenue_jod": "1200",
+        "projected_cost_per_kg_jod": "0.4",
+        "break_even_price_jod_per_kg": "0.4",
+        "required_future_break_even_price_jod_per_kg": "0.4",
+        "projected_profit_jod": "400",
+        "metric_explanations": {
+          "projected_cost_per_kg_jod": "Projected total costs divided by total marketable quantity (JOD/kg).",
+          "break_even_price_jod_per_kg": "Average full-season selling price needed to cover projected total costs (JOD/kg).",
+          "required_future_break_even_price_jod_per_kg": "Remaining uncovered projected costs divided by future sale quantity (JOD/kg)."
+        },
+        "warnings": [],
+        "assumptions": [
+          "Projected costs are additional future costs and exclude recorded costs.",
+          "Future sales contain only remaining unsold marketable quantities and exclude actual sales.",
+          "Unique IDs cannot establish whether physical harvest quantities overlap; the caller must verify this.",
+          "Total marketable quantity is actual sold quantity plus forecast future sales, not a validated biological yield.",
+          "All supplied costs and revenues use JOD; quantities use kg. Only declared entries are included."
+        ]
+      },
+      "price_references": {
+        "unsold": {
+          "status": "resolved",
+          "price_jod_per_kg": "0.6",
+          "source": "farmer_entered",
+          "source_urls": [],
+          "market": null,
+          "observation_start": null,
+          "observation_end": null,
+          "freshness": "not_applicable",
+          "observation_count": 0,
+          "explanation": "Explicit farmer price; not a verified completed sale or a market forecast.",
+          "warnings": []
+        }
+      },
+      "unresolved_future_sale_ids": []
+    }
+  },
+  "verified_reference": {
+    "request": {
+      "financial_inputs": {
+        "recorded_costs": [
+          {
+            "id": "incurred",
+            "amount_jod": "500"
+          }
+        ],
+        "projected_costs": [
+          {
+            "id": "remaining",
+            "amount_jod": "300"
+          }
+        ],
+        "actual_sales": [],
+        "future_sales": [
+          {
+            "id": "unsold",
+            "quantity_kg": "2000"
+          }
+        ]
+      },
+      "farmer_price": null,
+      "market_records": [
+        {
+          "date": "2026-10-05",
+          "crop": "tomato",
+          "market": "Amman Central Market",
+          "price_jod_per_kg": "0.150",
+          "source_url": "https://moa.gov.jo/ebv4.0/root_storage/ar/eb_list_page/5-10-2026.pdf",
+          "data_type": "verified_wholesale"
+        },
+        {
+          "date": "2026-10-06",
+          "crop": "tomato",
+          "market": "Amman Central Market",
+          "price_jod_per_kg": "0.150",
+          "source_url": "https://moa.gov.jo/ebv4.0/root_storage/ar/eb_list_page/6-10-2026.pdf",
+          "data_type": "verified_wholesale"
+        },
+        {
+          "date": "2026-10-07",
+          "crop": "tomato",
+          "market": "Amman Central Market",
+          "price_jod_per_kg": "0.150",
+          "source_url": "https://moa.gov.jo/ebv4.0/root_storage/ar/eb_list_page/7-10-2026.pdf",
+          "data_type": "verified_wholesale"
+        }
+      ],
+      "reference_date": "2026-10-09"
+    },
+    "response": {
+      "status": "calculated",
+      "prepared_inputs": {
+        "recorded_costs": [
+          {
+            "id": "incurred",
+            "amount_jod": "500"
+          }
+        ],
+        "projected_costs": [
+          {
+            "id": "remaining",
+            "amount_jod": "300"
+          }
+        ],
+        "actual_sales": [],
+        "future_sales": [
+          {
+            "id": "unsold",
+            "quantity_kg": "2000",
+            "price_jod_per_kg": "0.15"
+          }
+        ]
+      },
+      "financials": {
+        "status": "calculated",
+        "recorded_costs_jod": "500",
+        "projected_additional_costs_jod": "300",
+        "projected_total_costs_jod": "800",
+        "actual_sold_kg": "0",
+        "future_sale_kg": "2000",
+        "total_marketable_quantity_kg": "2000",
+        "actual_revenue_jod": "0",
+        "projected_future_revenue_jod": "300",
+        "projected_total_revenue_jod": "300",
+        "projected_cost_per_kg_jod": "0.4",
+        "break_even_price_jod_per_kg": "0.4",
+        "required_future_break_even_price_jod_per_kg": "0.4",
+        "projected_profit_jod": "-500",
+        "metric_explanations": {
+          "projected_cost_per_kg_jod": "Projected total costs divided by total marketable quantity (JOD/kg).",
+          "break_even_price_jod_per_kg": "Average full-season selling price needed to cover projected total costs (JOD/kg).",
+          "required_future_break_even_price_jod_per_kg": "Remaining uncovered projected costs divided by future sale quantity (JOD/kg)."
+        },
+        "warnings": [
+          "Wholesale reference may differ from the farmer's net selling price; transport and commissions must be declared as costs."
+        ],
+        "assumptions": [
+          "Projected costs are additional future costs and exclude recorded costs.",
+          "Future sales contain only remaining unsold marketable quantities and exclude actual sales.",
+          "Unique IDs cannot establish whether physical harvest quantities overlap; the caller must verify this.",
+          "Total marketable quantity is actual sold quantity plus forecast future sales, not a validated biological yield.",
+          "All supplied costs and revenues use JOD; quantities use kg. Only declared entries are included."
+        ]
+      },
+      "price_references": {
+        "unsold": {
+          "status": "resolved",
+          "price_jod_per_kg": "0.15",
+          "source": "ministry_wholesale_reference",
+          "source_urls": [
+            "https://moa.gov.jo/ebv4.0/root_storage/ar/eb_list_page/5-10-2026.pdf",
+            "https://moa.gov.jo/ebv4.0/root_storage/ar/eb_list_page/6-10-2026.pdf",
+            "https://moa.gov.jo/ebv4.0/root_storage/ar/eb_list_page/7-10-2026.pdf"
+          ],
+          "market": "Amman Central Market",
+          "observation_start": "2026-10-05",
+          "observation_end": "2026-10-07",
+          "freshness": "recent",
+          "observation_count": 3,
+          "explanation": "Median of recent curated wholesale observations; a reference estimate, not a farmgate price or guaranteed future price.",
+          "warnings": [
+            "Wholesale reference may differ from the farmer's net selling price; transport and commissions must be declared as costs."
+          ]
+        }
+      },
+      "unresolved_future_sale_ids": []
+    }
+  },
+  "unknown_price": {
+    "request": {
+      "financial_inputs": {
+        "recorded_costs": [
+          {
+            "id": "incurred",
+            "amount_jod": "500"
+          }
+        ],
+        "projected_costs": [
+          {
+            "id": "remaining",
+            "amount_jod": "300"
+          }
+        ],
+        "actual_sales": [],
+        "future_sales": [
+          {
+            "id": "unsold",
+            "quantity_kg": "2000"
+          }
+        ]
+      },
+      "farmer_price": null,
+      "market_records": [],
+      "reference_date": "2026-10-09"
+    },
+    "response": {
+      "status": "partial",
+      "prepared_inputs": null,
+      "financials": {
+        "status": "partial",
+        "recorded_costs_jod": "500",
+        "projected_additional_costs_jod": "300",
+        "projected_total_costs_jod": "800",
+        "actual_sold_kg": "0",
+        "future_sale_kg": "2000",
+        "total_marketable_quantity_kg": "2000",
+        "actual_revenue_jod": "0",
+        "projected_future_revenue_jod": null,
+        "projected_total_revenue_jod": null,
+        "projected_cost_per_kg_jod": "0.4",
+        "break_even_price_jod_per_kg": "0.4",
+        "required_future_break_even_price_jod_per_kg": "0.4",
+        "projected_profit_jod": null,
+        "metric_explanations": {
+          "projected_cost_per_kg_jod": "Projected total costs divided by total marketable quantity (JOD/kg).",
+          "break_even_price_jod_per_kg": "Average full-season selling price needed to cover projected total costs (JOD/kg).",
+          "required_future_break_even_price_jod_per_kg": "Remaining uncovered projected costs divided by future sale quantity (JOD/kg).",
+          "projected_future_revenue_jod": "Unavailable: selling price is unknown for future sales: unsold.",
+          "projected_total_revenue_jod": "Unavailable: selling price is unknown for future sales: unsold.",
+          "projected_profit_jod": "Unavailable: selling price is unknown for future sales: unsold."
+        },
+        "warnings": [
+          "Unavailable: selling price is unknown for future sales: unsold."
+        ],
+        "assumptions": [
+          "Projected costs are additional future costs and exclude recorded costs.",
+          "Future sales contain only remaining unsold marketable quantities and exclude actual sales.",
+          "Unique IDs cannot establish whether physical harvest quantities overlap; the caller must verify this.",
+          "Total marketable quantity is actual sold quantity plus forecast future sales, not a validated biological yield.",
+          "All supplied costs and revenues use JOD; quantities use kg. Only declared entries are included."
+        ]
+      },
+      "price_references": {
+        "unsold": {
+          "status": "unavailable",
+          "price_jod_per_kg": null,
+          "source": null,
+          "source_urls": [],
+          "market": "Amman Central Market",
+          "observation_start": null,
+          "observation_end": null,
+          "freshness": "unavailable",
+          "observation_count": 0,
+          "explanation": "No recent verified tomato observation in this market and JOD/kg; selling price remains unknown.",
+          "warnings": []
+        }
+      },
+      "unresolved_future_sale_ids": [
+        "unsold"
+      ]
+    }
+  },
+  "scenarios": {
+    "request": {
+      "financial_inputs": {
+        "recorded_costs": [
+          {
+            "id": "incurred",
+            "amount_jod": "500"
+          }
+        ],
+        "projected_costs": [
+          {
+            "id": "remaining",
+            "amount_jod": "300"
+          }
+        ],
+        "actual_sales": [],
+        "future_sales": [
+          {
+            "id": "unsold",
+            "quantity_kg": "2000",
+            "price_jod_per_kg": "0.600"
+          }
+        ]
+      },
+      "price_scenarios": {
+        "low": "0.300",
+        "base": "0.600",
+        "high": "0.900"
+      }
+    },
+    "response": {
+      "status": "simulated",
+      "scenarios": {
+        "low": {
+          "label": "hypothetical",
+          "price_jod_per_kg": "0.3",
+          "financials": {
+            "status": "calculated",
+            "recorded_costs_jod": "500",
+            "projected_additional_costs_jod": "300",
+            "projected_total_costs_jod": "800",
+            "actual_sold_kg": "0",
+            "future_sale_kg": "2000",
+            "total_marketable_quantity_kg": "2000",
+            "actual_revenue_jod": "0",
+            "projected_future_revenue_jod": "600",
+            "projected_total_revenue_jod": "600",
+            "projected_cost_per_kg_jod": "0.4",
+            "break_even_price_jod_per_kg": "0.4",
+            "required_future_break_even_price_jod_per_kg": "0.4",
+            "projected_profit_jod": "-200",
+            "metric_explanations": {
+              "projected_cost_per_kg_jod": "Projected total costs divided by total marketable quantity (JOD/kg).",
+              "break_even_price_jod_per_kg": "Average full-season selling price needed to cover projected total costs (JOD/kg).",
+              "required_future_break_even_price_jod_per_kg": "Remaining uncovered projected costs divided by future sale quantity (JOD/kg)."
+            },
+            "warnings": [],
+            "assumptions": [
+              "Projected costs are additional future costs and exclude recorded costs.",
+              "Future sales contain only remaining unsold marketable quantities and exclude actual sales.",
+              "Unique IDs cannot establish whether physical harvest quantities overlap; the caller must verify this.",
+              "Total marketable quantity is actual sold quantity plus forecast future sales, not a validated biological yield.",
+              "All supplied costs and revenues use JOD; quantities use kg. Only declared entries are included."
+            ]
+          },
+          "break_even_comparison": {
+            "message": "Below estimated break-even",
+            "proposed_price_jod_per_kg": "0.3",
+            "required_future_break_even_price_jod_per_kg": "0.4",
+            "basis": "Uniform future selling price versus remaining uncovered season costs per future kg.",
+            "warnings": [
+              "Estimated comparison only; not a guaranteed profit prediction."
+            ]
+          },
+          "profit_or_loss": "loss",
+          "warnings": [
+            "Estimated comparison only; not a guaranteed profit prediction.",
+            "Hypothetical scenario; not a statistically validated forecast."
+          ]
+        },
+        "base": {
+          "label": "hypothetical",
+          "price_jod_per_kg": "0.6",
+          "financials": {
+            "status": "calculated",
+            "recorded_costs_jod": "500",
+            "projected_additional_costs_jod": "300",
+            "projected_total_costs_jod": "800",
+            "actual_sold_kg": "0",
+            "future_sale_kg": "2000",
+            "total_marketable_quantity_kg": "2000",
+            "actual_revenue_jod": "0",
+            "projected_future_revenue_jod": "1200",
+            "projected_total_revenue_jod": "1200",
+            "projected_cost_per_kg_jod": "0.4",
+            "break_even_price_jod_per_kg": "0.4",
+            "required_future_break_even_price_jod_per_kg": "0.4",
+            "projected_profit_jod": "400",
+            "metric_explanations": {
+              "projected_cost_per_kg_jod": "Projected total costs divided by total marketable quantity (JOD/kg).",
+              "break_even_price_jod_per_kg": "Average full-season selling price needed to cover projected total costs (JOD/kg).",
+              "required_future_break_even_price_jod_per_kg": "Remaining uncovered projected costs divided by future sale quantity (JOD/kg)."
+            },
+            "warnings": [],
+            "assumptions": [
+              "Projected costs are additional future costs and exclude recorded costs.",
+              "Future sales contain only remaining unsold marketable quantities and exclude actual sales.",
+              "Unique IDs cannot establish whether physical harvest quantities overlap; the caller must verify this.",
+              "Total marketable quantity is actual sold quantity plus forecast future sales, not a validated biological yield.",
+              "All supplied costs and revenues use JOD; quantities use kg. Only declared entries are included."
+            ]
+          },
+          "break_even_comparison": {
+            "message": "Above estimated break-even",
+            "proposed_price_jod_per_kg": "0.6",
+            "required_future_break_even_price_jod_per_kg": "0.4",
+            "basis": "Uniform future selling price versus remaining uncovered season costs per future kg.",
+            "warnings": [
+              "Estimated comparison only; not a guaranteed profit prediction."
+            ]
+          },
+          "profit_or_loss": "profit",
+          "warnings": [
+            "Estimated comparison only; not a guaranteed profit prediction.",
+            "Hypothetical scenario; not a statistically validated forecast."
+          ]
+        },
+        "high": {
+          "label": "hypothetical",
+          "price_jod_per_kg": "0.9",
+          "financials": {
+            "status": "calculated",
+            "recorded_costs_jod": "500",
+            "projected_additional_costs_jod": "300",
+            "projected_total_costs_jod": "800",
+            "actual_sold_kg": "0",
+            "future_sale_kg": "2000",
+            "total_marketable_quantity_kg": "2000",
+            "actual_revenue_jod": "0",
+            "projected_future_revenue_jod": "1800",
+            "projected_total_revenue_jod": "1800",
+            "projected_cost_per_kg_jod": "0.4",
+            "break_even_price_jod_per_kg": "0.4",
+            "required_future_break_even_price_jod_per_kg": "0.4",
+            "projected_profit_jod": "1000",
+            "metric_explanations": {
+              "projected_cost_per_kg_jod": "Projected total costs divided by total marketable quantity (JOD/kg).",
+              "break_even_price_jod_per_kg": "Average full-season selling price needed to cover projected total costs (JOD/kg).",
+              "required_future_break_even_price_jod_per_kg": "Remaining uncovered projected costs divided by future sale quantity (JOD/kg)."
+            },
+            "warnings": [],
+            "assumptions": [
+              "Projected costs are additional future costs and exclude recorded costs.",
+              "Future sales contain only remaining unsold marketable quantities and exclude actual sales.",
+              "Unique IDs cannot establish whether physical harvest quantities overlap; the caller must verify this.",
+              "Total marketable quantity is actual sold quantity plus forecast future sales, not a validated biological yield.",
+              "All supplied costs and revenues use JOD; quantities use kg. Only declared entries are included."
+            ]
+          },
+          "break_even_comparison": {
+            "message": "Above estimated break-even",
+            "proposed_price_jod_per_kg": "0.9",
+            "required_future_break_even_price_jod_per_kg": "0.4",
+            "basis": "Uniform future selling price versus remaining uncovered season costs per future kg.",
+            "warnings": [
+              "Estimated comparison only; not a guaranteed profit prediction."
+            ]
+          },
+          "profit_or_loss": "profit",
+          "warnings": [
+            "Estimated comparison only; not a guaranteed profit prediction.",
+            "Hypothetical scenario; not a statistically validated forecast."
+          ]
+        }
+      }
+    }
+  }
+}
