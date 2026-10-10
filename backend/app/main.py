@@ -6,6 +6,9 @@ from sqlalchemy.orm import Session
 
 from .config import settings
 from .database import get_db
+from .routes.expenses import router as expenses_router
+from .routes.farms import router as farms_router
+from .routes.irrigations import router as irrigations_router
 
 
 app = FastAPI(
@@ -24,6 +27,10 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(farms_router)
+app.include_router(expenses_router)
+app.include_router(irrigations_router)
 
 
 @app.get("/health/live", tags=["health"])
