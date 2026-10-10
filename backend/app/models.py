@@ -51,6 +51,7 @@ class Farm(TimestampMixin, Base):
     longitude: Mapped[Decimal] = mapped_column(Numeric(9, 6), nullable=False)
     timezone: Mapped[str] = mapped_column(String(50), default="Asia/Amman", nullable=False)
     is_sample: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
+    name: Mapped[str | None] = mapped_column(String(200))
 
     owner: Mapped[User] = relationship(back_populates="farms")
     plots: Mapped[list["Plot"]] = relationship(back_populates="farm", cascade="all, delete-orphan")
@@ -96,6 +97,10 @@ class CropSeason(TimestampMixin, Base):
     expected_marketable_kg: Mapped[Decimal | None] = mapped_column(Numeric(14, 3))
     assumed_sale_price_jod_per_kg: Mapped[Decimal | None] = mapped_column(Numeric(14, 4))
     is_active: Mapped[bool] = mapped_column(Boolean, default=True, nullable=False)
+    name: Mapped[str | None] = mapped_column(String(120))
+    end_date: Mapped[date | None] = mapped_column(Date)
+    projected_costs_jod: Mapped[Decimal | None] = mapped_column(Numeric(14, 3))
+    fertilizer_budget_jod: Mapped[Decimal | None] = mapped_column(Numeric(14, 3))
 
     plot: Mapped[Plot] = relationship(back_populates="crop_seasons")
     expenses: Mapped[list["Expense"]] = relationship(
@@ -104,6 +109,8 @@ class CropSeason(TimestampMixin, Base):
     irrigation_events: Mapped[list["IrrigationEvent"]] = relationship(
         back_populates="crop_season", cascade="all, delete-orphan"
     )
+    harvests: Mapped[list["Harvest"]] = relationship(back_populates="crop_season", cascade="all, delete-orphan")
+    sales: Mapped[list["Sale"]] = relationship(back_populates="crop_season", cascade="all, delete-orphan")
 
     __table_args__ = (
         CheckConstraint("crop = 'tomato'", name="ck_crop_seasons_crop"),
@@ -176,6 +183,7 @@ class IrrigationEvent(TimestampMixin, Base):
     measurement_basis: Mapped[str] = mapped_column(String(30), nullable=False)
     status: Mapped[str] = mapped_column(String(20), default="confirmed", nullable=False)
     idempotency_key: Mapped[str] = mapped_column(String(150), nullable=False)
+    notes: Mapped[str | None] = mapped_column(String(4000))
 
     crop_season: Mapped[CropSeason] = relationship(back_populates="irrigation_events")
 
@@ -197,3 +205,41 @@ class IrrigationEvent(TimestampMixin, Base):
         ),
         CheckConstraint("status = 'confirmed'", name="ck_irrigation_confirmed_only"),
     )
+
+
+class Harvest(TimestampMixin, Base):
+    __tablename__ = "harvests"
+    id: Mapped[str] = mapped_column(String(100), primary_key=True)
+    crop_season_id: Mapped[str] = mapped_column(ForeignKey("crop_seasons.id", ondelete="CASCADE"), index=True)
+    date: Mapped[date] = mapped_column(Date)
+    quantity_kg: Mapped[Decimal] = mapped_column(Numeric(14, 3))
+    grade: Mapped[str | None] = mapped_column(String(80))
+    notes: Mapped[str | None] = mapped_column(String(4000))
+    crop_season: Mapped[CropSeason] = relationship(back_populates="harvests")
+    __table_args__ = (CheckConstraint("quantity_kg > 0", name="ck_harvest_quantity"),)
+
+
+class Sale(TimestampMixin, Base):
+    __tablename__ = "sales"
+    id: Mapped[str] = mapped_column(String(100), primary_key=True)
+    crop_season_id: Mapped[str] = mapped_column(ForeignKey("crop_seasons.id", ondelete="CASCADE"), index=True)
+    harvest_id: Mapped[str | None] = mapped_column(ForeignKey("harvests.id", ondelete="SET NULL"), index=True)
+    date: Mapped[date] = mapped_column(Date)
+    quantity_kg: Mapped[Decimal] = mapped_column(Numeric(14, 3))
+    unit_price_jod: Mapped[Decimal] = mapped_column(Numeric(14, 4))
+    buyer: Mapped[str | None] = mapped_column(String(160))
+    notes: Mapped[str | None] = mapped_column(String(4000))
+    crop_season: Mapped[CropSeason] = relationship(back_populates="sales")
+    __table_args__ = (
+        CheckConstraint("quantity_kg > 0", name="ck_sale_quantity"),
+        CheckConstraint("unit_price_jod >= 0", name="ck_sale_price"),
+    )
+
+
+class WriteReceipt(Base):
+    """Transactional idempotency, shared by the UI adapters (not another ledger)."""
+    __tablename__ = "write_receipts"
+    scope: Mapped[str] = mapped_column(String(250), primary_key=True)
+    key: Mapped[str] = mapped_column(String(150), primary_key=True)
+    digest: Mapped[str] = mapped_column(String(64))
+    response_json: Mapped[str] = mapped_column(String)

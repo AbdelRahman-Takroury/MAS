@@ -1,0 +1,3 @@
+Amiri Regular and Bold (SIL Open Font License 1.1)
+https://github.com/alif-type/amiri
+Used so Arabic PDF text can be embedded and shaped. The license does not modify Smart Farm AI source terms.

@@ -2,7 +2,7 @@
 
 from typing import Literal
 
-from pydantic import Field
+from pydantic import Field, field_validator
 
 from .common import StrictModel
 
@@ -12,6 +12,13 @@ class AssistantRequest(StrictModel):
     language: Literal["ar", "en"] = "ar"
     question: str = Field(min_length=1, max_length=2000)
     conversation_id: str | None = Field(default=None, max_length=100)
+
+    @field_validator("question")
+    @classmethod
+    def nonblank_question(cls, value):
+        if not value.strip():
+            raise ValueError("question cannot be blank")
+        return value.strip()
 
 
 class CalculatorReference(StrictModel):

@@ -3,16 +3,24 @@ from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import text
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import Session
+from pathlib import Path
+from fastapi.responses import FileResponse, JSONResponse
+from fastapi.staticfiles import StaticFiles
 
 from .config import settings
 from .database import get_db
+from .routes.assistant import router as assistant_router
+from .routes.dashboard import router as dashboard_router
 from .routes.expenses import router as expenses_router
 from .routes.farms import router as farms_router
 from .routes.irrigations import router as irrigations_router
+from .routes.simulations import router as simulations_router
+from .routes.ui import router as ui_router
+from .routes.voice import router as voice_router
 
 
 app = FastAPI(
-    title="Smart Farm AI",
+    title="Smart Farm AI – Tomato Farm Assistant",
     version="0.1.0",
     description=(
         "Arabic-first agricultural decision-support demonstration. "
@@ -29,8 +37,34 @@ app.add_middleware(
 )
 
 app.include_router(farms_router)
+app.include_router(dashboard_router)
 app.include_router(expenses_router)
 app.include_router(irrigations_router)
+app.include_router(simulations_router)
+app.include_router(assistant_router)
+app.include_router(ui_router)
+app.include_router(voice_router)
+
+
+@app.exception_handler(SQLAlchemyError)
+async def database_error(_request, _exc):
+    return JSONResponse(status_code=503, content={"detail": "Database operation failed; check server configuration and migrations"})
+
+
+PUBLIC = Path(__file__).resolve().parents[2] / "public"
+# Explicit allowlist: .env, source code, database files and .git are never served.
+for directory in ("css", "js", "assets"):
+    app.mount("/" + directory, StaticFiles(directory=PUBLIC / directory), name=directory)
+
+
+@app.get("/", include_in_schema=False)
+def landing():
+    return FileResponse(PUBLIC / "index.html")
+
+
+@app.get("/dashboard.html", include_in_schema=False)
+def dashboard_page():
+    return FileResponse(PUBLIC / "dashboard.html")
 
 
 @app.get("/health/live", tags=["health"])

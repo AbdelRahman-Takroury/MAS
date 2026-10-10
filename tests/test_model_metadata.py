@@ -12,6 +12,9 @@ def test_minimum_tables_are_registered():
         "crop_seasons",
         "expenses",
         "irrigation_events",
+        "harvests",
+        "sales",
+        "write_receipts",
     }
 
 
