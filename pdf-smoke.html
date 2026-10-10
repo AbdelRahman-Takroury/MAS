@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>PDF smoke test</title>
+<base href="./">
+<style>
+body{font:14px sans-serif;background:#111;color:#eee;padding:16px}
+canvas{display:block;margin:12px 0;background:#fff;max-width:100%;height:auto;border:1px solid #444}
+.status{white-space:pre-wrap}
+</style>
+</head>
+<body>
+<p class="status" id="st">Generating…</p>
+<div id="out"></div>
+<script src="js/mock-data.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/demo-recommendations.js"></script>
+<script src="js/recommendation-card.js"></script>
+<script src="js/vendor/jspdf.umd.min.js"></script>
+<script src="js/arabic-shape.js"></script>
+<script src="js/report.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
+<script>
+(async function () {
+  const st = document.getElementById('st');
+  const log = (m) => { st.textContent += '\n' + m; };
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.worker.min.js';
+  function snap(id, lang) {
+    const f = SFA_MOCK.farms[id];
+    const ok = (name) => f[name] ? { status: 'ok', data: Object.assign({ origin: 'sample' }, JSON.parse(JSON.stringify(f[name]))) } : { status: 'error', data: null };
+    const recs = SFA_DEMO_RECS({
+      farmId: id, profile: f.profile, irrigation: f.irrigation, financials: f.financials,
+      inspections: f.inspections, weather: f.weather
+    });
+    return {
+      generatedAt: '2026-10-09T12:00:00.000Z', lang, live: false, farmId: id,
+      farmName: f.profile && f.profile.name, farmsOrigin: 'sample',
+      sections: { profile: ok('profile'), irrigation: ok('irrigation'), financials: ok('financials'), inspections: ok('inspections'), weather: ok('weather') },
+      recs: { status: 'ok', data: { origin: 'demo', recommendations: recs } }
+    };
+  }
+  async function renderPdf(blob, label) {
+    const buf = await blob.arrayBuffer();
+    const pdf = await pdfjsLib.getDocument({ data: buf }).promise;
+    log(label + ': ' + pdf.numPages + ' pages, ' + blob.size + ' bytes');
+    const pages = [1, pdf.numPages];
+    for (const n of pages) {
+      const page = await pdf.getPage(n);
+      const text = await page.getTextContent();
+      const joined = text.items.map((i) => i.str).join(' | ');
+      log(label + ' p' + n + ' text: ' + joined.slice(0, 500));
+      const vp = page.getViewport({ scale: 1.4 });
+      const c = document.createElement('canvas');
+      c.width = vp.width; c.height = vp.height;
+      await page.render({ canvasContext: c.getContext('2d'), viewport: vp }).promise;
+      const cap = document.createElement('p'); cap.textContent = label + ' page ' + n;
+      document.getElementById('out').appendChild(cap);
+      document.getElementById('out').appendChild(c);
+    }
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = label + '.pdf';
+    a.textContent = 'Download ' + label;
+    document.getElementById('out').appendChild(a);
+    return pdf.numPages;
+  }
+  try {
+    const ar = await SFA_REPORT.blob(snap('a', 'ar'));
+    const en = await SFA_REPORT.blob(snap('a', 'en'));
+    const b = await SFA_REPORT.blob(snap('b', 'ar'));
+    window.__PDFS = { ar, en, b };
+    await renderPdf(ar.blob, 'farm-a-ar');
+    await renderPdf(en.blob, 'farm-a-en');
+    await renderPdf(b.blob, 'farm-b-ar');
+    log('DONE');
+  } catch (e) {
+    log('FAIL ' + (e && e.code) + ' ' + (e && e.message) + ' ' + (e && e.stack));
+  }
+})();
+</script>
+</body>
+</html>

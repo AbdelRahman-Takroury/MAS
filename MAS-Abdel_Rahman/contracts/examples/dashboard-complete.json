@@ -1,0 +1,110 @@
+{
+  "farm_id": "demo_farm_001",
+  "generated_at": "2026-10-10T08:30:00+03:00",
+  "is_sample": true,
+  "weather": {
+    "status": "ok",
+    "data_kind": "live",
+    "source": {
+      "name": "Open-Meteo",
+      "reference": "https://open-meteo.com/",
+      "retrieved_at": "2026-10-10T08:25:00+03:00"
+    },
+    "generated_at": "2026-10-10T08:25:00+03:00",
+    "missing_inputs": [],
+    "assumptions": [],
+    "warnings": [],
+    "timezone": "Asia/Amman",
+    "forecast_generated_at": "2026-10-10T08:25:00+03:00",
+    "daily": [
+      {
+        "date": "2026-10-10",
+        "temperature_max_c": 31.5,
+        "temperature_min_c": 19.0,
+        "precipitation_mm": 0.0,
+        "relative_humidity_mean_percent": 58.0,
+        "et0_mm": 5.0
+      }
+    ]
+  },
+  "irrigation": {
+    "status": "estimated",
+    "data_kind": "calculated",
+    "source": {
+      "name": "FAO-56 demonstration baseline",
+      "reference": "https://www.fao.org/4/X0490E/x0490e0b.htm",
+      "retrieved_at": null
+    },
+    "generated_at": "2026-10-10T08:30:00+03:00",
+    "missing_inputs": ["system_flow_liters_per_hour"],
+    "assumptions": ["Mid-season crop coefficient and efficiency are demonstration assumptions."],
+    "warnings": ["This period estimate is not an instruction to irrigate this amount today."],
+    "period_days": 7,
+    "period_start_date": "2026-10-10",
+    "period_end_date": "2026-10-16",
+    "water_required_liters": 5200.0,
+    "runtime_hours": null,
+    "calculator_version": "irrigation-fao56-demo-v1"
+  },
+  "water_budget": {
+    "status": "estimated",
+    "data_kind": "calculated",
+    "source": {
+      "name": "Zar3ati water-budget calculator",
+      "reference": null,
+      "retrieved_at": null
+    },
+    "generated_at": "2026-10-10T08:30:00+03:00",
+    "missing_inputs": [],
+    "assumptions": ["Available water applies to the same seven-day period."],
+    "warnings": [],
+    "water_required_liters": 5200.0,
+    "water_available_liters": 4000.0,
+    "water_shortage_liters": 1200.0,
+    "water_surplus_liters": 0.0,
+    "coverage_percentage": 76.92,
+    "water_status": "shortage"
+  },
+  "finance": {
+    "status": "estimated",
+    "data_kind": "calculated",
+    "source": {
+      "name": "Zar3ati finance calculator",
+      "reference": null,
+      "retrieved_at": null
+    },
+    "generated_at": "2026-10-10T08:30:00+03:00",
+    "missing_inputs": [],
+    "assumptions": ["Expected marketable harvest and price are user-entered scenario values."],
+    "warnings": ["This is a scenario, not a guaranteed profit forecast."],
+    "projected_total_cost_jod": 800.0,
+    "expected_marketable_kg": 2000.0,
+    "break_even_jod_per_kg": 0.4,
+    "assumed_sale_price_jod_per_kg": 0.6,
+    "projected_revenue_jod": 1200.0,
+    "projected_profit_jod": 400.0,
+    "calculator_version": "finance-demo-v1"
+  },
+  "inspection": {
+    "status": "ok",
+    "data_kind": "calculated",
+    "source": {
+      "name": "Demonstration weather inspection rules",
+      "reference": null,
+      "retrieved_at": null
+    },
+    "generated_at": "2026-10-10T08:30:00+03:00",
+    "missing_inputs": [],
+    "assumptions": [],
+    "warnings": ["Environmental favorability is not a disease diagnosis."],
+    "assessment": "not_favorable",
+    "alerts": [],
+    "inspection_actions": ["Continue routine visual inspection of tomato plants."],
+    "limitations": ["Outdoor weather does not measure canopy leaf wetness."]
+  },
+  "actions": [
+    "Review available water against the estimated seven-day requirement.",
+    "Confirm irrigation-system flow before requesting a runtime estimate.",
+    "Review the assumed selling price before making sales decisions."
+  ]
+}

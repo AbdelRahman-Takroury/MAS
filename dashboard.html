@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Smart Farm AI – Dashboard</title>
+<meta name="description" content="Smart Farm AI dashboard for open-field tomato farms in the Jordan Valley: weather, crop overview, farm summary and an AI farming assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Manrope:wght@400;500;600;800&display=swap">
+<link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+<!-- Icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <defs>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M12 21v-8M12 13C12 8 9 6 4 6c0 5 2 7 8 7zM12 15c0-4 3-7 8-7 0 5-3 7-8 7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="4" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.6"/></g></symbol>
+  <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3.5c3.5 4.2 6 7.2 6 10.5a6 6 0 0 1-12 0c0-3.300 2.500-6.300 6-10.500z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+  <symbol id="i-sprout" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20v-7"/><path d="M12 13c0-3.500-2.500-5.500-6.500-5.500 0 3.500 2 5.500 6.500 5.500zM12 11.500c0-3 2.200-5 6-5 0 3-2 5-6 5z"/><path d="M8 20h8"/></g></symbol>
+  <symbol id="i-farm" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.500 11 12 4l8.500 7"/><path d="M5.500 10v9.500h13V10"/><path d="M10 19.500v-5h4v5"/></g></symbol>
+  <symbol id="i-flask" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9.500 3.500h5M10.500 3.500v6L5 19a1.200 1.200 0 0 0 1 1.800h12A1.200 1.200 0 0 0 19 19l-5.500-9.500v-6"/><path d="M8 15h8"/></g></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 20v-6M12 20V6M18 20v-9"/></g></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="3"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 3.500v2.200M12 18.300v2.200M3.500 12h2.200M18.300 12h2.200M6 6l1.500 1.500M16.500 16.500 18 18M6 18l1.500-1.500M16.500 7.500 18 6"/></g></symbol>
+  <symbol id="i-help" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="8.500"/><path d="M12 7.500v5.500M12 16.200v.1"/></g></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4"/></g></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16.500V11a6 6 0 0 1 12 0v5.500l1.500 1.500h-15z"/><path d="M10 20.500h4"/></g></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="8.500" r="3.800"/><path d="M4.500 20c.8-4 3.700-6 7.500-6s6.700 2 7.500 6"/></g></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M12 19V6M6.500 11.500 12 6l5.500 5.500" fill="none" stroke="currentColor" stroke-width="2.200" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8.500"/><path d="M3.500 12h17M12 3.500c2.500 2.500 3.500 5.300 3.500 8.500s-1 6-3.500 8.500c-2.500-2.500-3.500-5.300-3.500-8.500s1-6 3.500-8.500z"/></g></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-map" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="m3.500 6.500 5.500-2 6 2 5.500-2v13l-5.500 2-6-2-5.500 2z"/><path d="M9 4.500v13M15 6.500v13"/></g></symbol>
+  <symbol id="i-coins" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="12" cy="7" rx="6.500" ry="2.800"/><path d="M5.500 7v5c0 1.500 2.900 2.800 6.500 2.800s6.500-1.300 6.500-2.800V7M5.500 12v5c0 1.500 2.900 2.800 6.500 2.800s6.500-1.300 6.500-2.800v-5"/></g></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 3.500 6 13.500h5l-1 7 7-10h-5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.500" fill="#f4c542"/><path d="M12 2.500v2.500M12 19v2.500M2.500 12H5M19 12h2.500M5.200 5.200 7 7M17 17l1.800 1.800M5.200 18.800 7 17M17 7l1.800-1.800" stroke="#f4c542" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-partly" viewBox="0 0 24 24"><circle cx="9" cy="9" r="3.800" fill="#f4c542"/><path d="M9 2.500v1.500M2.500 9H4M4.500 4.500l1 1M13.500 4.500l-1 1" stroke="#f4c542" stroke-width="1.500" stroke-linecap="round"/><path d="M8 19.500h10a3.500 3.500 0 0 0 .3-7 4.800 4.800 0 0 0-9.100 1A3 3 0 0 0 8 19.500z" fill="#e8efe2"/></symbol>
+  <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18.500h10.500a4 4 0 0 0 .4-8 5.600 5.600 0 0 0-10.700 1.300A3.400 3.400 0 0 0 7 18.500z" fill="#dfe8da"/></symbol>
+  <symbol id="i-rain" viewBox="0 0 24 24"><path d="M7 15h10.500a4 4 0 0 0 .4-8 5.600 5.600 0 0 0-10.700 1.300A3.400 3.400 0 0 0 7 15z" fill="#cfdacb"/><path d="M8.500 17.500 7.500 20M12.500 17.500l-1 2.500M16.500 17.500l-1 2.500" stroke="#7fc6e8" stroke-width="1.700" stroke-linecap="round"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 21 19.500H3z"/><path d="M12 10v4M12 16.800v.1"/></g></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 0 0-14.500-4M4 5v3.500h3.500M4 13a8 8 0 0 0 14.500 4M20 19v-3.500h-3.500"/></g></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3.500l2 5.500 5.500 2-5.500 2-2 5.500-2-5.500-5.500-2 5.500-2z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+    <symbol id="i-speaker" viewBox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4V5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4" fill="currentColor"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1" fill="currentColor"/><rect x="14" y="4" width="4" height="16" rx="1" fill="currentColor"/></symbol>
+  <symbol id="i-stop" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="2" fill="currentColor"/></symbol>
+  <symbol id="i-replay" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><polyline points="3 3 3 8 8 8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v10M8 10l4 4 4-4"/><path d="M5 19h14"/></g></symbol>
+ </defs>
+</svg>
+
+<div class="bg" aria-hidden="true"></div>
+<div class="bg-shade" aria-hidden="true"></div>
+
+<div class="app" id="app" data-view="overview">
+
+ <!-- Top bar -->
+ <header class="topbar">
+  <a class="logo" id="logo" href="Smart%20Farm%20AI%20%E2%80%93%20Landing%20Page.html" data-i18n-aria="back" aria-label="Back to home">
+   <svg width="24" height="24" aria-hidden="true"><use href="#i-leaf"/></svg>
+  </a>
+
+  <nav class="tabs" id="tabs" data-i18n-aria="navLabel" aria-label="Dashboard views">
+   <button type="button" class="tab" data-view="overview" id="tab-overview" data-i18n="overview">Overview</button>
+   <button type="button" class="tab" data-view="irrigation" id="tab-irrigation" data-i18n="irrigation">Irrigation</button>
+   <button type="button" class="tab" data-view="weather" id="tab-weather" data-i18n="weather">Weather</button>
+   <button type="button" class="tab" data-view="analytics" id="tab-analytics" data-i18n="analytics">Analytics</button>
+  </nav>
+
+  <div class="actions">
+   <button type="button" class="lang-btn" id="lang-btn" data-i18n="langBtn" data-i18n-aria="langAria">العربية</button>
+   <button type="button" class="round" id="btn-search" data-i18n-aria="search" aria-label="Search"><svg width="18" height="18"><use href="#i-search"/></svg></button>
+   <button type="button" class="round" id="btn-notif" data-i18n-aria="notifications" aria-label="Notifications"><svg width="18" height="18"><use href="#i-bell"/></svg><i class="dot" id="notif-dot" hidden></i></button>
+   <span class="round avatar" role="img" data-i18n-aria="profile" aria-label="Profile"><svg width="20" height="20"><use href="#i-user"/></svg></span>
+  </div>
+ </header>
+
+ <div class="body">
+
+  <!-- Sidebar -->
+  <aside class="side" id="side">
+   <div class="side-main">
+    <button type="button" class="sbtn" data-view="overview" id="s-overview" data-i18n-aria="overview"><svg width="20" height="20"><use href="#i-grid"/></svg></button>
+    <button type="button" class="sbtn" data-view="irrigation" id="s-irrigation" data-i18n-aria="irrigation"><svg width="20" height="20"><use href="#i-drop"/></svg></button>
+    <button type="button" class="sbtn" data-view="cropHealth" id="s-crop" data-i18n-aria="cropHealth"><svg width="20" height="20"><use href="#i-sprout"/></svg></button>
+    <button type="button" class="sbtn" data-view="farm" id="s-farm" data-i18n-aria="farmProfile"><svg width="20" height="20"><use href="#i-farm"/></svg></button>
+    <button type="button" class="sbtn" data-view="fertilizer" id="s-fert" data-i18n-aria="fertilizer"><svg width="20" height="20"><use href="#i-flask"/></svg></button>
+    <button type="button" class="sbtn" data-view="financial" id="s-fin" data-i18n-aria="financial"><svg width="20" height="20"><use href="#i-chart"/></svg></button>
+   </div>
+   <div class="side-foot">
+    <button type="button" class="sbtn" id="s-help" data-i18n-aria="help"><svg width="20" height="20"><use href="#i-help"/></svg></button>
+    <button type="button" class="sbtn" id="s-settings" data-i18n-aria="settings"><svg width="20" height="20"><use href="#i-gear"/></svg></button>
+   </div>
+  </aside>
+
+  <!-- Left column -->
+  <main class="left">
+
+   <section class="glass profile" id="profile" data-focus="overview farm" aria-label="Farm profile">
+    <div class="p-sel">
+     <label class="sr" for="farm-select" data-i18n="farmSelect">Farm</label>
+     <select id="farm-select"></select>
+    </div>
+    <dl class="p-items" id="p-items"></dl>
+    <div class="p-tools">
+     <span class="chip" id="p-chip" hidden></span>
+     <button type="button" class="report-btn" id="btn-report" data-i18n-aria="reportBtn">
+      <svg width="16" height="16" aria-hidden="true"><use href="#i-download"/></svg>
+      <span data-i18n="reportBtn">Generate Farm Report</span>
+     </button>
+     <button type="button" class="round sm" id="btn-refresh" data-i18n-aria="refresh" aria-label="Refresh data"><svg width="16" height="16"><use href="#i-refresh"/></svg></button>
+    </div>
+    <p class="report-err" id="report-err" hidden role="alert"></p>
+   </section>
+
+   <section class="stage panel-free" data-focus="overview cropHealth" aria-label="Tomato plant">
+    <div class="artwrap">
+     <div class="art" id="art">
+      <img class="plant" src="assets/tomato-plant.png" alt="Young tomato plant (illustrative)" draggable="false">
+      <svg class="lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+       <polyline points="31,19 31,30 41,39" />
+       <polyline points="69,76 69,66 60,56" />
+       <circle cx="41" cy="39" r="0.9"/><circle cx="60" cy="56" r="0.9"/>
+      </svg>
+      <div class="note n-left">
+       <span><small data-i18n="crop">Crop</small><b data-i18n="cropVal">Tomato</b></span>
+       <span><small data-i18n="stage">Growth stage</small><b id="note-stage">…</b></span>
+      </div>
+      <div class="note n-right">
+       <span><small data-i18n="cond">Crop condition</small><b data-i18n="condVal">Not yet assessed</b></span>
+       <span><small data-i18n="leaf">Leaf moisture</small><b class="muted" data-i18n="leafVal">Unavailable</b></span>
+      </div>
+     </div>
+    </div>
+    <p class="visual-note" data-i18n="visualNote">Illustrative image – not a diagnosis</p>
+
+    <div class="thumbs">
+     <button type="button" class="thumb" id="thumb-1" aria-pressed="false" data-i18n-aria="thumb1"><img src="assets/thumb-irrigation.jpg" alt="" draggable="false"></button>
+     <button type="button" class="thumb selected" id="thumb-2" aria-pressed="true" data-i18n-aria="thumb2"><img src="assets/thumb-seedling.jpg" alt="" draggable="false"></button>
+     <button type="button" class="thumb add" id="thumb-add" data-i18n-aria="addImg"><svg width="24" height="24"><use href="#i-plus"/></svg></button>
+    </div>
+   </section>
+
+   <div class="bottom">
+    <!-- Weather -->
+    <section class="glass card wx" id="card-weather" data-focus="weather overview" aria-labelledby="wx-title">
+     <header class="card-h">
+      <h2 id="wx-title" data-i18n="wxTitle">7-Day Weather Forecast</h2>
+      <span class="chip" id="wx-chip" hidden></span>
+     </header>
+     <div class="wx-body" id="wx-body" aria-live="polite"></div>
+     <p class="foot" id="wx-foot"></p>
+    </section>
+
+    <!-- Crop overview -->
+    <section class="glass card crop" id="card-crop" data-focus="analytics cropHealth overview" aria-labelledby="crop-title">
+     <header class="card-h">
+      <h2 id="crop-title" data-i18n="cropTitle">Tomato Crop Overview</h2>
+      <span class="chip" id="crop-chip" hidden></span>
+     </header>
+     <div class="radar-wrap" id="radar"></div>
+     <ul class="legend" aria-hidden="true">
+      <li><i class="lg a"></i><span data-i18n="available">Available</span></li>
+      <li><i class="lg r"></i><span data-i18n="review">Needs review</span></li>
+      <li><i class="lg m"></i><span data-i18n="missing">Missing data</span></li>
+     </ul>
+     <p class="foot" data-i18n="radarNote">Illustrative levels – not measurements.</p>
+    </section>
+   </div>
+  </main>
+
+  <!-- Right column -->
+  <section class="right">
+   <div class="glass ai" id="card-ai" data-focus="overview fertilizer" aria-labelledby="ai-title">
+    <h2 id="ai-title" class="sr" data-i18n="aiTitle">AI Farming Assistant</h2>
+    <div class="ai-top" id="ai-top">
+     <div class="orb" aria-hidden="true"><i></i></div>
+     <p class="greet" data-i18n="greet">Hello! I'm your Tomato Farm Assistant.</p>
+     <p class="greet-sub" data-i18n="greetSub">I can help explain your irrigation estimates, fertilizer options, crop inspection reminders, and farm financial results.</p>
+    </div>
+    <div class="msgs" id="msgs" role="log" aria-live="polite"></div>
+    <form class="composer" id="chat-form" autocomplete="off">
+     <label class="sr" for="chat-input" data-i18n="placeholder">Ask about your tomato farm...</label>
+     <input id="chat-input" type="text" maxlength="500" data-i18n-ph="placeholder" placeholder="Ask about your tomato farm...">
+     <div class="comp-row">
+      <span class="src"><svg width="14" height="14"><use href="#i-globe"/></svg><span data-i18n="sourcesInfo">Sources shown when available</span></span>
+      <button type="button" class="recs-btn" id="btn-recs"><svg width="14" height="14"><use href="#i-spark"/></svg><span data-i18n="recsBtn">Recommendations</span><em id="recs-count" hidden></em></button>
+      <button type="submit" class="send" id="chat-send" data-i18n-aria="send" aria-label="Send"><svg width="18" height="18"><use href="#i-send"/></svg></button>
+     </div>
+    </form>
+   </div>
+
+   <section class="glass fert-panel" id="fert-panel" data-focus="fertilizer" aria-labelledby="fert-title">
+    <header class="card-h"><h2 id="fert-title" data-i18n="fertCompareTitle">Fertilizer price comparison</h2><span class="chip" id="fert-chip" hidden></span></header>
+    <div id="fert-body" class="fert-body" aria-live="polite"></div>
+   </section>
+   <section class="glass sum" id="card-sum" data-focus="overview farm financial irrigation analytics cropHealth fertilizer" aria-labelledby="sum-title">
+    <h2 class="sr" id="sum-title" data-i18n="sumTitle">Farm summary</h2>
+    <span class="chip sum-chip" id="sum-chip" hidden></span>
+    <div class="sum-grid" id="sum-grid" aria-live="polite"></div>
+   </section>
+  </section>
+ </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<dialog class="dlg" id="dlg-settings" aria-labelledby="dlg-s-t">
+ <h3 id="dlg-s-t" data-i18n="settingsTitle">Settings</h3>
+ <p class="dlg-l" data-i18n="langLabel">Language</p>
+ <div class="seg">
+  <button type="button" id="set-en" data-set-lang="en">English</button>
+  <button type="button" id="set-ar" data-set-lang="ar">العربية</button>
+ </div>
+ <p class="dlg-l" data-i18n="dataSrc">Data source</p>
+ <p class="dlg-p" id="dlg-src"></p>
+ <button type="button" class="dlg-close" data-close data-i18n="close">Close</button>
+</dialog>
+
+<dialog class="dlg dlg-recs" id="dlg-recs" aria-labelledby="recs-title">
+ <header class="recs-h">
+  <div><h3 id="recs-title" data-i18n="recsTitle">Farm Recommendations</h3><p class="recs-for" id="recs-for"></p></div>
+  <button type="button" class="round sm" data-close data-i18n-aria="close" aria-label="Close"><svg width="16" height="16"><use href="#i-plus" style="transform:rotate(45deg);transform-origin:center"/></svg></button>
+ </header>
+ <p class="recs-note" id="recs-note"></p>
+ <div class="recs-body" id="recs-body" aria-live="polite"></div>
+ <p class="recs-disc" data-i18n="recDisclaimer">Academic demo, not validated agricultural advice.</p>
+</dialog>
+
+<dialog class="dlg" id="dlg-help" aria-labelledby="dlg-h-t">
+ <h3 id="dlg-h-t" data-i18n="helpTitle">About this dashboard</h3>
+ <ul class="dlg-ul">
+  <li data-i18n="help1"></li><li data-i18n="help2"></li><li data-i18n="help3"></li><li data-i18n="help4"></li><li data-i18n="help5"></li>
+ </ul>
+ <button type="button" class="dlg-close" data-close data-i18n="close">Close</button>
+</dialog>
+
+<script src="js/mock-data.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/demo-recommendations.js"></script>
+<script src="js/speech-text.js"></script>
+<script src="js/voice.js"></script>
+<script src="js/recommendation-card.js"></script>
+<script>
+  (function () {
+    const api = new URLSearchParams(window.location.search).get('api');
+    window.SFA_CONFIG = Object.assign({ API_BASE: null }, window.SFA_CONFIG || {});
+    if (api !== null) window.SFA_CONFIG.API_BASE = api || null;
+  })();
+</script>
+<script src="js/api.js"></script>
+<script src="js/vendor/jspdf.umd.min.js"></script>
+<script src="js/arabic-shape.js"></script>
+<script src="js/report.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

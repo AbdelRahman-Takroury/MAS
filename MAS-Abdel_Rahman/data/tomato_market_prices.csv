@@ -1,0 +1,4 @@
+date,crop,market,price_jod_per_kg,source_url,data_type
+2026-10-05,tomato,Amman Central Market,0.150,https://moa.gov.jo/ebv4.0/root_storage/ar/eb_list_page/5-10-2026.pdf,verified_wholesale
+2026-10-06,tomato,Amman Central Market,0.150,https://moa.gov.jo/ebv4.0/root_storage/ar/eb_list_page/6-10-2026.pdf,verified_wholesale
+2026-10-07,tomato,Amman Central Market,0.150,https://moa.gov.jo/ebv4.0/root_storage/ar/eb_list_page/7-10-2026.pdf,verified_wholesale

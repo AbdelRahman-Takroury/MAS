@@ -1,0 +1,23 @@
+{
+  "answer": "يوجد عجز تقديري لأن المياه المتاحة أقل من الاحتياج المحسوب للفترة. هذه نتيجة توضيحية وليست أمراً بالري.",
+  "language": "ar",
+  "used_fallback": false,
+  "calculator_references": [
+    {
+      "calculator": "irrigation-fao56-demo-v1",
+      "result_id": "demo-dashboard-001"
+    }
+  ],
+  "document_references": [
+    {
+      "document_id": "fao56-etc",
+      "title": "FAO-56 crop evapotranspiration",
+      "section": "Crop evapotranspiration",
+      "source_url": "https://www.fao.org/4/X0490E/x0490e0b.htm"
+    }
+  ],
+  "limitations": [
+    "لم يتم قياس رطوبة التربة مباشرة.",
+    "لا يمكن حساب مدة الري دون معرفة تدفق النظام."
+  ]
+}

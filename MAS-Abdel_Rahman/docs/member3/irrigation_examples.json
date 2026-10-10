@@ -1,0 +1,4168 @@
+{
+  "complete_weather": {
+    "example_data_type": "historical_replay_of_genuine_forecast_with_hypothetical_farm",
+    "request": {
+      "farm": {
+        "crop": "tomato",
+        "area_m2": 1000,
+        "crop_stage": "mid_season",
+        "irrigation_method": "drip",
+        "irrigation_efficiency": 0.9,
+        "effective_rain_fraction": 0.8,
+        "system_flow_liters_per_hour": 2000
+      },
+      "weather": {
+        "status": "live",
+        "source": "open-meteo",
+        "data_type": "forecast",
+        "retrieved_at": "2026-10-09T20:54:24.642303Z",
+        "timezone": "Asia/Amman",
+        "latitude": 32.19,
+        "longitude": 35.62,
+        "provider_latitude": 32.168934,
+        "provider_longitude": 35.59414,
+        "forecast_start_date": "2026-10-09",
+        "forecast_end_date": "2026-10-15",
+        "daily": [
+          {
+            "date": "2026-10-09",
+            "temperature_max_c": 35.0,
+            "temperature_min_c": 23.1,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 0.0,
+            "wind_speed_max_kmh": 22.6,
+            "et0_mm": 4.91,
+            "weather_code": 1,
+            "relative_humidity_mean_percent": 55.5,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-10",
+            "temperature_max_c": 35.9,
+            "temperature_min_c": 24.3,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 3.0,
+            "wind_speed_max_kmh": 19.0,
+            "et0_mm": 4.56,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 58.208333333333336,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-11",
+            "temperature_max_c": 31.2,
+            "temperature_min_c": 25.3,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 14.0,
+            "wind_speed_max_kmh": 14.0,
+            "et0_mm": 2.76,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 59.333333333333336,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-12",
+            "temperature_max_c": 35.3,
+            "temperature_min_c": 23.7,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 8.0,
+            "wind_speed_max_kmh": 19.8,
+            "et0_mm": 4.96,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 51.916666666666664,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-13",
+            "temperature_max_c": 33.3,
+            "temperature_min_c": 24.4,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 2.0,
+            "wind_speed_max_kmh": 17.2,
+            "et0_mm": 4.57,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 58.125,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-14",
+            "temperature_max_c": 32.3,
+            "temperature_min_c": 23.0,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 4.0,
+            "wind_speed_max_kmh": 10.5,
+            "et0_mm": 3.64,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 52.708333333333336,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-15",
+            "temperature_max_c": 30.9,
+            "temperature_min_c": 22.0,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 3.0,
+            "wind_speed_max_kmh": 21.1,
+            "et0_mm": 4.48,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 49.208333333333336,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          }
+        ],
+        "summary": {
+          "status": "complete",
+          "requested_days": 7,
+          "available_days": 7,
+          "total_precipitation_mm": 0.0,
+          "total_et0_mm": 29.88,
+          "heat_days": 2,
+          "wind_days": 0,
+          "rainy_days": 0,
+          "metric_status": {
+            "total_precipitation_mm": "complete",
+            "total_et0_mm": "complete",
+            "heat_days": "complete",
+            "wind_days": "complete",
+            "rainy_days": "complete"
+          },
+          "available_days_per_metric": {
+            "total_precipitation_mm": 7,
+            "total_et0_mm": 7,
+            "heat_days": 7,
+            "wind_days": 7,
+            "rainy_days": 7
+          },
+          "available_days_per_field": {
+            "temperature_max_c": 7,
+            "temperature_min_c": 7,
+            "precipitation_mm": 7,
+            "rain_probability_max_percent": 7,
+            "wind_speed_max_kmh": 7,
+            "et0_mm": 7,
+            "weather_code": 7,
+            "relative_humidity_mean_percent": 7
+          },
+          "humidity_hours_available": 168,
+          "humidity_hours_expected": 168,
+          "thresholds": {
+            "rain_mm": 5.0,
+            "heat_c": 35.0,
+            "wind_kmh": 30.0,
+            "rainy_day_mm": 0.0
+          }
+        },
+        "advisories": [
+          {
+            "date": "2026-10-10",
+            "type": "heat_inspection",
+            "metric": "temperature_max_c",
+            "value": 35.9,
+            "threshold": 35.0,
+            "message": "High temperatures are forecast. Inspect tomato plants and verify soil moisture."
+          },
+          {
+            "date": "2026-10-12",
+            "type": "heat_inspection",
+            "metric": "temperature_max_c",
+            "value": 35.3,
+            "threshold": 35.0,
+            "message": "High temperatures are forecast. Inspect tomato plants and verify soil moisture."
+          }
+        ],
+        "warnings": [
+          "Advisory thresholds are demonstration heuristics, not validated tomato risk thresholds."
+        ],
+        "units": {
+          "temperature": "celsius",
+          "precipitation": "mm",
+          "wind_speed": "km/h",
+          "et0": "mm/day",
+          "relative_humidity": "percent",
+          "rain_probability": "percent",
+          "weather_code": "WMO"
+        },
+        "errors": []
+      },
+      "reference_time": "2026-10-09T20:54:24.642303Z",
+      "water_available_liters": 50000
+    },
+    "response": {
+      "irrigation": {
+        "status": "calculated",
+        "data_type": "estimate",
+        "calculated_at": "2026-10-09T20:54:24.642303Z",
+        "period_days": 7,
+        "period_start_date": "2026-10-09",
+        "period_end_date": "2026-10-15",
+        "weather_provenance": {
+          "status": "live",
+          "source": "open-meteo",
+          "data_type": "forecast",
+          "timezone": "Asia/Amman",
+          "retrieved_at": "2026-10-09T20:54:24.642303Z",
+          "valid_until": "2026-10-10T20:54:24.642303Z",
+          "original_horizon_end": "2026-10-15",
+          "forecast_start_date": "2026-10-09",
+          "forecast_end_date": "2026-10-15",
+          "period_start_date": "2026-10-09",
+          "period_end_date": "2026-10-15",
+          "requested_days": 7
+        },
+        "kc": {
+          "value": 1.15,
+          "crop_stage": "mid_season",
+          "source": "fao56_table12_reference",
+          "source_url": "https://www.fao.org/4/X0490E/x0490e0b.htm",
+          "explanation": "FAO-56 Table 12 reference coefficient; local climate/wetting adjustments are not modelled."
+        },
+        "farm_assumptions": {
+          "area_m2": 1000.0,
+          "irrigation_efficiency": 0.9,
+          "effective_rain_fraction": 0.8,
+          "system_flow_liters_per_hour": 2000.0
+        },
+        "daily": [
+          {
+            "date": "2026-10-09",
+            "et0_mm": 4.91,
+            "kc": 1.15,
+            "etc_mm": 5.6465,
+            "crop_water_consumption_liters": 5646.5,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 5.6465,
+            "net_irrigation_liters": 5646.5,
+            "gross_irrigation_liters": 6273.888888888889,
+            "runtime_hours": 3.1369444444444445,
+            "status": "calculated",
+            "warnings": []
+          },
+          {
+            "date": "2026-10-10",
+            "et0_mm": 4.56,
+            "kc": 1.15,
+            "etc_mm": 5.244,
+            "crop_water_consumption_liters": 5244.0,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 5.244,
+            "net_irrigation_liters": 5244.0,
+            "gross_irrigation_liters": 5826.666666666667,
+            "runtime_hours": 2.9133333333333336,
+            "status": "calculated",
+            "warnings": []
+          },
+          {
+            "date": "2026-10-11",
+            "et0_mm": 2.76,
+            "kc": 1.15,
+            "etc_mm": 3.174,
+            "crop_water_consumption_liters": 3174.0,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 3.174,
+            "net_irrigation_liters": 3174.0,
+            "gross_irrigation_liters": 3526.6666666666665,
+            "runtime_hours": 1.7633333333333334,
+            "status": "calculated",
+            "warnings": []
+          },
+          {
+            "date": "2026-10-12",
+            "et0_mm": 4.96,
+            "kc": 1.15,
+            "etc_mm": 5.704,
+            "crop_water_consumption_liters": 5704.0,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 5.704,
+            "net_irrigation_liters": 5704.0,
+            "gross_irrigation_liters": 6337.777777777777,
+            "runtime_hours": 3.168888888888889,
+            "status": "calculated",
+            "warnings": []
+          },
+          {
+            "date": "2026-10-13",
+            "et0_mm": 4.57,
+            "kc": 1.15,
+            "etc_mm": 5.2555,
+            "crop_water_consumption_liters": 5255.5,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 5.2555,
+            "net_irrigation_liters": 5255.5,
+            "gross_irrigation_liters": 5839.444444444444,
+            "runtime_hours": 2.919722222222222,
+            "status": "calculated",
+            "warnings": []
+          },
+          {
+            "date": "2026-10-14",
+            "et0_mm": 3.64,
+            "kc": 1.15,
+            "etc_mm": 4.186,
+            "crop_water_consumption_liters": 4186.0,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 4.186,
+            "net_irrigation_liters": 4186.0,
+            "gross_irrigation_liters": 4651.111111111111,
+            "runtime_hours": 2.3255555555555554,
+            "status": "calculated",
+            "warnings": []
+          },
+          {
+            "date": "2026-10-15",
+            "et0_mm": 4.48,
+            "kc": 1.15,
+            "etc_mm": 5.152,
+            "crop_water_consumption_liters": 5152.0,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 5.152,
+            "net_irrigation_liters": 5152.0,
+            "gross_irrigation_liters": 5724.444444444444,
+            "runtime_hours": 2.862222222222222,
+            "status": "calculated",
+            "warnings": []
+          }
+        ],
+        "summary": {
+          "status": "calculated",
+          "period_days": 7,
+          "available_days": 7,
+          "total_etc_mm": 34.362,
+          "total_crop_water_consumption_liters": 34362.0,
+          "total_effective_rain_mm": 0.0,
+          "total_net_irrigation_liters": 34362.0,
+          "total_gross_irrigation_liters": 38180.0,
+          "total_runtime_hours": 19.09,
+          "complete_days": 7,
+          "incomplete_days": 0,
+          "partial_totals": {
+            "total_etc_mm": {
+              "value": 34.362,
+              "dates": [
+                "2026-10-09",
+                "2026-10-10",
+                "2026-10-11",
+                "2026-10-12",
+                "2026-10-13",
+                "2026-10-14",
+                "2026-10-15"
+              ],
+              "covered_days": 7,
+              "requested_days": 7,
+              "status": "complete"
+            },
+            "total_crop_water_consumption_liters": {
+              "value": 34362.0,
+              "dates": [
+                "2026-10-09",
+                "2026-10-10",
+                "2026-10-11",
+                "2026-10-12",
+                "2026-10-13",
+                "2026-10-14",
+                "2026-10-15"
+              ],
+              "covered_days": 7,
+              "requested_days": 7,
+              "status": "complete"
+            },
+            "total_effective_rain_mm": {
+              "value": 0.0,
+              "dates": [
+                "2026-10-09",
+                "2026-10-10",
+                "2026-10-11",
+                "2026-10-12",
+                "2026-10-13",
+                "2026-10-14",
+                "2026-10-15"
+              ],
+              "covered_days": 7,
+              "requested_days": 7,
+              "status": "complete"
+            },
+            "total_net_irrigation_liters": {
+              "value": 34362.0,
+              "dates": [
+                "2026-10-09",
+                "2026-10-10",
+                "2026-10-11",
+                "2026-10-12",
+                "2026-10-13",
+                "2026-10-14",
+                "2026-10-15"
+              ],
+              "covered_days": 7,
+              "requested_days": 7,
+              "status": "complete"
+            },
+            "total_gross_irrigation_liters": {
+              "value": 38180.0,
+              "dates": [
+                "2026-10-09",
+                "2026-10-10",
+                "2026-10-11",
+                "2026-10-12",
+                "2026-10-13",
+                "2026-10-14",
+                "2026-10-15"
+              ],
+              "covered_days": 7,
+              "requested_days": 7,
+              "status": "complete"
+            },
+            "total_runtime_hours": {
+              "value": 19.09,
+              "dates": [
+                "2026-10-09",
+                "2026-10-10",
+                "2026-10-11",
+                "2026-10-12",
+                "2026-10-13",
+                "2026-10-14",
+                "2026-10-15"
+              ],
+              "covered_days": 7,
+              "requested_days": 7,
+              "status": "complete"
+            }
+          }
+        },
+        "warnings": [
+          "Advisory thresholds are demonstration heuristics, not validated tomato risk thresholds."
+        ],
+        "assumptions": [
+          "Crop stage/Kc is held constant over the assessed period; no crop calendar is inferred.",
+          "ETc estimates crop consumption under reference coefficient assumptions, not measured field water use.",
+          "Effective rain fraction and application efficiency are explicit caller assumptions, not validated drip-system properties.",
+          "Excess rain is not transferred between days; soil storage, groundwater, runoff, salinity and drainage are not modelled.",
+          "Volumes and runtime are planning estimates, not an exact irrigation schedule or continuous-run instruction.",
+          "Confirmed past irrigation is not subtracted from future demand without a dated soil-water balance."
+        ],
+        "units": {
+          "et0": "mm/day",
+          "etc": "mm/day",
+          "precipitation": "mm/day",
+          "effective_rain": "mm/day",
+          "net_irrigation_depth": "mm/day",
+          "volume": "liters",
+          "area": "m2",
+          "runtime": "hours",
+          "system_flow": "liters/hour",
+          "kc": "dimensionless"
+        }
+      },
+      "water_budget": {
+        "status": "calculated",
+        "period_days": 7,
+        "period_start_date": "2026-10-09",
+        "period_end_date": "2026-10-15",
+        "weather_provenance": {
+          "status": "live",
+          "source": "open-meteo",
+          "data_type": "forecast",
+          "timezone": "Asia/Amman",
+          "retrieved_at": "2026-10-09T20:54:24.642303Z",
+          "valid_until": "2026-10-10T20:54:24.642303Z",
+          "original_horizon_end": "2026-10-15",
+          "forecast_start_date": "2026-10-09",
+          "forecast_end_date": "2026-10-15",
+          "period_start_date": "2026-10-09",
+          "period_end_date": "2026-10-15",
+          "requested_days": 7
+        },
+        "water_required_liters": 38180.0,
+        "water_available_liters": 50000.0,
+        "water_shortage_liters": 0.0,
+        "water_surplus_liters": 11820.0,
+        "coverage_percentage": 100.0,
+        "water_status": "sufficient",
+        "indicator": "Available water covers 100% of estimated gross irrigation demand over the assessed period.",
+        "partial_assessment": null,
+        "warnings": [
+          "Available-water period was not independently supplied; caller must verify it matches the assessed forecast period."
+        ],
+        "assumptions": [
+          "Available water refers to the SAME upcoming period as estimated gross irrigation demand; scalar availability alone cannot verify this.",
+          "Surplus is an arithmetic excess over estimated demand, not a guarantee of storage or delivery capacity.",
+          "Water sufficiency does not guarantee crop safety or quantify crop stress/yield loss.",
+          "Zero required volume uses 100% coverage by convention; no division by zero is performed."
+        ],
+        "units": {
+          "volume": "liters",
+          "coverage": "percent"
+        }
+      }
+    }
+  },
+  "shortage": {
+    "example_data_type": "historical_replay_of_genuine_forecast_with_hypothetical_farm",
+    "request": {
+      "farm": {
+        "crop": "tomato",
+        "area_m2": 1000,
+        "crop_stage": "mid_season",
+        "irrigation_method": "drip",
+        "irrigation_efficiency": 0.9,
+        "effective_rain_fraction": 0.8,
+        "system_flow_liters_per_hour": 2000
+      },
+      "weather": {
+        "status": "live",
+        "source": "open-meteo",
+        "data_type": "forecast",
+        "retrieved_at": "2026-10-09T20:54:24.642303Z",
+        "timezone": "Asia/Amman",
+        "latitude": 32.19,
+        "longitude": 35.62,
+        "provider_latitude": 32.168934,
+        "provider_longitude": 35.59414,
+        "forecast_start_date": "2026-10-09",
+        "forecast_end_date": "2026-10-15",
+        "daily": [
+          {
+            "date": "2026-10-09",
+            "temperature_max_c": 35.0,
+            "temperature_min_c": 23.1,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 0.0,
+            "wind_speed_max_kmh": 22.6,
+            "et0_mm": 4.91,
+            "weather_code": 1,
+            "relative_humidity_mean_percent": 55.5,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-10",
+            "temperature_max_c": 35.9,
+            "temperature_min_c": 24.3,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 3.0,
+            "wind_speed_max_kmh": 19.0,
+            "et0_mm": 4.56,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 58.208333333333336,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-11",
+            "temperature_max_c": 31.2,
+            "temperature_min_c": 25.3,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 14.0,
+            "wind_speed_max_kmh": 14.0,
+            "et0_mm": 2.76,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 59.333333333333336,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-12",
+            "temperature_max_c": 35.3,
+            "temperature_min_c": 23.7,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 8.0,
+            "wind_speed_max_kmh": 19.8,
+            "et0_mm": 4.96,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 51.916666666666664,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-13",
+            "temperature_max_c": 33.3,
+            "temperature_min_c": 24.4,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 2.0,
+            "wind_speed_max_kmh": 17.2,
+            "et0_mm": 4.57,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 58.125,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-14",
+            "temperature_max_c": 32.3,
+            "temperature_min_c": 23.0,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 4.0,
+            "wind_speed_max_kmh": 10.5,
+            "et0_mm": 3.64,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 52.708333333333336,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-15",
+            "temperature_max_c": 30.9,
+            "temperature_min_c": 22.0,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 3.0,
+            "wind_speed_max_kmh": 21.1,
+            "et0_mm": 4.48,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 49.208333333333336,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          }
+        ],
+        "summary": {
+          "status": "complete",
+          "requested_days": 7,
+          "available_days": 7,
+          "total_precipitation_mm": 0.0,
+          "total_et0_mm": 29.88,
+          "heat_days": 2,
+          "wind_days": 0,
+          "rainy_days": 0,
+          "metric_status": {
+            "total_precipitation_mm": "complete",
+            "total_et0_mm": "complete",
+            "heat_days": "complete",
+            "wind_days": "complete",
+            "rainy_days": "complete"
+          },
+          "available_days_per_metric": {
+            "total_precipitation_mm": 7,
+            "total_et0_mm": 7,
+            "heat_days": 7,
+            "wind_days": 7,
+            "rainy_days": 7
+          },
+          "available_days_per_field": {
+            "temperature_max_c": 7,
+            "temperature_min_c": 7,
+            "precipitation_mm": 7,
+            "rain_probability_max_percent": 7,
+            "wind_speed_max_kmh": 7,
+            "et0_mm": 7,
+            "weather_code": 7,
+            "relative_humidity_mean_percent": 7
+          },
+          "humidity_hours_available": 168,
+          "humidity_hours_expected": 168,
+          "thresholds": {
+            "rain_mm": 5.0,
+            "heat_c": 35.0,
+            "wind_kmh": 30.0,
+            "rainy_day_mm": 0.0
+          }
+        },
+        "advisories": [
+          {
+            "date": "2026-10-10",
+            "type": "heat_inspection",
+            "metric": "temperature_max_c",
+            "value": 35.9,
+            "threshold": 35.0,
+            "message": "High temperatures are forecast. Inspect tomato plants and verify soil moisture."
+          },
+          {
+            "date": "2026-10-12",
+            "type": "heat_inspection",
+            "metric": "temperature_max_c",
+            "value": 35.3,
+            "threshold": 35.0,
+            "message": "High temperatures are forecast. Inspect tomato plants and verify soil moisture."
+          }
+        ],
+        "warnings": [
+          "Advisory thresholds are demonstration heuristics, not validated tomato risk thresholds."
+        ],
+        "units": {
+          "temperature": "celsius",
+          "precipitation": "mm",
+          "wind_speed": "km/h",
+          "et0": "mm/day",
+          "relative_humidity": "percent",
+          "rain_probability": "percent",
+          "weather_code": "WMO"
+        },
+        "errors": []
+      },
+      "reference_time": "2026-10-09T20:54:24.642303Z",
+      "water_available_liters": 30000
+    },
+    "response": {
+      "irrigation": {
+        "status": "calculated",
+        "data_type": "estimate",
+        "calculated_at": "2026-10-09T20:54:24.642303Z",
+        "period_days": 7,
+        "period_start_date": "2026-10-09",
+        "period_end_date": "2026-10-15",
+        "weather_provenance": {
+          "status": "live",
+          "source": "open-meteo",
+          "data_type": "forecast",
+          "timezone": "Asia/Amman",
+          "retrieved_at": "2026-10-09T20:54:24.642303Z",
+          "valid_until": "2026-10-10T20:54:24.642303Z",
+          "original_horizon_end": "2026-10-15",
+          "forecast_start_date": "2026-10-09",
+          "forecast_end_date": "2026-10-15",
+          "period_start_date": "2026-10-09",
+          "period_end_date": "2026-10-15",
+          "requested_days": 7
+        },
+        "kc": {
+          "value": 1.15,
+          "crop_stage": "mid_season",
+          "source": "fao56_table12_reference",
+          "source_url": "https://www.fao.org/4/X0490E/x0490e0b.htm",
+          "explanation": "FAO-56 Table 12 reference coefficient; local climate/wetting adjustments are not modelled."
+        },
+        "farm_assumptions": {
+          "area_m2": 1000.0,
+          "irrigation_efficiency": 0.9,
+          "effective_rain_fraction": 0.8,
+          "system_flow_liters_per_hour": 2000.0
+        },
+        "daily": [
+          {
+            "date": "2026-10-09",
+            "et0_mm": 4.91,
+            "kc": 1.15,
+            "etc_mm": 5.6465,
+            "crop_water_consumption_liters": 5646.5,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 5.6465,
+            "net_irrigation_liters": 5646.5,
+            "gross_irrigation_liters": 6273.888888888889,
+            "runtime_hours": 3.1369444444444445,
+            "status": "calculated",
+            "warnings": []
+          },
+          {
+            "date": "2026-10-10",
+            "et0_mm": 4.56,
+            "kc": 1.15,
+            "etc_mm": 5.244,
+            "crop_water_consumption_liters": 5244.0,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 5.244,
+            "net_irrigation_liters": 5244.0,
+            "gross_irrigation_liters": 5826.666666666667,
+            "runtime_hours": 2.9133333333333336,
+            "status": "calculated",
+            "warnings": []
+          },
+          {
+            "date": "2026-10-11",
+            "et0_mm": 2.76,
+            "kc": 1.15,
+            "etc_mm": 3.174,
+            "crop_water_consumption_liters": 3174.0,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 3.174,
+            "net_irrigation_liters": 3174.0,
+            "gross_irrigation_liters": 3526.6666666666665,
+            "runtime_hours": 1.7633333333333334,
+            "status": "calculated",
+            "warnings": []
+          },
+          {
+            "date": "2026-10-12",
+            "et0_mm": 4.96,
+            "kc": 1.15,
+            "etc_mm": 5.704,
+            "crop_water_consumption_liters": 5704.0,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 5.704,
+            "net_irrigation_liters": 5704.0,
+            "gross_irrigation_liters": 6337.777777777777,
+            "runtime_hours": 3.168888888888889,
+            "status": "calculated",
+            "warnings": []
+          },
+          {
+            "date": "2026-10-13",
+            "et0_mm": 4.57,
+            "kc": 1.15,
+            "etc_mm": 5.2555,
+            "crop_water_consumption_liters": 5255.5,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 5.2555,
+            "net_irrigation_liters": 5255.5,
+            "gross_irrigation_liters": 5839.444444444444,
+            "runtime_hours": 2.919722222222222,
+            "status": "calculated",
+            "warnings": []
+          },
+          {
+            "date": "2026-10-14",
+            "et0_mm": 3.64,
+            "kc": 1.15,
+            "etc_mm": 4.186,
+            "crop_water_consumption_liters": 4186.0,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 4.186,
+            "net_irrigation_liters": 4186.0,
+            "gross_irrigation_liters": 4651.111111111111,
+            "runtime_hours": 2.3255555555555554,
+            "status": "calculated",
+            "warnings": []
+          },
+          {
+            "date": "2026-10-15",
+            "et0_mm": 4.48,
+            "kc": 1.15,
+            "etc_mm": 5.152,
+            "crop_water_consumption_liters": 5152.0,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 5.152,
+            "net_irrigation_liters": 5152.0,
+            "gross_irrigation_liters": 5724.444444444444,
+            "runtime_hours": 2.862222222222222,
+            "status": "calculated",
+            "warnings": []
+          }
+        ],
+        "summary": {
+          "status": "calculated",
+          "period_days": 7,
+          "available_days": 7,
+          "total_etc_mm": 34.362,
+          "total_crop_water_consumption_liters": 34362.0,
+          "total_effective_rain_mm": 0.0,
+          "total_net_irrigation_liters": 34362.0,
+          "total_gross_irrigation_liters": 38180.0,
+          "total_runtime_hours": 19.09,
+          "complete_days": 7,
+          "incomplete_days": 0,
+          "partial_totals": {
+            "total_etc_mm": {
+              "value": 34.362,
+              "dates": [
+                "2026-10-09",
+                "2026-10-10",
+                "2026-10-11",
+                "2026-10-12",
+                "2026-10-13",
+                "2026-10-14",
+                "2026-10-15"
+              ],
+              "covered_days": 7,
+              "requested_days": 7,
+              "status": "complete"
+            },
+            "total_crop_water_consumption_liters": {
+              "value": 34362.0,
+              "dates": [
+                "2026-10-09",
+                "2026-10-10",
+                "2026-10-11",
+                "2026-10-12",
+                "2026-10-13",
+                "2026-10-14",
+                "2026-10-15"
+              ],
+              "covered_days": 7,
+              "requested_days": 7,
+              "status": "complete"
+            },
+            "total_effective_rain_mm": {
+              "value": 0.0,
+              "dates": [
+                "2026-10-09",
+                "2026-10-10",
+                "2026-10-11",
+                "2026-10-12",
+                "2026-10-13",
+                "2026-10-14",
+                "2026-10-15"
+              ],
+              "covered_days": 7,
+              "requested_days": 7,
+              "status": "complete"
+            },
+            "total_net_irrigation_liters": {
+              "value": 34362.0,
+              "dates": [
+                "2026-10-09",
+                "2026-10-10",
+                "2026-10-11",
+                "2026-10-12",
+                "2026-10-13",
+                "2026-10-14",
+                "2026-10-15"
+              ],
+              "covered_days": 7,
+              "requested_days": 7,
+              "status": "complete"
+            },
+            "total_gross_irrigation_liters": {
+              "value": 38180.0,
+              "dates": [
+                "2026-10-09",
+                "2026-10-10",
+                "2026-10-11",
+                "2026-10-12",
+                "2026-10-13",
+                "2026-10-14",
+                "2026-10-15"
+              ],
+              "covered_days": 7,
+              "requested_days": 7,
+              "status": "complete"
+            },
+            "total_runtime_hours": {
+              "value": 19.09,
+              "dates": [
+                "2026-10-09",
+                "2026-10-10",
+                "2026-10-11",
+                "2026-10-12",
+                "2026-10-13",
+                "2026-10-14",
+                "2026-10-15"
+              ],
+              "covered_days": 7,
+              "requested_days": 7,
+              "status": "complete"
+            }
+          }
+        },
+        "warnings": [
+          "Advisory thresholds are demonstration heuristics, not validated tomato risk thresholds."
+        ],
+        "assumptions": [
+          "Crop stage/Kc is held constant over the assessed period; no crop calendar is inferred.",
+          "ETc estimates crop consumption under reference coefficient assumptions, not measured field water use.",
+          "Effective rain fraction and application efficiency are explicit caller assumptions, not validated drip-system properties.",
+          "Excess rain is not transferred between days; soil storage, groundwater, runoff, salinity and drainage are not modelled.",
+          "Volumes and runtime are planning estimates, not an exact irrigation schedule or continuous-run instruction.",
+          "Confirmed past irrigation is not subtracted from future demand without a dated soil-water balance."
+        ],
+        "units": {
+          "et0": "mm/day",
+          "etc": "mm/day",
+          "precipitation": "mm/day",
+          "effective_rain": "mm/day",
+          "net_irrigation_depth": "mm/day",
+          "volume": "liters",
+          "area": "m2",
+          "runtime": "hours",
+          "system_flow": "liters/hour",
+          "kc": "dimensionless"
+        }
+      },
+      "water_budget": {
+        "status": "calculated",
+        "period_days": 7,
+        "period_start_date": "2026-10-09",
+        "period_end_date": "2026-10-15",
+        "weather_provenance": {
+          "status": "live",
+          "source": "open-meteo",
+          "data_type": "forecast",
+          "timezone": "Asia/Amman",
+          "retrieved_at": "2026-10-09T20:54:24.642303Z",
+          "valid_until": "2026-10-10T20:54:24.642303Z",
+          "original_horizon_end": "2026-10-15",
+          "forecast_start_date": "2026-10-09",
+          "forecast_end_date": "2026-10-15",
+          "period_start_date": "2026-10-09",
+          "period_end_date": "2026-10-15",
+          "requested_days": 7
+        },
+        "water_required_liters": 38180.0,
+        "water_available_liters": 30000.0,
+        "water_shortage_liters": 8180.0,
+        "water_surplus_liters": 0.0,
+        "coverage_percentage": 78.5751702462022,
+        "water_status": "shortage",
+        "indicator": "Estimated water shortage: 8180 liters over the assessed period.",
+        "partial_assessment": null,
+        "warnings": [
+          "Available-water period was not independently supplied; caller must verify it matches the assessed forecast period."
+        ],
+        "assumptions": [
+          "Available water refers to the SAME upcoming period as estimated gross irrigation demand; scalar availability alone cannot verify this.",
+          "Surplus is an arithmetic excess over estimated demand, not a guarantee of storage or delivery capacity.",
+          "Water sufficiency does not guarantee crop safety or quantify crop stress/yield loss.",
+          "Zero required volume uses 100% coverage by convention; no division by zero is performed."
+        ],
+        "units": {
+          "volume": "liters",
+          "coverage": "percent"
+        }
+      }
+    }
+  },
+  "sufficient": {
+    "example_data_type": "historical_replay_of_genuine_forecast_with_hypothetical_farm",
+    "request": {
+      "farm": {
+        "crop": "tomato",
+        "area_m2": 1000,
+        "crop_stage": "mid_season",
+        "irrigation_method": "drip",
+        "irrigation_efficiency": 0.9,
+        "effective_rain_fraction": 0.8,
+        "system_flow_liters_per_hour": 2000
+      },
+      "weather": {
+        "status": "live",
+        "source": "open-meteo",
+        "data_type": "forecast",
+        "retrieved_at": "2026-10-09T20:54:24.642303Z",
+        "timezone": "Asia/Amman",
+        "latitude": 32.19,
+        "longitude": 35.62,
+        "provider_latitude": 32.168934,
+        "provider_longitude": 35.59414,
+        "forecast_start_date": "2026-10-09",
+        "forecast_end_date": "2026-10-15",
+        "daily": [
+          {
+            "date": "2026-10-09",
+            "temperature_max_c": 35.0,
+            "temperature_min_c": 23.1,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 0.0,
+            "wind_speed_max_kmh": 22.6,
+            "et0_mm": 4.91,
+            "weather_code": 1,
+            "relative_humidity_mean_percent": 55.5,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-10",
+            "temperature_max_c": 35.9,
+            "temperature_min_c": 24.3,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 3.0,
+            "wind_speed_max_kmh": 19.0,
+            "et0_mm": 4.56,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 58.208333333333336,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-11",
+            "temperature_max_c": 31.2,
+            "temperature_min_c": 25.3,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 14.0,
+            "wind_speed_max_kmh": 14.0,
+            "et0_mm": 2.76,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 59.333333333333336,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-12",
+            "temperature_max_c": 35.3,
+            "temperature_min_c": 23.7,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 8.0,
+            "wind_speed_max_kmh": 19.8,
+            "et0_mm": 4.96,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 51.916666666666664,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-13",
+            "temperature_max_c": 33.3,
+            "temperature_min_c": 24.4,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 2.0,
+            "wind_speed_max_kmh": 17.2,
+            "et0_mm": 4.57,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 58.125,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-14",
+            "temperature_max_c": 32.3,
+            "temperature_min_c": 23.0,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 4.0,
+            "wind_speed_max_kmh": 10.5,
+            "et0_mm": 3.64,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 52.708333333333336,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-15",
+            "temperature_max_c": 30.9,
+            "temperature_min_c": 22.0,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 3.0,
+            "wind_speed_max_kmh": 21.1,
+            "et0_mm": 4.48,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 49.208333333333336,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          }
+        ],
+        "summary": {
+          "status": "complete",
+          "requested_days": 7,
+          "available_days": 7,
+          "total_precipitation_mm": 0.0,
+          "total_et0_mm": 29.88,
+          "heat_days": 2,
+          "wind_days": 0,
+          "rainy_days": 0,
+          "metric_status": {
+            "total_precipitation_mm": "complete",
+            "total_et0_mm": "complete",
+            "heat_days": "complete",
+            "wind_days": "complete",
+            "rainy_days": "complete"
+          },
+          "available_days_per_metric": {
+            "total_precipitation_mm": 7,
+            "total_et0_mm": 7,
+            "heat_days": 7,
+            "wind_days": 7,
+            "rainy_days": 7
+          },
+          "available_days_per_field": {
+            "temperature_max_c": 7,
+            "temperature_min_c": 7,
+            "precipitation_mm": 7,
+            "rain_probability_max_percent": 7,
+            "wind_speed_max_kmh": 7,
+            "et0_mm": 7,
+            "weather_code": 7,
+            "relative_humidity_mean_percent": 7
+          },
+          "humidity_hours_available": 168,
+          "humidity_hours_expected": 168,
+          "thresholds": {
+            "rain_mm": 5.0,
+            "heat_c": 35.0,
+            "wind_kmh": 30.0,
+            "rainy_day_mm": 0.0
+          }
+        },
+        "advisories": [
+          {
+            "date": "2026-10-10",
+            "type": "heat_inspection",
+            "metric": "temperature_max_c",
+            "value": 35.9,
+            "threshold": 35.0,
+            "message": "High temperatures are forecast. Inspect tomato plants and verify soil moisture."
+          },
+          {
+            "date": "2026-10-12",
+            "type": "heat_inspection",
+            "metric": "temperature_max_c",
+            "value": 35.3,
+            "threshold": 35.0,
+            "message": "High temperatures are forecast. Inspect tomato plants and verify soil moisture."
+          }
+        ],
+        "warnings": [
+          "Advisory thresholds are demonstration heuristics, not validated tomato risk thresholds."
+        ],
+        "units": {
+          "temperature": "celsius",
+          "precipitation": "mm",
+          "wind_speed": "km/h",
+          "et0": "mm/day",
+          "relative_humidity": "percent",
+          "rain_probability": "percent",
+          "weather_code": "WMO"
+        },
+        "errors": []
+      },
+      "reference_time": "2026-10-09T20:54:24.642303Z",
+      "water_available_liters": 50000
+    },
+    "response": {
+      "irrigation": {
+        "status": "calculated",
+        "data_type": "estimate",
+        "calculated_at": "2026-10-09T20:54:24.642303Z",
+        "period_days": 7,
+        "period_start_date": "2026-10-09",
+        "period_end_date": "2026-10-15",
+        "weather_provenance": {
+          "status": "live",
+          "source": "open-meteo",
+          "data_type": "forecast",
+          "timezone": "Asia/Amman",
+          "retrieved_at": "2026-10-09T20:54:24.642303Z",
+          "valid_until": "2026-10-10T20:54:24.642303Z",
+          "original_horizon_end": "2026-10-15",
+          "forecast_start_date": "2026-10-09",
+          "forecast_end_date": "2026-10-15",
+          "period_start_date": "2026-10-09",
+          "period_end_date": "2026-10-15",
+          "requested_days": 7
+        },
+        "kc": {
+          "value": 1.15,
+          "crop_stage": "mid_season",
+          "source": "fao56_table12_reference",
+          "source_url": "https://www.fao.org/4/X0490E/x0490e0b.htm",
+          "explanation": "FAO-56 Table 12 reference coefficient; local climate/wetting adjustments are not modelled."
+        },
+        "farm_assumptions": {
+          "area_m2": 1000.0,
+          "irrigation_efficiency": 0.9,
+          "effective_rain_fraction": 0.8,
+          "system_flow_liters_per_hour": 2000.0
+        },
+        "daily": [
+          {
+            "date": "2026-10-09",
+            "et0_mm": 4.91,
+            "kc": 1.15,
+            "etc_mm": 5.6465,
+            "crop_water_consumption_liters": 5646.5,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 5.6465,
+            "net_irrigation_liters": 5646.5,
+            "gross_irrigation_liters": 6273.888888888889,
+            "runtime_hours": 3.1369444444444445,
+            "status": "calculated",
+            "warnings": []
+          },
+          {
+            "date": "2026-10-10",
+            "et0_mm": 4.56,
+            "kc": 1.15,
+            "etc_mm": 5.244,
+            "crop_water_consumption_liters": 5244.0,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 5.244,
+            "net_irrigation_liters": 5244.0,
+            "gross_irrigation_liters": 5826.666666666667,
+            "runtime_hours": 2.9133333333333336,
+            "status": "calculated",
+            "warnings": []
+          },
+          {
+            "date": "2026-10-11",
+            "et0_mm": 2.76,
+            "kc": 1.15,
+            "etc_mm": 3.174,
+            "crop_water_consumption_liters": 3174.0,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 3.174,
+            "net_irrigation_liters": 3174.0,
+            "gross_irrigation_liters": 3526.6666666666665,
+            "runtime_hours": 1.7633333333333334,
+            "status": "calculated",
+            "warnings": []
+          },
+          {
+            "date": "2026-10-12",
+            "et0_mm": 4.96,
+            "kc": 1.15,
+            "etc_mm": 5.704,
+            "crop_water_consumption_liters": 5704.0,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 5.704,
+            "net_irrigation_liters": 5704.0,
+            "gross_irrigation_liters": 6337.777777777777,
+            "runtime_hours": 3.168888888888889,
+            "status": "calculated",
+            "warnings": []
+          },
+          {
+            "date": "2026-10-13",
+            "et0_mm": 4.57,
+            "kc": 1.15,
+            "etc_mm": 5.2555,
+            "crop_water_consumption_liters": 5255.5,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 5.2555,
+            "net_irrigation_liters": 5255.5,
+            "gross_irrigation_liters": 5839.444444444444,
+            "runtime_hours": 2.919722222222222,
+            "status": "calculated",
+            "warnings": []
+          },
+          {
+            "date": "2026-10-14",
+            "et0_mm": 3.64,
+            "kc": 1.15,
+            "etc_mm": 4.186,
+            "crop_water_consumption_liters": 4186.0,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 4.186,
+            "net_irrigation_liters": 4186.0,
+            "gross_irrigation_liters": 4651.111111111111,
+            "runtime_hours": 2.3255555555555554,
+            "status": "calculated",
+            "warnings": []
+          },
+          {
+            "date": "2026-10-15",
+            "et0_mm": 4.48,
+            "kc": 1.15,
+            "etc_mm": 5.152,
+            "crop_water_consumption_liters": 5152.0,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 5.152,
+            "net_irrigation_liters": 5152.0,
+            "gross_irrigation_liters": 5724.444444444444,
+            "runtime_hours": 2.862222222222222,
+            "status": "calculated",
+            "warnings": []
+          }
+        ],
+        "summary": {
+          "status": "calculated",
+          "period_days": 7,
+          "available_days": 7,
+          "total_etc_mm": 34.362,
+          "total_crop_water_consumption_liters": 34362.0,
+          "total_effective_rain_mm": 0.0,
+          "total_net_irrigation_liters": 34362.0,
+          "total_gross_irrigation_liters": 38180.0,
+          "total_runtime_hours": 19.09,
+          "complete_days": 7,
+          "incomplete_days": 0,
+          "partial_totals": {
+            "total_etc_mm": {
+              "value": 34.362,
+              "dates": [
+                "2026-10-09",
+                "2026-10-10",
+                "2026-10-11",
+                "2026-10-12",
+                "2026-10-13",
+                "2026-10-14",
+                "2026-10-15"
+              ],
+              "covered_days": 7,
+              "requested_days": 7,
+              "status": "complete"
+            },
+            "total_crop_water_consumption_liters": {
+              "value": 34362.0,
+              "dates": [
+                "2026-10-09",
+                "2026-10-10",
+                "2026-10-11",
+                "2026-10-12",
+                "2026-10-13",
+                "2026-10-14",
+                "2026-10-15"
+              ],
+              "covered_days": 7,
+              "requested_days": 7,
+              "status": "complete"
+            },
+            "total_effective_rain_mm": {
+              "value": 0.0,
+              "dates": [
+                "2026-10-09",
+                "2026-10-10",
+                "2026-10-11",
+                "2026-10-12",
+                "2026-10-13",
+                "2026-10-14",
+                "2026-10-15"
+              ],
+              "covered_days": 7,
+              "requested_days": 7,
+              "status": "complete"
+            },
+            "total_net_irrigation_liters": {
+              "value": 34362.0,
+              "dates": [
+                "2026-10-09",
+                "2026-10-10",
+                "2026-10-11",
+                "2026-10-12",
+                "2026-10-13",
+                "2026-10-14",
+                "2026-10-15"
+              ],
+              "covered_days": 7,
+              "requested_days": 7,
+              "status": "complete"
+            },
+            "total_gross_irrigation_liters": {
+              "value": 38180.0,
+              "dates": [
+                "2026-10-09",
+                "2026-10-10",
+                "2026-10-11",
+                "2026-10-12",
+                "2026-10-13",
+                "2026-10-14",
+                "2026-10-15"
+              ],
+              "covered_days": 7,
+              "requested_days": 7,
+              "status": "complete"
+            },
+            "total_runtime_hours": {
+              "value": 19.09,
+              "dates": [
+                "2026-10-09",
+                "2026-10-10",
+                "2026-10-11",
+                "2026-10-12",
+                "2026-10-13",
+                "2026-10-14",
+                "2026-10-15"
+              ],
+              "covered_days": 7,
+              "requested_days": 7,
+              "status": "complete"
+            }
+          }
+        },
+        "warnings": [
+          "Advisory thresholds are demonstration heuristics, not validated tomato risk thresholds."
+        ],
+        "assumptions": [
+          "Crop stage/Kc is held constant over the assessed period; no crop calendar is inferred.",
+          "ETc estimates crop consumption under reference coefficient assumptions, not measured field water use.",
+          "Effective rain fraction and application efficiency are explicit caller assumptions, not validated drip-system properties.",
+          "Excess rain is not transferred between days; soil storage, groundwater, runoff, salinity and drainage are not modelled.",
+          "Volumes and runtime are planning estimates, not an exact irrigation schedule or continuous-run instruction.",
+          "Confirmed past irrigation is not subtracted from future demand without a dated soil-water balance."
+        ],
+        "units": {
+          "et0": "mm/day",
+          "etc": "mm/day",
+          "precipitation": "mm/day",
+          "effective_rain": "mm/day",
+          "net_irrigation_depth": "mm/day",
+          "volume": "liters",
+          "area": "m2",
+          "runtime": "hours",
+          "system_flow": "liters/hour",
+          "kc": "dimensionless"
+        }
+      },
+      "water_budget": {
+        "status": "calculated",
+        "period_days": 7,
+        "period_start_date": "2026-10-09",
+        "period_end_date": "2026-10-15",
+        "weather_provenance": {
+          "status": "live",
+          "source": "open-meteo",
+          "data_type": "forecast",
+          "timezone": "Asia/Amman",
+          "retrieved_at": "2026-10-09T20:54:24.642303Z",
+          "valid_until": "2026-10-10T20:54:24.642303Z",
+          "original_horizon_end": "2026-10-15",
+          "forecast_start_date": "2026-10-09",
+          "forecast_end_date": "2026-10-15",
+          "period_start_date": "2026-10-09",
+          "period_end_date": "2026-10-15",
+          "requested_days": 7
+        },
+        "water_required_liters": 38180.0,
+        "water_available_liters": 50000.0,
+        "water_shortage_liters": 0.0,
+        "water_surplus_liters": 11820.0,
+        "coverage_percentage": 100.0,
+        "water_status": "sufficient",
+        "indicator": "Available water covers 100% of estimated gross irrigation demand over the assessed period.",
+        "partial_assessment": null,
+        "warnings": [
+          "Available-water period was not independently supplied; caller must verify it matches the assessed forecast period."
+        ],
+        "assumptions": [
+          "Available water refers to the SAME upcoming period as estimated gross irrigation demand; scalar availability alone cannot verify this.",
+          "Surplus is an arithmetic excess over estimated demand, not a guarantee of storage or delivery capacity.",
+          "Water sufficiency does not guarantee crop safety or quantify crop stress/yield loss.",
+          "Zero required volume uses 100% coverage by convention; no division by zero is performed."
+        ],
+        "units": {
+          "volume": "liters",
+          "coverage": "percent"
+        }
+      }
+    }
+  },
+  "missing_efficiency": {
+    "example_data_type": "historical_replay_of_genuine_forecast_with_hypothetical_farm",
+    "request": {
+      "farm": {
+        "crop": "tomato",
+        "area_m2": 1000,
+        "crop_stage": "mid_season",
+        "irrigation_method": "drip",
+        "effective_rain_fraction": 0.8,
+        "system_flow_liters_per_hour": 2000
+      },
+      "weather": {
+        "status": "live",
+        "source": "open-meteo",
+        "data_type": "forecast",
+        "retrieved_at": "2026-10-09T20:54:24.642303Z",
+        "timezone": "Asia/Amman",
+        "latitude": 32.19,
+        "longitude": 35.62,
+        "provider_latitude": 32.168934,
+        "provider_longitude": 35.59414,
+        "forecast_start_date": "2026-10-09",
+        "forecast_end_date": "2026-10-15",
+        "daily": [
+          {
+            "date": "2026-10-09",
+            "temperature_max_c": 35.0,
+            "temperature_min_c": 23.1,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 0.0,
+            "wind_speed_max_kmh": 22.6,
+            "et0_mm": 4.91,
+            "weather_code": 1,
+            "relative_humidity_mean_percent": 55.5,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-10",
+            "temperature_max_c": 35.9,
+            "temperature_min_c": 24.3,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 3.0,
+            "wind_speed_max_kmh": 19.0,
+            "et0_mm": 4.56,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 58.208333333333336,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-11",
+            "temperature_max_c": 31.2,
+            "temperature_min_c": 25.3,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 14.0,
+            "wind_speed_max_kmh": 14.0,
+            "et0_mm": 2.76,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 59.333333333333336,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-12",
+            "temperature_max_c": 35.3,
+            "temperature_min_c": 23.7,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 8.0,
+            "wind_speed_max_kmh": 19.8,
+            "et0_mm": 4.96,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 51.916666666666664,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-13",
+            "temperature_max_c": 33.3,
+            "temperature_min_c": 24.4,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 2.0,
+            "wind_speed_max_kmh": 17.2,
+            "et0_mm": 4.57,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 58.125,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-14",
+            "temperature_max_c": 32.3,
+            "temperature_min_c": 23.0,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 4.0,
+            "wind_speed_max_kmh": 10.5,
+            "et0_mm": 3.64,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 52.708333333333336,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-15",
+            "temperature_max_c": 30.9,
+            "temperature_min_c": 22.0,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 3.0,
+            "wind_speed_max_kmh": 21.1,
+            "et0_mm": 4.48,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 49.208333333333336,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          }
+        ],
+        "summary": {
+          "status": "complete",
+          "requested_days": 7,
+          "available_days": 7,
+          "total_precipitation_mm": 0.0,
+          "total_et0_mm": 29.88,
+          "heat_days": 2,
+          "wind_days": 0,
+          "rainy_days": 0,
+          "metric_status": {
+            "total_precipitation_mm": "complete",
+            "total_et0_mm": "complete",
+            "heat_days": "complete",
+            "wind_days": "complete",
+            "rainy_days": "complete"
+          },
+          "available_days_per_metric": {
+            "total_precipitation_mm": 7,
+            "total_et0_mm": 7,
+            "heat_days": 7,
+            "wind_days": 7,
+            "rainy_days": 7
+          },
+          "available_days_per_field": {
+            "temperature_max_c": 7,
+            "temperature_min_c": 7,
+            "precipitation_mm": 7,
+            "rain_probability_max_percent": 7,
+            "wind_speed_max_kmh": 7,
+            "et0_mm": 7,
+            "weather_code": 7,
+            "relative_humidity_mean_percent": 7
+          },
+          "humidity_hours_available": 168,
+          "humidity_hours_expected": 168,
+          "thresholds": {
+            "rain_mm": 5.0,
+            "heat_c": 35.0,
+            "wind_kmh": 30.0,
+            "rainy_day_mm": 0.0
+          }
+        },
+        "advisories": [
+          {
+            "date": "2026-10-10",
+            "type": "heat_inspection",
+            "metric": "temperature_max_c",
+            "value": 35.9,
+            "threshold": 35.0,
+            "message": "High temperatures are forecast. Inspect tomato plants and verify soil moisture."
+          },
+          {
+            "date": "2026-10-12",
+            "type": "heat_inspection",
+            "metric": "temperature_max_c",
+            "value": 35.3,
+            "threshold": 35.0,
+            "message": "High temperatures are forecast. Inspect tomato plants and verify soil moisture."
+          }
+        ],
+        "warnings": [
+          "Advisory thresholds are demonstration heuristics, not validated tomato risk thresholds."
+        ],
+        "units": {
+          "temperature": "celsius",
+          "precipitation": "mm",
+          "wind_speed": "km/h",
+          "et0": "mm/day",
+          "relative_humidity": "percent",
+          "rain_probability": "percent",
+          "weather_code": "WMO"
+        },
+        "errors": []
+      },
+      "reference_time": "2026-10-09T20:54:24.642303Z",
+      "water_available_liters": 50000
+    },
+    "response": {
+      "irrigation": {
+        "status": "partial",
+        "data_type": "estimate",
+        "calculated_at": "2026-10-09T20:54:24.642303Z",
+        "period_days": 7,
+        "period_start_date": "2026-10-09",
+        "period_end_date": "2026-10-15",
+        "weather_provenance": {
+          "status": "live",
+          "source": "open-meteo",
+          "data_type": "forecast",
+          "timezone": "Asia/Amman",
+          "retrieved_at": "2026-10-09T20:54:24.642303Z",
+          "valid_until": "2026-10-10T20:54:24.642303Z",
+          "original_horizon_end": "2026-10-15",
+          "forecast_start_date": "2026-10-09",
+          "forecast_end_date": "2026-10-15",
+          "period_start_date": "2026-10-09",
+          "period_end_date": "2026-10-15",
+          "requested_days": 7
+        },
+        "kc": {
+          "value": 1.15,
+          "crop_stage": "mid_season",
+          "source": "fao56_table12_reference",
+          "source_url": "https://www.fao.org/4/X0490E/x0490e0b.htm",
+          "explanation": "FAO-56 Table 12 reference coefficient; local climate/wetting adjustments are not modelled."
+        },
+        "farm_assumptions": {
+          "area_m2": 1000.0,
+          "irrigation_efficiency": null,
+          "effective_rain_fraction": 0.8,
+          "system_flow_liters_per_hour": 2000.0
+        },
+        "daily": [
+          {
+            "date": "2026-10-09",
+            "et0_mm": 4.91,
+            "kc": 1.15,
+            "etc_mm": 5.6465,
+            "crop_water_consumption_liters": 5646.5,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 5.6465,
+            "net_irrigation_liters": 5646.5,
+            "gross_irrigation_liters": null,
+            "runtime_hours": null,
+            "status": "partial",
+            "warnings": [
+              "Explicit irrigation efficiency is required for gross supplied-water demand."
+            ]
+          },
+          {
+            "date": "2026-10-10",
+            "et0_mm": 4.56,
+            "kc": 1.15,
+            "etc_mm": 5.244,
+            "crop_water_consumption_liters": 5244.0,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 5.244,
+            "net_irrigation_liters": 5244.0,
+            "gross_irrigation_liters": null,
+            "runtime_hours": null,
+            "status": "partial",
+            "warnings": [
+              "Explicit irrigation efficiency is required for gross supplied-water demand."
+            ]
+          },
+          {
+            "date": "2026-10-11",
+            "et0_mm": 2.76,
+            "kc": 1.15,
+            "etc_mm": 3.174,
+            "crop_water_consumption_liters": 3174.0,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 3.174,
+            "net_irrigation_liters": 3174.0,
+            "gross_irrigation_liters": null,
+            "runtime_hours": null,
+            "status": "partial",
+            "warnings": [
+              "Explicit irrigation efficiency is required for gross supplied-water demand."
+            ]
+          },
+          {
+            "date": "2026-10-12",
+            "et0_mm": 4.96,
+            "kc": 1.15,
+            "etc_mm": 5.704,
+            "crop_water_consumption_liters": 5704.0,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 5.704,
+            "net_irrigation_liters": 5704.0,
+            "gross_irrigation_liters": null,
+            "runtime_hours": null,
+            "status": "partial",
+            "warnings": [
+              "Explicit irrigation efficiency is required for gross supplied-water demand."
+            ]
+          },
+          {
+            "date": "2026-10-13",
+            "et0_mm": 4.57,
+            "kc": 1.15,
+            "etc_mm": 5.2555,
+            "crop_water_consumption_liters": 5255.5,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 5.2555,
+            "net_irrigation_liters": 5255.5,
+            "gross_irrigation_liters": null,
+            "runtime_hours": null,
+            "status": "partial",
+            "warnings": [
+              "Explicit irrigation efficiency is required for gross supplied-water demand."
+            ]
+          },
+          {
+            "date": "2026-10-14",
+            "et0_mm": 3.64,
+            "kc": 1.15,
+            "etc_mm": 4.186,
+            "crop_water_consumption_liters": 4186.0,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 4.186,
+            "net_irrigation_liters": 4186.0,
+            "gross_irrigation_liters": null,
+            "runtime_hours": null,
+            "status": "partial",
+            "warnings": [
+              "Explicit irrigation efficiency is required for gross supplied-water demand."
+            ]
+          },
+          {
+            "date": "2026-10-15",
+            "et0_mm": 4.48,
+            "kc": 1.15,
+            "etc_mm": 5.152,
+            "crop_water_consumption_liters": 5152.0,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 5.152,
+            "net_irrigation_liters": 5152.0,
+            "gross_irrigation_liters": null,
+            "runtime_hours": null,
+            "status": "partial",
+            "warnings": [
+              "Explicit irrigation efficiency is required for gross supplied-water demand."
+            ]
+          }
+        ],
+        "summary": {
+          "status": "partial",
+          "period_days": 7,
+          "available_days": 7,
+          "total_etc_mm": 34.362,
+          "total_crop_water_consumption_liters": 34362.0,
+          "total_effective_rain_mm": 0.0,
+          "total_net_irrigation_liters": 34362.0,
+          "total_gross_irrigation_liters": null,
+          "total_runtime_hours": null,
+          "complete_days": 0,
+          "incomplete_days": 7,
+          "partial_totals": {
+            "total_etc_mm": {
+              "value": 34.362,
+              "dates": [
+                "2026-10-09",
+                "2026-10-10",
+                "2026-10-11",
+                "2026-10-12",
+                "2026-10-13",
+                "2026-10-14",
+                "2026-10-15"
+              ],
+              "covered_days": 7,
+              "requested_days": 7,
+              "status": "complete"
+            },
+            "total_crop_water_consumption_liters": {
+              "value": 34362.0,
+              "dates": [
+                "2026-10-09",
+                "2026-10-10",
+                "2026-10-11",
+                "2026-10-12",
+                "2026-10-13",
+                "2026-10-14",
+                "2026-10-15"
+              ],
+              "covered_days": 7,
+              "requested_days": 7,
+              "status": "complete"
+            },
+            "total_effective_rain_mm": {
+              "value": 0.0,
+              "dates": [
+                "2026-10-09",
+                "2026-10-10",
+                "2026-10-11",
+                "2026-10-12",
+                "2026-10-13",
+                "2026-10-14",
+                "2026-10-15"
+              ],
+              "covered_days": 7,
+              "requested_days": 7,
+              "status": "complete"
+            },
+            "total_net_irrigation_liters": {
+              "value": 34362.0,
+              "dates": [
+                "2026-10-09",
+                "2026-10-10",
+                "2026-10-11",
+                "2026-10-12",
+                "2026-10-13",
+                "2026-10-14",
+                "2026-10-15"
+              ],
+              "covered_days": 7,
+              "requested_days": 7,
+              "status": "complete"
+            },
+            "total_gross_irrigation_liters": {
+              "value": null,
+              "dates": [],
+              "covered_days": 0,
+              "requested_days": 7,
+              "status": "unavailable"
+            },
+            "total_runtime_hours": {
+              "value": null,
+              "dates": [],
+              "covered_days": 0,
+              "requested_days": 7,
+              "status": "unavailable"
+            }
+          }
+        },
+        "warnings": [
+          "Irrigation efficiency is unknown; gross irrigation and runtime are unavailable.",
+          "Advisory thresholds are demonstration heuristics, not validated tomato risk thresholds.",
+          "Full-period supplied-water demand is unavailable; partial totals identify only their covered dates."
+        ],
+        "assumptions": [
+          "Crop stage/Kc is held constant over the assessed period; no crop calendar is inferred.",
+          "ETc estimates crop consumption under reference coefficient assumptions, not measured field water use.",
+          "Effective rain fraction and application efficiency are explicit caller assumptions, not validated drip-system properties.",
+          "Excess rain is not transferred between days; soil storage, groundwater, runoff, salinity and drainage are not modelled.",
+          "Volumes and runtime are planning estimates, not an exact irrigation schedule or continuous-run instruction.",
+          "Confirmed past irrigation is not subtracted from future demand without a dated soil-water balance."
+        ],
+        "units": {
+          "et0": "mm/day",
+          "etc": "mm/day",
+          "precipitation": "mm/day",
+          "effective_rain": "mm/day",
+          "net_irrigation_depth": "mm/day",
+          "volume": "liters",
+          "area": "m2",
+          "runtime": "hours",
+          "system_flow": "liters/hour",
+          "kc": "dimensionless"
+        }
+      },
+      "water_budget": {
+        "status": "partial",
+        "period_days": 7,
+        "period_start_date": "2026-10-09",
+        "period_end_date": "2026-10-15",
+        "weather_provenance": {
+          "status": "live",
+          "source": "open-meteo",
+          "data_type": "forecast",
+          "timezone": "Asia/Amman",
+          "retrieved_at": "2026-10-09T20:54:24.642303Z",
+          "valid_until": "2026-10-10T20:54:24.642303Z",
+          "original_horizon_end": "2026-10-15",
+          "forecast_start_date": "2026-10-09",
+          "forecast_end_date": "2026-10-15",
+          "period_start_date": "2026-10-09",
+          "period_end_date": "2026-10-15",
+          "requested_days": 7
+        },
+        "water_required_liters": null,
+        "water_available_liters": 50000.0,
+        "water_shortage_liters": null,
+        "water_surplus_liters": null,
+        "coverage_percentage": null,
+        "water_status": "unavailable",
+        "indicator": "Insufficient information to calculate water sufficiency.",
+        "partial_assessment": null,
+        "warnings": [
+          "Available-water period was not independently supplied; caller must verify it matches the assessed forecast period.",
+          "Gross demand does not cover the complete requested period; full-period sufficiency is unavailable."
+        ],
+        "assumptions": [
+          "Available water refers to the SAME upcoming period as estimated gross irrigation demand; scalar availability alone cannot verify this.",
+          "Surplus is an arithmetic excess over estimated demand, not a guarantee of storage or delivery capacity.",
+          "Water sufficiency does not guarantee crop safety or quantify crop stress/yield loss.",
+          "Zero required volume uses 100% coverage by convention; no division by zero is performed."
+        ],
+        "units": {
+          "volume": "liters",
+          "coverage": "percent"
+        }
+      }
+    }
+  },
+  "missing_et0": {
+    "example_data_type": "synthetic_missing_value_test_alteration",
+    "request": {
+      "farm": {
+        "crop": "tomato",
+        "area_m2": 1000,
+        "crop_stage": "mid_season",
+        "irrigation_method": "drip",
+        "irrigation_efficiency": 0.9,
+        "effective_rain_fraction": 0.8,
+        "system_flow_liters_per_hour": 2000
+      },
+      "weather": {
+        "status": "live",
+        "source": "open-meteo",
+        "data_type": "forecast",
+        "retrieved_at": "2026-10-09T20:54:24.642303Z",
+        "timezone": "Asia/Amman",
+        "latitude": 32.19,
+        "longitude": 35.62,
+        "provider_latitude": 32.168934,
+        "provider_longitude": 35.59414,
+        "forecast_start_date": "2026-10-09",
+        "forecast_end_date": "2026-10-15",
+        "daily": [
+          {
+            "date": "2026-10-09",
+            "temperature_max_c": 35.0,
+            "temperature_min_c": 23.1,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 0.0,
+            "wind_speed_max_kmh": 22.6,
+            "et0_mm": null,
+            "weather_code": 1,
+            "relative_humidity_mean_percent": 55.5,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-10",
+            "temperature_max_c": 35.9,
+            "temperature_min_c": 24.3,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 3.0,
+            "wind_speed_max_kmh": 19.0,
+            "et0_mm": 4.56,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 58.208333333333336,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-11",
+            "temperature_max_c": 31.2,
+            "temperature_min_c": 25.3,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 14.0,
+            "wind_speed_max_kmh": 14.0,
+            "et0_mm": 2.76,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 59.333333333333336,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-12",
+            "temperature_max_c": 35.3,
+            "temperature_min_c": 23.7,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 8.0,
+            "wind_speed_max_kmh": 19.8,
+            "et0_mm": 4.96,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 51.916666666666664,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-13",
+            "temperature_max_c": 33.3,
+            "temperature_min_c": 24.4,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 2.0,
+            "wind_speed_max_kmh": 17.2,
+            "et0_mm": 4.57,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 58.125,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-14",
+            "temperature_max_c": 32.3,
+            "temperature_min_c": 23.0,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 4.0,
+            "wind_speed_max_kmh": 10.5,
+            "et0_mm": 3.64,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 52.708333333333336,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-15",
+            "temperature_max_c": 30.9,
+            "temperature_min_c": 22.0,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 3.0,
+            "wind_speed_max_kmh": 21.1,
+            "et0_mm": 4.48,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 49.208333333333336,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          }
+        ],
+        "summary": {
+          "status": "complete",
+          "requested_days": 7,
+          "available_days": 7,
+          "total_precipitation_mm": 0.0,
+          "total_et0_mm": 29.88,
+          "heat_days": 2,
+          "wind_days": 0,
+          "rainy_days": 0,
+          "metric_status": {
+            "total_precipitation_mm": "complete",
+            "total_et0_mm": "complete",
+            "heat_days": "complete",
+            "wind_days": "complete",
+            "rainy_days": "complete"
+          },
+          "available_days_per_metric": {
+            "total_precipitation_mm": 7,
+            "total_et0_mm": 7,
+            "heat_days": 7,
+            "wind_days": 7,
+            "rainy_days": 7
+          },
+          "available_days_per_field": {
+            "temperature_max_c": 7,
+            "temperature_min_c": 7,
+            "precipitation_mm": 7,
+            "rain_probability_max_percent": 7,
+            "wind_speed_max_kmh": 7,
+            "et0_mm": 7,
+            "weather_code": 7,
+            "relative_humidity_mean_percent": 7
+          },
+          "humidity_hours_available": 168,
+          "humidity_hours_expected": 168,
+          "thresholds": {
+            "rain_mm": 5.0,
+            "heat_c": 35.0,
+            "wind_kmh": 30.0,
+            "rainy_day_mm": 0.0
+          }
+        },
+        "advisories": [
+          {
+            "date": "2026-10-10",
+            "type": "heat_inspection",
+            "metric": "temperature_max_c",
+            "value": 35.9,
+            "threshold": 35.0,
+            "message": "High temperatures are forecast. Inspect tomato plants and verify soil moisture."
+          },
+          {
+            "date": "2026-10-12",
+            "type": "heat_inspection",
+            "metric": "temperature_max_c",
+            "value": 35.3,
+            "threshold": 35.0,
+            "message": "High temperatures are forecast. Inspect tomato plants and verify soil moisture."
+          }
+        ],
+        "warnings": [
+          "Advisory thresholds are demonstration heuristics, not validated tomato risk thresholds."
+        ],
+        "units": {
+          "temperature": "celsius",
+          "precipitation": "mm",
+          "wind_speed": "km/h",
+          "et0": "mm/day",
+          "relative_humidity": "percent",
+          "rain_probability": "percent",
+          "weather_code": "WMO"
+        },
+        "errors": []
+      },
+      "reference_time": "2026-10-09T20:54:24.642303Z",
+      "water_available_liters": 50000
+    },
+    "response": {
+      "irrigation": {
+        "status": "partial",
+        "data_type": "estimate",
+        "calculated_at": "2026-10-09T20:54:24.642303Z",
+        "period_days": 7,
+        "period_start_date": "2026-10-09",
+        "period_end_date": "2026-10-15",
+        "weather_provenance": {
+          "status": "live",
+          "source": "open-meteo",
+          "data_type": "forecast",
+          "timezone": "Asia/Amman",
+          "retrieved_at": "2026-10-09T20:54:24.642303Z",
+          "valid_until": "2026-10-10T20:54:24.642303Z",
+          "original_horizon_end": "2026-10-15",
+          "forecast_start_date": "2026-10-09",
+          "forecast_end_date": "2026-10-15",
+          "period_start_date": "2026-10-09",
+          "period_end_date": "2026-10-15",
+          "requested_days": 7
+        },
+        "kc": {
+          "value": 1.15,
+          "crop_stage": "mid_season",
+          "source": "fao56_table12_reference",
+          "source_url": "https://www.fao.org/4/X0490E/x0490e0b.htm",
+          "explanation": "FAO-56 Table 12 reference coefficient; local climate/wetting adjustments are not modelled."
+        },
+        "farm_assumptions": {
+          "area_m2": 1000.0,
+          "irrigation_efficiency": 0.9,
+          "effective_rain_fraction": 0.8,
+          "system_flow_liters_per_hour": 2000.0
+        },
+        "daily": [
+          {
+            "date": "2026-10-09",
+            "et0_mm": null,
+            "kc": 1.15,
+            "etc_mm": null,
+            "crop_water_consumption_liters": null,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": null,
+            "net_irrigation_liters": null,
+            "gross_irrigation_liters": null,
+            "runtime_hours": null,
+            "status": "unavailable",
+            "warnings": [
+              "et0_mm is missing; dependent estimates are unavailable."
+            ]
+          },
+          {
+            "date": "2026-10-10",
+            "et0_mm": 4.56,
+            "kc": 1.15,
+            "etc_mm": 5.244,
+            "crop_water_consumption_liters": 5244.0,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 5.244,
+            "net_irrigation_liters": 5244.0,
+            "gross_irrigation_liters": 5826.666666666667,
+            "runtime_hours": 2.9133333333333336,
+            "status": "calculated",
+            "warnings": []
+          },
+          {
+            "date": "2026-10-11",
+            "et0_mm": 2.76,
+            "kc": 1.15,
+            "etc_mm": 3.174,
+            "crop_water_consumption_liters": 3174.0,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 3.174,
+            "net_irrigation_liters": 3174.0,
+            "gross_irrigation_liters": 3526.6666666666665,
+            "runtime_hours": 1.7633333333333334,
+            "status": "calculated",
+            "warnings": []
+          },
+          {
+            "date": "2026-10-12",
+            "et0_mm": 4.96,
+            "kc": 1.15,
+            "etc_mm": 5.704,
+            "crop_water_consumption_liters": 5704.0,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 5.704,
+            "net_irrigation_liters": 5704.0,
+            "gross_irrigation_liters": 6337.777777777777,
+            "runtime_hours": 3.168888888888889,
+            "status": "calculated",
+            "warnings": []
+          },
+          {
+            "date": "2026-10-13",
+            "et0_mm": 4.57,
+            "kc": 1.15,
+            "etc_mm": 5.2555,
+            "crop_water_consumption_liters": 5255.5,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 5.2555,
+            "net_irrigation_liters": 5255.5,
+            "gross_irrigation_liters": 5839.444444444444,
+            "runtime_hours": 2.919722222222222,
+            "status": "calculated",
+            "warnings": []
+          },
+          {
+            "date": "2026-10-14",
+            "et0_mm": 3.64,
+            "kc": 1.15,
+            "etc_mm": 4.186,
+            "crop_water_consumption_liters": 4186.0,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 4.186,
+            "net_irrigation_liters": 4186.0,
+            "gross_irrigation_liters": 4651.111111111111,
+            "runtime_hours": 2.3255555555555554,
+            "status": "calculated",
+            "warnings": []
+          },
+          {
+            "date": "2026-10-15",
+            "et0_mm": 4.48,
+            "kc": 1.15,
+            "etc_mm": 5.152,
+            "crop_water_consumption_liters": 5152.0,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 5.152,
+            "net_irrigation_liters": 5152.0,
+            "gross_irrigation_liters": 5724.444444444444,
+            "runtime_hours": 2.862222222222222,
+            "status": "calculated",
+            "warnings": []
+          }
+        ],
+        "summary": {
+          "status": "partial",
+          "period_days": 7,
+          "available_days": 7,
+          "total_etc_mm": null,
+          "total_crop_water_consumption_liters": null,
+          "total_effective_rain_mm": 0.0,
+          "total_net_irrigation_liters": null,
+          "total_gross_irrigation_liters": null,
+          "total_runtime_hours": null,
+          "complete_days": 6,
+          "incomplete_days": 1,
+          "partial_totals": {
+            "total_etc_mm": {
+              "value": 28.7155,
+              "dates": [
+                "2026-10-10",
+                "2026-10-11",
+                "2026-10-12",
+                "2026-10-13",
+                "2026-10-14",
+                "2026-10-15"
+              ],
+              "covered_days": 6,
+              "requested_days": 7,
+              "status": "partial"
+            },
+            "total_crop_water_consumption_liters": {
+              "value": 28715.5,
+              "dates": [
+                "2026-10-10",
+                "2026-10-11",
+                "2026-10-12",
+                "2026-10-13",
+                "2026-10-14",
+                "2026-10-15"
+              ],
+              "covered_days": 6,
+              "requested_days": 7,
+              "status": "partial"
+            },
+            "total_effective_rain_mm": {
+              "value": 0.0,
+              "dates": [
+                "2026-10-09",
+                "2026-10-10",
+                "2026-10-11",
+                "2026-10-12",
+                "2026-10-13",
+                "2026-10-14",
+                "2026-10-15"
+              ],
+              "covered_days": 7,
+              "requested_days": 7,
+              "status": "complete"
+            },
+            "total_net_irrigation_liters": {
+              "value": 28715.5,
+              "dates": [
+                "2026-10-10",
+                "2026-10-11",
+                "2026-10-12",
+                "2026-10-13",
+                "2026-10-14",
+                "2026-10-15"
+              ],
+              "covered_days": 6,
+              "requested_days": 7,
+              "status": "partial"
+            },
+            "total_gross_irrigation_liters": {
+              "value": 31906.11111111111,
+              "dates": [
+                "2026-10-10",
+                "2026-10-11",
+                "2026-10-12",
+                "2026-10-13",
+                "2026-10-14",
+                "2026-10-15"
+              ],
+              "covered_days": 6,
+              "requested_days": 7,
+              "status": "partial"
+            },
+            "total_runtime_hours": {
+              "value": 15.953055555555556,
+              "dates": [
+                "2026-10-10",
+                "2026-10-11",
+                "2026-10-12",
+                "2026-10-13",
+                "2026-10-14",
+                "2026-10-15"
+              ],
+              "covered_days": 6,
+              "requested_days": 7,
+              "status": "partial"
+            }
+          }
+        },
+        "warnings": [
+          "Advisory thresholds are demonstration heuristics, not validated tomato risk thresholds.",
+          "Full-period supplied-water demand is unavailable; partial totals identify only their covered dates."
+        ],
+        "assumptions": [
+          "Crop stage/Kc is held constant over the assessed period; no crop calendar is inferred.",
+          "ETc estimates crop consumption under reference coefficient assumptions, not measured field water use.",
+          "Effective rain fraction and application efficiency are explicit caller assumptions, not validated drip-system properties.",
+          "Excess rain is not transferred between days; soil storage, groundwater, runoff, salinity and drainage are not modelled.",
+          "Volumes and runtime are planning estimates, not an exact irrigation schedule or continuous-run instruction.",
+          "Confirmed past irrigation is not subtracted from future demand without a dated soil-water balance."
+        ],
+        "units": {
+          "et0": "mm/day",
+          "etc": "mm/day",
+          "precipitation": "mm/day",
+          "effective_rain": "mm/day",
+          "net_irrigation_depth": "mm/day",
+          "volume": "liters",
+          "area": "m2",
+          "runtime": "hours",
+          "system_flow": "liters/hour",
+          "kc": "dimensionless"
+        }
+      },
+      "water_budget": {
+        "status": "partial",
+        "period_days": 7,
+        "period_start_date": "2026-10-09",
+        "period_end_date": "2026-10-15",
+        "weather_provenance": {
+          "status": "live",
+          "source": "open-meteo",
+          "data_type": "forecast",
+          "timezone": "Asia/Amman",
+          "retrieved_at": "2026-10-09T20:54:24.642303Z",
+          "valid_until": "2026-10-10T20:54:24.642303Z",
+          "original_horizon_end": "2026-10-15",
+          "forecast_start_date": "2026-10-09",
+          "forecast_end_date": "2026-10-15",
+          "period_start_date": "2026-10-09",
+          "period_end_date": "2026-10-15",
+          "requested_days": 7
+        },
+        "water_required_liters": null,
+        "water_available_liters": 50000.0,
+        "water_shortage_liters": null,
+        "water_surplus_liters": null,
+        "coverage_percentage": null,
+        "water_status": "unavailable",
+        "indicator": "Insufficient information to calculate water sufficiency.",
+        "partial_assessment": {
+          "scope": "known_dates_only",
+          "covered_dates": [
+            "2026-10-10",
+            "2026-10-11",
+            "2026-10-12",
+            "2026-10-13",
+            "2026-10-14",
+            "2026-10-15"
+          ],
+          "covered_days": 6,
+          "requested_days": 7,
+          "water_required_liters": 31906.11111111111,
+          "water_available_liters": 50000.0,
+          "water_shortage_liters": 0.0,
+          "water_surplus_liters": 18093.88888888889,
+          "coverage_percentage": 100.0,
+          "water_status": "sufficient",
+          "indicator": "Available water covers 100% of estimated gross irrigation demand over the assessed period.",
+          "warning": "Subset comparison only; remaining demand is unknown and available water is shared across the full period."
+        },
+        "warnings": [
+          "Available-water period was not independently supplied; caller must verify it matches the assessed forecast period.",
+          "Gross demand does not cover the complete requested period; full-period sufficiency is unavailable."
+        ],
+        "assumptions": [
+          "Available water refers to the SAME upcoming period as estimated gross irrigation demand; scalar availability alone cannot verify this.",
+          "Surplus is an arithmetic excess over estimated demand, not a guarantee of storage or delivery capacity.",
+          "Water sufficiency does not guarantee crop safety or quantify crop stress/yield loss.",
+          "Zero required volume uses 100% coverage by convention; no division by zero is performed."
+        ],
+        "units": {
+          "volume": "liters",
+          "coverage": "percent"
+        }
+      }
+    }
+  },
+  "cached_partial": {
+    "example_data_type": "historical_replay_of_genuine_forecast_with_hypothetical_farm",
+    "request": {
+      "farm": {
+        "crop": "tomato",
+        "area_m2": 1000,
+        "crop_stage": "mid_season",
+        "irrigation_method": "drip",
+        "irrigation_efficiency": 0.9,
+        "effective_rain_fraction": 0.8,
+        "system_flow_liters_per_hour": 2000
+      },
+      "weather": {
+        "status": "cached",
+        "source": "open-meteo",
+        "data_type": "forecast",
+        "retrieved_at": "2026-10-09T20:54:24.642303Z",
+        "timezone": "Asia/Amman",
+        "latitude": 32.19,
+        "longitude": 35.62,
+        "provider_latitude": 32.168934,
+        "provider_longitude": 35.59414,
+        "forecast_start_date": "2026-10-09",
+        "forecast_end_date": "2026-10-15",
+        "daily": [
+          {
+            "date": "2026-10-09",
+            "temperature_max_c": 35.0,
+            "temperature_min_c": 23.1,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 0.0,
+            "wind_speed_max_kmh": 22.6,
+            "et0_mm": 4.91,
+            "weather_code": 1,
+            "relative_humidity_mean_percent": 55.5,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-10",
+            "temperature_max_c": 35.9,
+            "temperature_min_c": 24.3,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 3.0,
+            "wind_speed_max_kmh": 19.0,
+            "et0_mm": 4.56,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 58.208333333333336,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-11",
+            "temperature_max_c": 31.2,
+            "temperature_min_c": 25.3,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 14.0,
+            "wind_speed_max_kmh": 14.0,
+            "et0_mm": 2.76,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 59.333333333333336,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-12",
+            "temperature_max_c": 35.3,
+            "temperature_min_c": 23.7,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 8.0,
+            "wind_speed_max_kmh": 19.8,
+            "et0_mm": 4.96,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 51.916666666666664,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-13",
+            "temperature_max_c": 33.3,
+            "temperature_min_c": 24.4,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 2.0,
+            "wind_speed_max_kmh": 17.2,
+            "et0_mm": 4.57,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 58.125,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-14",
+            "temperature_max_c": 32.3,
+            "temperature_min_c": 23.0,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 4.0,
+            "wind_speed_max_kmh": 10.5,
+            "et0_mm": 3.64,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 52.708333333333336,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-15",
+            "temperature_max_c": 30.9,
+            "temperature_min_c": 22.0,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 3.0,
+            "wind_speed_max_kmh": 21.1,
+            "et0_mm": 4.48,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 49.208333333333336,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          }
+        ],
+        "summary": {
+          "status": "complete",
+          "requested_days": 7,
+          "available_days": 7,
+          "total_precipitation_mm": 0.0,
+          "total_et0_mm": 29.88,
+          "heat_days": 2,
+          "wind_days": 0,
+          "rainy_days": 0,
+          "metric_status": {
+            "total_precipitation_mm": "complete",
+            "total_et0_mm": "complete",
+            "heat_days": "complete",
+            "wind_days": "complete",
+            "rainy_days": "complete"
+          },
+          "available_days_per_metric": {
+            "total_precipitation_mm": 7,
+            "total_et0_mm": 7,
+            "heat_days": 7,
+            "wind_days": 7,
+            "rainy_days": 7
+          },
+          "available_days_per_field": {
+            "temperature_max_c": 7,
+            "temperature_min_c": 7,
+            "precipitation_mm": 7,
+            "rain_probability_max_percent": 7,
+            "wind_speed_max_kmh": 7,
+            "et0_mm": 7,
+            "weather_code": 7,
+            "relative_humidity_mean_percent": 7
+          },
+          "humidity_hours_available": 168,
+          "humidity_hours_expected": 168,
+          "thresholds": {
+            "rain_mm": 5.0,
+            "heat_c": 35.0,
+            "wind_kmh": 30.0,
+            "rainy_day_mm": 0.0
+          }
+        },
+        "advisories": [
+          {
+            "date": "2026-10-10",
+            "type": "heat_inspection",
+            "metric": "temperature_max_c",
+            "value": 35.9,
+            "threshold": 35.0,
+            "message": "High temperatures are forecast. Inspect tomato plants and verify soil moisture."
+          },
+          {
+            "date": "2026-10-12",
+            "type": "heat_inspection",
+            "metric": "temperature_max_c",
+            "value": 35.3,
+            "threshold": 35.0,
+            "message": "High temperatures are forecast. Inspect tomato plants and verify soil moisture."
+          }
+        ],
+        "warnings": [
+          "Advisory thresholds are demonstration heuristics, not validated tomato risk thresholds."
+        ],
+        "units": {
+          "temperature": "celsius",
+          "precipitation": "mm",
+          "wind_speed": "km/h",
+          "et0": "mm/day",
+          "relative_humidity": "percent",
+          "rain_probability": "percent",
+          "weather_code": "WMO"
+        },
+        "errors": []
+      },
+      "reference_time": "2026-10-10T09:00:00Z",
+      "water_available_liters": 50000
+    },
+    "response": {
+      "irrigation": {
+        "status": "partial",
+        "data_type": "estimate",
+        "calculated_at": "2026-10-10T09:00:00Z",
+        "period_days": 7,
+        "period_start_date": "2026-10-10",
+        "period_end_date": "2026-10-16",
+        "weather_provenance": {
+          "status": "cached",
+          "source": "open-meteo",
+          "data_type": "forecast",
+          "timezone": "Asia/Amman",
+          "retrieved_at": "2026-10-09T20:54:24.642303Z",
+          "valid_until": "2026-10-10T20:54:24.642303Z",
+          "original_horizon_end": "2026-10-15",
+          "forecast_start_date": "2026-10-09",
+          "forecast_end_date": "2026-10-15",
+          "period_start_date": "2026-10-10",
+          "period_end_date": "2026-10-16",
+          "requested_days": 7
+        },
+        "kc": {
+          "value": 1.15,
+          "crop_stage": "mid_season",
+          "source": "fao56_table12_reference",
+          "source_url": "https://www.fao.org/4/X0490E/x0490e0b.htm",
+          "explanation": "FAO-56 Table 12 reference coefficient; local climate/wetting adjustments are not modelled."
+        },
+        "farm_assumptions": {
+          "area_m2": 1000.0,
+          "irrigation_efficiency": 0.9,
+          "effective_rain_fraction": 0.8,
+          "system_flow_liters_per_hour": 2000.0
+        },
+        "daily": [
+          {
+            "date": "2026-10-10",
+            "et0_mm": 4.56,
+            "kc": 1.15,
+            "etc_mm": 5.244,
+            "crop_water_consumption_liters": 5244.0,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 5.244,
+            "net_irrigation_liters": 5244.0,
+            "gross_irrigation_liters": 5826.666666666667,
+            "runtime_hours": 2.9133333333333336,
+            "status": "calculated",
+            "warnings": []
+          },
+          {
+            "date": "2026-10-11",
+            "et0_mm": 2.76,
+            "kc": 1.15,
+            "etc_mm": 3.174,
+            "crop_water_consumption_liters": 3174.0,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 3.174,
+            "net_irrigation_liters": 3174.0,
+            "gross_irrigation_liters": 3526.6666666666665,
+            "runtime_hours": 1.7633333333333334,
+            "status": "calculated",
+            "warnings": []
+          },
+          {
+            "date": "2026-10-12",
+            "et0_mm": 4.96,
+            "kc": 1.15,
+            "etc_mm": 5.704,
+            "crop_water_consumption_liters": 5704.0,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 5.704,
+            "net_irrigation_liters": 5704.0,
+            "gross_irrigation_liters": 6337.777777777777,
+            "runtime_hours": 3.168888888888889,
+            "status": "calculated",
+            "warnings": []
+          },
+          {
+            "date": "2026-10-13",
+            "et0_mm": 4.57,
+            "kc": 1.15,
+            "etc_mm": 5.2555,
+            "crop_water_consumption_liters": 5255.5,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 5.2555,
+            "net_irrigation_liters": 5255.5,
+            "gross_irrigation_liters": 5839.444444444444,
+            "runtime_hours": 2.919722222222222,
+            "status": "calculated",
+            "warnings": []
+          },
+          {
+            "date": "2026-10-14",
+            "et0_mm": 3.64,
+            "kc": 1.15,
+            "etc_mm": 4.186,
+            "crop_water_consumption_liters": 4186.0,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 4.186,
+            "net_irrigation_liters": 4186.0,
+            "gross_irrigation_liters": 4651.111111111111,
+            "runtime_hours": 2.3255555555555554,
+            "status": "calculated",
+            "warnings": []
+          },
+          {
+            "date": "2026-10-15",
+            "et0_mm": 4.48,
+            "kc": 1.15,
+            "etc_mm": 5.152,
+            "crop_water_consumption_liters": 5152.0,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 5.152,
+            "net_irrigation_liters": 5152.0,
+            "gross_irrigation_liters": 5724.444444444444,
+            "runtime_hours": 2.862222222222222,
+            "status": "calculated",
+            "warnings": []
+          }
+        ],
+        "summary": {
+          "status": "partial",
+          "period_days": 7,
+          "available_days": 6,
+          "total_etc_mm": null,
+          "total_crop_water_consumption_liters": null,
+          "total_effective_rain_mm": null,
+          "total_net_irrigation_liters": null,
+          "total_gross_irrigation_liters": null,
+          "total_runtime_hours": null,
+          "complete_days": 6,
+          "incomplete_days": 1,
+          "partial_totals": {
+            "total_etc_mm": {
+              "value": 28.7155,
+              "dates": [
+                "2026-10-10",
+                "2026-10-11",
+                "2026-10-12",
+                "2026-10-13",
+                "2026-10-14",
+                "2026-10-15"
+              ],
+              "covered_days": 6,
+              "requested_days": 7,
+              "status": "partial"
+            },
+            "total_crop_water_consumption_liters": {
+              "value": 28715.5,
+              "dates": [
+                "2026-10-10",
+                "2026-10-11",
+                "2026-10-12",
+                "2026-10-13",
+                "2026-10-14",
+                "2026-10-15"
+              ],
+              "covered_days": 6,
+              "requested_days": 7,
+              "status": "partial"
+            },
+            "total_effective_rain_mm": {
+              "value": 0.0,
+              "dates": [
+                "2026-10-10",
+                "2026-10-11",
+                "2026-10-12",
+                "2026-10-13",
+                "2026-10-14",
+                "2026-10-15"
+              ],
+              "covered_days": 6,
+              "requested_days": 7,
+              "status": "partial"
+            },
+            "total_net_irrigation_liters": {
+              "value": 28715.5,
+              "dates": [
+                "2026-10-10",
+                "2026-10-11",
+                "2026-10-12",
+                "2026-10-13",
+                "2026-10-14",
+                "2026-10-15"
+              ],
+              "covered_days": 6,
+              "requested_days": 7,
+              "status": "partial"
+            },
+            "total_gross_irrigation_liters": {
+              "value": 31906.11111111111,
+              "dates": [
+                "2026-10-10",
+                "2026-10-11",
+                "2026-10-12",
+                "2026-10-13",
+                "2026-10-14",
+                "2026-10-15"
+              ],
+              "covered_days": 6,
+              "requested_days": 7,
+              "status": "partial"
+            },
+            "total_runtime_hours": {
+              "value": 15.953055555555556,
+              "dates": [
+                "2026-10-10",
+                "2026-10-11",
+                "2026-10-12",
+                "2026-10-13",
+                "2026-10-14",
+                "2026-10-15"
+              ],
+              "covered_days": 6,
+              "requested_days": 7,
+              "status": "partial"
+            }
+          }
+        },
+        "warnings": [
+          "Advisory thresholds are demonstration heuristics, not validated tomato risk thresholds.",
+          "Irrigation uses cached forecast data; original retrieval time and freshness limit are retained.",
+          "2026-10-09: expired/out-of-period forecast date excluded.",
+          "Full-period supplied-water demand is unavailable; partial totals identify only their covered dates."
+        ],
+        "assumptions": [
+          "Crop stage/Kc is held constant over the assessed period; no crop calendar is inferred.",
+          "ETc estimates crop consumption under reference coefficient assumptions, not measured field water use.",
+          "Effective rain fraction and application efficiency are explicit caller assumptions, not validated drip-system properties.",
+          "Excess rain is not transferred between days; soil storage, groundwater, runoff, salinity and drainage are not modelled.",
+          "Volumes and runtime are planning estimates, not an exact irrigation schedule or continuous-run instruction.",
+          "Confirmed past irrigation is not subtracted from future demand without a dated soil-water balance."
+        ],
+        "units": {
+          "et0": "mm/day",
+          "etc": "mm/day",
+          "precipitation": "mm/day",
+          "effective_rain": "mm/day",
+          "net_irrigation_depth": "mm/day",
+          "volume": "liters",
+          "area": "m2",
+          "runtime": "hours",
+          "system_flow": "liters/hour",
+          "kc": "dimensionless"
+        }
+      },
+      "water_budget": {
+        "status": "partial",
+        "period_days": 7,
+        "period_start_date": "2026-10-10",
+        "period_end_date": "2026-10-16",
+        "weather_provenance": {
+          "status": "cached",
+          "source": "open-meteo",
+          "data_type": "forecast",
+          "timezone": "Asia/Amman",
+          "retrieved_at": "2026-10-09T20:54:24.642303Z",
+          "valid_until": "2026-10-10T20:54:24.642303Z",
+          "original_horizon_end": "2026-10-15",
+          "forecast_start_date": "2026-10-09",
+          "forecast_end_date": "2026-10-15",
+          "period_start_date": "2026-10-10",
+          "period_end_date": "2026-10-16",
+          "requested_days": 7
+        },
+        "water_required_liters": null,
+        "water_available_liters": 50000.0,
+        "water_shortage_liters": null,
+        "water_surplus_liters": null,
+        "coverage_percentage": null,
+        "water_status": "unavailable",
+        "indicator": "Insufficient information to calculate water sufficiency.",
+        "partial_assessment": {
+          "scope": "known_dates_only",
+          "covered_dates": [
+            "2026-10-10",
+            "2026-10-11",
+            "2026-10-12",
+            "2026-10-13",
+            "2026-10-14",
+            "2026-10-15"
+          ],
+          "covered_days": 6,
+          "requested_days": 7,
+          "water_required_liters": 31906.11111111111,
+          "water_available_liters": 50000.0,
+          "water_shortage_liters": 0.0,
+          "water_surplus_liters": 18093.88888888889,
+          "coverage_percentage": 100.0,
+          "water_status": "sufficient",
+          "indicator": "Available water covers 100% of estimated gross irrigation demand over the assessed period.",
+          "warning": "Subset comparison only; remaining demand is unknown and available water is shared across the full period."
+        },
+        "warnings": [
+          "Available-water period was not independently supplied; caller must verify it matches the assessed forecast period.",
+          "Gross demand does not cover the complete requested period; full-period sufficiency is unavailable.",
+          "Budget uses cached forecast-derived demand; original retrieval timestamp is retained."
+        ],
+        "assumptions": [
+          "Available water refers to the SAME upcoming period as estimated gross irrigation demand; scalar availability alone cannot verify this.",
+          "Surplus is an arithmetic excess over estimated demand, not a guarantee of storage or delivery capacity.",
+          "Water sufficiency does not guarantee crop safety or quantify crop stress/yield loss.",
+          "Zero required volume uses 100% coverage by convention; no division by zero is performed."
+        ],
+        "units": {
+          "volume": "liters",
+          "coverage": "percent"
+        }
+      }
+    }
+  },
+  "expired": {
+    "example_data_type": "historical_replay_of_genuine_forecast_with_hypothetical_farm",
+    "request": {
+      "farm": {
+        "crop": "tomato",
+        "area_m2": 1000,
+        "crop_stage": "mid_season",
+        "irrigation_method": "drip",
+        "irrigation_efficiency": 0.9,
+        "effective_rain_fraction": 0.8,
+        "system_flow_liters_per_hour": 2000
+      },
+      "weather": {
+        "status": "cached",
+        "source": "open-meteo",
+        "data_type": "forecast",
+        "retrieved_at": "2026-10-09T20:54:24.642303Z",
+        "timezone": "Asia/Amman",
+        "latitude": 32.19,
+        "longitude": 35.62,
+        "provider_latitude": 32.168934,
+        "provider_longitude": 35.59414,
+        "forecast_start_date": "2026-10-09",
+        "forecast_end_date": "2026-10-15",
+        "daily": [
+          {
+            "date": "2026-10-09",
+            "temperature_max_c": 35.0,
+            "temperature_min_c": 23.1,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 0.0,
+            "wind_speed_max_kmh": 22.6,
+            "et0_mm": 4.91,
+            "weather_code": 1,
+            "relative_humidity_mean_percent": 55.5,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-10",
+            "temperature_max_c": 35.9,
+            "temperature_min_c": 24.3,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 3.0,
+            "wind_speed_max_kmh": 19.0,
+            "et0_mm": 4.56,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 58.208333333333336,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-11",
+            "temperature_max_c": 31.2,
+            "temperature_min_c": 25.3,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 14.0,
+            "wind_speed_max_kmh": 14.0,
+            "et0_mm": 2.76,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 59.333333333333336,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-12",
+            "temperature_max_c": 35.3,
+            "temperature_min_c": 23.7,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 8.0,
+            "wind_speed_max_kmh": 19.8,
+            "et0_mm": 4.96,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 51.916666666666664,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-13",
+            "temperature_max_c": 33.3,
+            "temperature_min_c": 24.4,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 2.0,
+            "wind_speed_max_kmh": 17.2,
+            "et0_mm": 4.57,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 58.125,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-14",
+            "temperature_max_c": 32.3,
+            "temperature_min_c": 23.0,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 4.0,
+            "wind_speed_max_kmh": 10.5,
+            "et0_mm": 3.64,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 52.708333333333336,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-15",
+            "temperature_max_c": 30.9,
+            "temperature_min_c": 22.0,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 3.0,
+            "wind_speed_max_kmh": 21.1,
+            "et0_mm": 4.48,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 49.208333333333336,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          }
+        ],
+        "summary": {
+          "status": "complete",
+          "requested_days": 7,
+          "available_days": 7,
+          "total_precipitation_mm": 0.0,
+          "total_et0_mm": 29.88,
+          "heat_days": 2,
+          "wind_days": 0,
+          "rainy_days": 0,
+          "metric_status": {
+            "total_precipitation_mm": "complete",
+            "total_et0_mm": "complete",
+            "heat_days": "complete",
+            "wind_days": "complete",
+            "rainy_days": "complete"
+          },
+          "available_days_per_metric": {
+            "total_precipitation_mm": 7,
+            "total_et0_mm": 7,
+            "heat_days": 7,
+            "wind_days": 7,
+            "rainy_days": 7
+          },
+          "available_days_per_field": {
+            "temperature_max_c": 7,
+            "temperature_min_c": 7,
+            "precipitation_mm": 7,
+            "rain_probability_max_percent": 7,
+            "wind_speed_max_kmh": 7,
+            "et0_mm": 7,
+            "weather_code": 7,
+            "relative_humidity_mean_percent": 7
+          },
+          "humidity_hours_available": 168,
+          "humidity_hours_expected": 168,
+          "thresholds": {
+            "rain_mm": 5.0,
+            "heat_c": 35.0,
+            "wind_kmh": 30.0,
+            "rainy_day_mm": 0.0
+          }
+        },
+        "advisories": [
+          {
+            "date": "2026-10-10",
+            "type": "heat_inspection",
+            "metric": "temperature_max_c",
+            "value": 35.9,
+            "threshold": 35.0,
+            "message": "High temperatures are forecast. Inspect tomato plants and verify soil moisture."
+          },
+          {
+            "date": "2026-10-12",
+            "type": "heat_inspection",
+            "metric": "temperature_max_c",
+            "value": 35.3,
+            "threshold": 35.0,
+            "message": "High temperatures are forecast. Inspect tomato plants and verify soil moisture."
+          }
+        ],
+        "warnings": [
+          "Advisory thresholds are demonstration heuristics, not validated tomato risk thresholds."
+        ],
+        "units": {
+          "temperature": "celsius",
+          "precipitation": "mm",
+          "wind_speed": "km/h",
+          "et0": "mm/day",
+          "relative_humidity": "percent",
+          "rain_probability": "percent",
+          "weather_code": "WMO"
+        },
+        "errors": []
+      },
+      "reference_time": "2026-10-12T09:00:00Z",
+      "water_available_liters": 50000
+    },
+    "response": {
+      "irrigation": {
+        "status": "unavailable",
+        "data_type": "estimate",
+        "calculated_at": "2026-10-12T09:00:00Z",
+        "period_days": null,
+        "period_start_date": null,
+        "period_end_date": null,
+        "weather_provenance": null,
+        "kc": {
+          "value": 1.15,
+          "crop_stage": "mid_season",
+          "source": "fao56_table12_reference",
+          "source_url": "https://www.fao.org/4/X0490E/x0490e0b.htm",
+          "explanation": "FAO-56 Table 12 reference coefficient; local climate/wetting adjustments are not modelled."
+        },
+        "farm_assumptions": {
+          "area_m2": 1000.0,
+          "irrigation_efficiency": 0.9,
+          "effective_rain_fraction": 0.8,
+          "system_flow_liters_per_hour": 2000.0
+        },
+        "daily": [],
+        "summary": {
+          "status": "unavailable",
+          "period_days": null,
+          "available_days": 0,
+          "total_etc_mm": null,
+          "total_crop_water_consumption_liters": null,
+          "total_effective_rain_mm": null,
+          "total_net_irrigation_liters": null,
+          "total_gross_irrigation_liters": null,
+          "total_runtime_hours": null,
+          "complete_days": 0,
+          "incomplete_days": null,
+          "partial_totals": {
+            "total_etc_mm": {
+              "value": null,
+              "dates": [],
+              "covered_days": 0,
+              "requested_days": null,
+              "status": "unavailable"
+            },
+            "total_crop_water_consumption_liters": {
+              "value": null,
+              "dates": [],
+              "covered_days": 0,
+              "requested_days": null,
+              "status": "unavailable"
+            },
+            "total_effective_rain_mm": {
+              "value": null,
+              "dates": [],
+              "covered_days": 0,
+              "requested_days": null,
+              "status": "unavailable"
+            },
+            "total_net_irrigation_liters": {
+              "value": null,
+              "dates": [],
+              "covered_days": 0,
+              "requested_days": null,
+              "status": "unavailable"
+            },
+            "total_gross_irrigation_liters": {
+              "value": null,
+              "dates": [],
+              "covered_days": 0,
+              "requested_days": null,
+              "status": "unavailable"
+            },
+            "total_runtime_hours": {
+              "value": null,
+              "dates": [],
+              "covered_days": 0,
+              "requested_days": null,
+              "status": "unavailable"
+            }
+          }
+        },
+        "warnings": [
+          "Weather unavailable: Weather retrieval is future-dated or expired",
+          "Full-period supplied-water demand is unavailable; partial totals identify only their covered dates."
+        ],
+        "assumptions": [
+          "Crop stage/Kc is held constant over the assessed period; no crop calendar is inferred.",
+          "ETc estimates crop consumption under reference coefficient assumptions, not measured field water use.",
+          "Effective rain fraction and application efficiency are explicit caller assumptions, not validated drip-system properties.",
+          "Excess rain is not transferred between days; soil storage, groundwater, runoff, salinity and drainage are not modelled.",
+          "Volumes and runtime are planning estimates, not an exact irrigation schedule or continuous-run instruction.",
+          "Confirmed past irrigation is not subtracted from future demand without a dated soil-water balance."
+        ],
+        "units": {
+          "et0": "mm/day",
+          "etc": "mm/day",
+          "precipitation": "mm/day",
+          "effective_rain": "mm/day",
+          "net_irrigation_depth": "mm/day",
+          "volume": "liters",
+          "area": "m2",
+          "runtime": "hours",
+          "system_flow": "liters/hour",
+          "kc": "dimensionless"
+        }
+      },
+      "water_budget": {
+        "status": "unavailable",
+        "period_days": null,
+        "period_start_date": null,
+        "period_end_date": null,
+        "weather_provenance": null,
+        "water_required_liters": null,
+        "water_available_liters": 50000.0,
+        "water_shortage_liters": null,
+        "water_surplus_liters": null,
+        "coverage_percentage": null,
+        "water_status": "unavailable",
+        "indicator": "Insufficient information to calculate water sufficiency.",
+        "partial_assessment": null,
+        "warnings": [
+          "Available-water period was not independently supplied; caller must verify it matches the assessed forecast period.",
+          "Irrigation demand is unavailable; no water sufficiency comparison was made."
+        ],
+        "assumptions": [
+          "Available water refers to the SAME upcoming period as estimated gross irrigation demand; scalar availability alone cannot verify this.",
+          "Surplus is an arithmetic excess over estimated demand, not a guarantee of storage or delivery capacity.",
+          "Water sufficiency does not guarantee crop safety or quantify crop stress/yield loss.",
+          "Zero required volume uses 100% coverage by convention; no division by zero is performed."
+        ],
+        "units": {
+          "volume": "liters",
+          "coverage": "percent"
+        }
+      }
+    }
+  },
+  "runtime": {
+    "example_data_type": "historical_replay_of_genuine_forecast_with_hypothetical_farm",
+    "request": {
+      "farm": {
+        "crop": "tomato",
+        "area_m2": 1000,
+        "crop_stage": "mid_season",
+        "irrigation_method": "drip",
+        "irrigation_efficiency": 0.9,
+        "effective_rain_fraction": 0.8,
+        "system_flow_liters_per_hour": 2000
+      },
+      "weather": {
+        "status": "live",
+        "source": "open-meteo",
+        "data_type": "forecast",
+        "retrieved_at": "2026-10-09T20:54:24.642303Z",
+        "timezone": "Asia/Amman",
+        "latitude": 32.19,
+        "longitude": 35.62,
+        "provider_latitude": 32.168934,
+        "provider_longitude": 35.59414,
+        "forecast_start_date": "2026-10-09",
+        "forecast_end_date": "2026-10-15",
+        "daily": [
+          {
+            "date": "2026-10-09",
+            "temperature_max_c": 35.0,
+            "temperature_min_c": 23.1,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 0.0,
+            "wind_speed_max_kmh": 22.6,
+            "et0_mm": 4.91,
+            "weather_code": 1,
+            "relative_humidity_mean_percent": 55.5,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-10",
+            "temperature_max_c": 35.9,
+            "temperature_min_c": 24.3,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 3.0,
+            "wind_speed_max_kmh": 19.0,
+            "et0_mm": 4.56,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 58.208333333333336,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-11",
+            "temperature_max_c": 31.2,
+            "temperature_min_c": 25.3,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 14.0,
+            "wind_speed_max_kmh": 14.0,
+            "et0_mm": 2.76,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 59.333333333333336,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-12",
+            "temperature_max_c": 35.3,
+            "temperature_min_c": 23.7,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 8.0,
+            "wind_speed_max_kmh": 19.8,
+            "et0_mm": 4.96,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 51.916666666666664,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-13",
+            "temperature_max_c": 33.3,
+            "temperature_min_c": 24.4,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 2.0,
+            "wind_speed_max_kmh": 17.2,
+            "et0_mm": 4.57,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 58.125,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-14",
+            "temperature_max_c": 32.3,
+            "temperature_min_c": 23.0,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 4.0,
+            "wind_speed_max_kmh": 10.5,
+            "et0_mm": 3.64,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 52.708333333333336,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          },
+          {
+            "date": "2026-10-15",
+            "temperature_max_c": 30.9,
+            "temperature_min_c": 22.0,
+            "precipitation_mm": 0.0,
+            "rain_probability_max_percent": 3.0,
+            "wind_speed_max_kmh": 21.1,
+            "et0_mm": 4.48,
+            "weather_code": 3,
+            "relative_humidity_mean_percent": 49.208333333333336,
+            "relative_humidity_hours_available": 24,
+            "relative_humidity_hours_expected": 24
+          }
+        ],
+        "summary": {
+          "status": "complete",
+          "requested_days": 7,
+          "available_days": 7,
+          "total_precipitation_mm": 0.0,
+          "total_et0_mm": 29.88,
+          "heat_days": 2,
+          "wind_days": 0,
+          "rainy_days": 0,
+          "metric_status": {
+            "total_precipitation_mm": "complete",
+            "total_et0_mm": "complete",
+            "heat_days": "complete",
+            "wind_days": "complete",
+            "rainy_days": "complete"
+          },
+          "available_days_per_metric": {
+            "total_precipitation_mm": 7,
+            "total_et0_mm": 7,
+            "heat_days": 7,
+            "wind_days": 7,
+            "rainy_days": 7
+          },
+          "available_days_per_field": {
+            "temperature_max_c": 7,
+            "temperature_min_c": 7,
+            "precipitation_mm": 7,
+            "rain_probability_max_percent": 7,
+            "wind_speed_max_kmh": 7,
+            "et0_mm": 7,
+            "weather_code": 7,
+            "relative_humidity_mean_percent": 7
+          },
+          "humidity_hours_available": 168,
+          "humidity_hours_expected": 168,
+          "thresholds": {
+            "rain_mm": 5.0,
+            "heat_c": 35.0,
+            "wind_kmh": 30.0,
+            "rainy_day_mm": 0.0
+          }
+        },
+        "advisories": [
+          {
+            "date": "2026-10-10",
+            "type": "heat_inspection",
+            "metric": "temperature_max_c",
+            "value": 35.9,
+            "threshold": 35.0,
+            "message": "High temperatures are forecast. Inspect tomato plants and verify soil moisture."
+          },
+          {
+            "date": "2026-10-12",
+            "type": "heat_inspection",
+            "metric": "temperature_max_c",
+            "value": 35.3,
+            "threshold": 35.0,
+            "message": "High temperatures are forecast. Inspect tomato plants and verify soil moisture."
+          }
+        ],
+        "warnings": [
+          "Advisory thresholds are demonstration heuristics, not validated tomato risk thresholds."
+        ],
+        "units": {
+          "temperature": "celsius",
+          "precipitation": "mm",
+          "wind_speed": "km/h",
+          "et0": "mm/day",
+          "relative_humidity": "percent",
+          "rain_probability": "percent",
+          "weather_code": "WMO"
+        },
+        "errors": []
+      },
+      "reference_time": "2026-10-09T20:54:24.642303Z",
+      "water_available_liters": 50000
+    },
+    "response": {
+      "irrigation": {
+        "status": "calculated",
+        "data_type": "estimate",
+        "calculated_at": "2026-10-09T20:54:24.642303Z",
+        "period_days": 7,
+        "period_start_date": "2026-10-09",
+        "period_end_date": "2026-10-15",
+        "weather_provenance": {
+          "status": "live",
+          "source": "open-meteo",
+          "data_type": "forecast",
+          "timezone": "Asia/Amman",
+          "retrieved_at": "2026-10-09T20:54:24.642303Z",
+          "valid_until": "2026-10-10T20:54:24.642303Z",
+          "original_horizon_end": "2026-10-15",
+          "forecast_start_date": "2026-10-09",
+          "forecast_end_date": "2026-10-15",
+          "period_start_date": "2026-10-09",
+          "period_end_date": "2026-10-15",
+          "requested_days": 7
+        },
+        "kc": {
+          "value": 1.15,
+          "crop_stage": "mid_season",
+          "source": "fao56_table12_reference",
+          "source_url": "https://www.fao.org/4/X0490E/x0490e0b.htm",
+          "explanation": "FAO-56 Table 12 reference coefficient; local climate/wetting adjustments are not modelled."
+        },
+        "farm_assumptions": {
+          "area_m2": 1000.0,
+          "irrigation_efficiency": 0.9,
+          "effective_rain_fraction": 0.8,
+          "system_flow_liters_per_hour": 2000.0
+        },
+        "daily": [
+          {
+            "date": "2026-10-09",
+            "et0_mm": 4.91,
+            "kc": 1.15,
+            "etc_mm": 5.6465,
+            "crop_water_consumption_liters": 5646.5,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 5.6465,
+            "net_irrigation_liters": 5646.5,
+            "gross_irrigation_liters": 6273.888888888889,
+            "runtime_hours": 3.1369444444444445,
+            "status": "calculated",
+            "warnings": []
+          },
+          {
+            "date": "2026-10-10",
+            "et0_mm": 4.56,
+            "kc": 1.15,
+            "etc_mm": 5.244,
+            "crop_water_consumption_liters": 5244.0,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 5.244,
+            "net_irrigation_liters": 5244.0,
+            "gross_irrigation_liters": 5826.666666666667,
+            "runtime_hours": 2.9133333333333336,
+            "status": "calculated",
+            "warnings": []
+          },
+          {
+            "date": "2026-10-11",
+            "et0_mm": 2.76,
+            "kc": 1.15,
+            "etc_mm": 3.174,
+            "crop_water_consumption_liters": 3174.0,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 3.174,
+            "net_irrigation_liters": 3174.0,
+            "gross_irrigation_liters": 3526.6666666666665,
+            "runtime_hours": 1.7633333333333334,
+            "status": "calculated",
+            "warnings": []
+          },
+          {
+            "date": "2026-10-12",
+            "et0_mm": 4.96,
+            "kc": 1.15,
+            "etc_mm": 5.704,
+            "crop_water_consumption_liters": 5704.0,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 5.704,
+            "net_irrigation_liters": 5704.0,
+            "gross_irrigation_liters": 6337.777777777777,
+            "runtime_hours": 3.168888888888889,
+            "status": "calculated",
+            "warnings": []
+          },
+          {
+            "date": "2026-10-13",
+            "et0_mm": 4.57,
+            "kc": 1.15,
+            "etc_mm": 5.2555,
+            "crop_water_consumption_liters": 5255.5,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 5.2555,
+            "net_irrigation_liters": 5255.5,
+            "gross_irrigation_liters": 5839.444444444444,
+            "runtime_hours": 2.919722222222222,
+            "status": "calculated",
+            "warnings": []
+          },
+          {
+            "date": "2026-10-14",
+            "et0_mm": 3.64,
+            "kc": 1.15,
+            "etc_mm": 4.186,
+            "crop_water_consumption_liters": 4186.0,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 4.186,
+            "net_irrigation_liters": 4186.0,
+            "gross_irrigation_liters": 4651.111111111111,
+            "runtime_hours": 2.3255555555555554,
+            "status": "calculated",
+            "warnings": []
+          },
+          {
+            "date": "2026-10-15",
+            "et0_mm": 4.48,
+            "kc": 1.15,
+            "etc_mm": 5.152,
+            "crop_water_consumption_liters": 5152.0,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 5.152,
+            "net_irrigation_liters": 5152.0,
+            "gross_irrigation_liters": 5724.444444444444,
+            "runtime_hours": 2.862222222222222,
+            "status": "calculated",
+            "warnings": []
+          }
+        ],
+        "summary": {
+          "status": "calculated",
+          "period_days": 7,
+          "available_days": 7,
+          "total_etc_mm": 34.362,
+          "total_crop_water_consumption_liters": 34362.0,
+          "total_effective_rain_mm": 0.0,
+          "total_net_irrigation_liters": 34362.0,
+          "total_gross_irrigation_liters": 38180.0,
+          "total_runtime_hours": 19.09,
+          "complete_days": 7,
+          "incomplete_days": 0,
+          "partial_totals": {
+            "total_etc_mm": {
+              "value": 34.362,
+              "dates": [
+                "2026-10-09",
+                "2026-10-10",
+                "2026-10-11",
+                "2026-10-12",
+                "2026-10-13",
+                "2026-10-14",
+                "2026-10-15"
+              ],
+              "covered_days": 7,
+              "requested_days": 7,
+              "status": "complete"
+            },
+            "total_crop_water_consumption_liters": {
+              "value": 34362.0,
+              "dates": [
+                "2026-10-09",
+                "2026-10-10",
+                "2026-10-11",
+                "2026-10-12",
+                "2026-10-13",
+                "2026-10-14",
+                "2026-10-15"
+              ],
+              "covered_days": 7,
+              "requested_days": 7,
+              "status": "complete"
+            },
+            "total_effective_rain_mm": {
+              "value": 0.0,
+              "dates": [
+                "2026-10-09",
+                "2026-10-10",
+                "2026-10-11",
+                "2026-10-12",
+                "2026-10-13",
+                "2026-10-14",
+                "2026-10-15"
+              ],
+              "covered_days": 7,
+              "requested_days": 7,
+              "status": "complete"
+            },
+            "total_net_irrigation_liters": {
+              "value": 34362.0,
+              "dates": [
+                "2026-10-09",
+                "2026-10-10",
+                "2026-10-11",
+                "2026-10-12",
+                "2026-10-13",
+                "2026-10-14",
+                "2026-10-15"
+              ],
+              "covered_days": 7,
+              "requested_days": 7,
+              "status": "complete"
+            },
+            "total_gross_irrigation_liters": {
+              "value": 38180.0,
+              "dates": [
+                "2026-10-09",
+                "2026-10-10",
+                "2026-10-11",
+                "2026-10-12",
+                "2026-10-13",
+                "2026-10-14",
+                "2026-10-15"
+              ],
+              "covered_days": 7,
+              "requested_days": 7,
+              "status": "complete"
+            },
+            "total_runtime_hours": {
+              "value": 19.09,
+              "dates": [
+                "2026-10-09",
+                "2026-10-10",
+                "2026-10-11",
+                "2026-10-12",
+                "2026-10-13",
+                "2026-10-14",
+                "2026-10-15"
+              ],
+              "covered_days": 7,
+              "requested_days": 7,
+              "status": "complete"
+            }
+          }
+        },
+        "warnings": [
+          "Advisory thresholds are demonstration heuristics, not validated tomato risk thresholds."
+        ],
+        "assumptions": [
+          "Crop stage/Kc is held constant over the assessed period; no crop calendar is inferred.",
+          "ETc estimates crop consumption under reference coefficient assumptions, not measured field water use.",
+          "Effective rain fraction and application efficiency are explicit caller assumptions, not validated drip-system properties.",
+          "Excess rain is not transferred between days; soil storage, groundwater, runoff, salinity and drainage are not modelled.",
+          "Volumes and runtime are planning estimates, not an exact irrigation schedule or continuous-run instruction.",
+          "Confirmed past irrigation is not subtracted from future demand without a dated soil-water balance."
+        ],
+        "units": {
+          "et0": "mm/day",
+          "etc": "mm/day",
+          "precipitation": "mm/day",
+          "effective_rain": "mm/day",
+          "net_irrigation_depth": "mm/day",
+          "volume": "liters",
+          "area": "m2",
+          "runtime": "hours",
+          "system_flow": "liters/hour",
+          "kc": "dimensionless"
+        }
+      },
+      "water_budget": {
+        "status": "calculated",
+        "period_days": 7,
+        "period_start_date": "2026-10-09",
+        "period_end_date": "2026-10-15",
+        "weather_provenance": {
+          "status": "live",
+          "source": "open-meteo",
+          "data_type": "forecast",
+          "timezone": "Asia/Amman",
+          "retrieved_at": "2026-10-09T20:54:24.642303Z",
+          "valid_until": "2026-10-10T20:54:24.642303Z",
+          "original_horizon_end": "2026-10-15",
+          "forecast_start_date": "2026-10-09",
+          "forecast_end_date": "2026-10-15",
+          "period_start_date": "2026-10-09",
+          "period_end_date": "2026-10-15",
+          "requested_days": 7
+        },
+        "water_required_liters": 38180.0,
+        "water_available_liters": 50000.0,
+        "water_shortage_liters": 0.0,
+        "water_surplus_liters": 11820.0,
+        "coverage_percentage": 100.0,
+        "water_status": "sufficient",
+        "indicator": "Available water covers 100% of estimated gross irrigation demand over the assessed period.",
+        "partial_assessment": null,
+        "warnings": [
+          "Available-water period was not independently supplied; caller must verify it matches the assessed forecast period."
+        ],
+        "assumptions": [
+          "Available water refers to the SAME upcoming period as estimated gross irrigation demand; scalar availability alone cannot verify this.",
+          "Surplus is an arithmetic excess over estimated demand, not a guarantee of storage or delivery capacity.",
+          "Water sufficiency does not guarantee crop safety or quantify crop stress/yield loss.",
+          "Zero required volume uses 100% coverage by convention; no division by zero is performed."
+        ],
+        "units": {
+          "volume": "liters",
+          "coverage": "percent"
+        }
+      }
+    }
+  },
+  "mathematical_one_day": {
+    "example_data_type": "synthetic_mathematical_contract_fixture_not_provider_data",
+    "request": {
+      "farm": {
+        "crop": "tomato",
+        "area_m2": 1000,
+        "crop_stage": "mid_season",
+        "irrigation_method": "drip",
+        "irrigation_efficiency": 0.9,
+        "effective_rain_fraction": 0.8,
+        "system_flow_liters_per_hour": 2000
+      },
+      "weather": {
+        "status": "live",
+        "source": "open-meteo",
+        "data_type": "forecast",
+        "timezone": "Asia/Amman",
+        "retrieved_at": "2026-10-10T09:00:00Z",
+        "forecast_start_date": "2026-10-10",
+        "forecast_end_date": "2026-10-10",
+        "summary": {
+          "requested_days": 1
+        },
+        "units": {
+          "et0": "mm/day",
+          "precipitation": "mm"
+        },
+        "daily": [
+          {
+            "date": "2026-10-10",
+            "et0_mm": 5,
+            "precipitation_mm": 0
+          }
+        ]
+      },
+      "reference_time": "2026-10-10T09:00:00Z",
+      "water_available_liters": 5000
+    },
+    "response": {
+      "irrigation": {
+        "status": "calculated",
+        "data_type": "estimate",
+        "calculated_at": "2026-10-10T09:00:00Z",
+        "period_days": 1,
+        "period_start_date": "2026-10-10",
+        "period_end_date": "2026-10-10",
+        "weather_provenance": {
+          "status": "live",
+          "source": "open-meteo",
+          "data_type": "forecast",
+          "timezone": "Asia/Amman",
+          "retrieved_at": "2026-10-10T09:00:00Z",
+          "valid_until": "2026-10-11T09:00:00Z",
+          "original_horizon_end": "2026-10-16",
+          "forecast_start_date": "2026-10-10",
+          "forecast_end_date": "2026-10-10",
+          "period_start_date": "2026-10-10",
+          "period_end_date": "2026-10-10",
+          "requested_days": 1
+        },
+        "kc": {
+          "value": 1.15,
+          "crop_stage": "mid_season",
+          "source": "fao56_table12_reference",
+          "source_url": "https://www.fao.org/4/X0490E/x0490e0b.htm",
+          "explanation": "FAO-56 Table 12 reference coefficient; local climate/wetting adjustments are not modelled."
+        },
+        "farm_assumptions": {
+          "area_m2": 1000.0,
+          "irrigation_efficiency": 0.9,
+          "effective_rain_fraction": 0.8,
+          "system_flow_liters_per_hour": 2000.0
+        },
+        "daily": [
+          {
+            "date": "2026-10-10",
+            "et0_mm": 5.0,
+            "kc": 1.15,
+            "etc_mm": 5.75,
+            "crop_water_consumption_liters": 5750.0,
+            "precipitation_mm": 0.0,
+            "effective_rain_mm": 0.0,
+            "net_irrigation_mm": 5.75,
+            "net_irrigation_liters": 5750.0,
+            "gross_irrigation_liters": 6388.888888888889,
+            "runtime_hours": 3.1944444444444446,
+            "status": "calculated",
+            "warnings": []
+          }
+        ],
+        "summary": {
+          "status": "calculated",
+          "period_days": 1,
+          "available_days": 1,
+          "total_etc_mm": 5.75,
+          "total_crop_water_consumption_liters": 5750.0,
+          "total_effective_rain_mm": 0.0,
+          "total_net_irrigation_liters": 5750.0,
+          "total_gross_irrigation_liters": 6388.888888888889,
+          "total_runtime_hours": 3.1944444444444446,
+          "complete_days": 1,
+          "incomplete_days": 0,
+          "partial_totals": {
+            "total_etc_mm": {
+              "value": 5.75,
+              "dates": [
+                "2026-10-10"
+              ],
+              "covered_days": 1,
+              "requested_days": 1,
+              "status": "complete"
+            },
+            "total_crop_water_consumption_liters": {
+              "value": 5750.0,
+              "dates": [
+                "2026-10-10"
+              ],
+              "covered_days": 1,
+              "requested_days": 1,
+              "status": "complete"
+            },
+            "total_effective_rain_mm": {
+              "value": 0.0,
+              "dates": [
+                "2026-10-10"
+              ],
+              "covered_days": 1,
+              "requested_days": 1,
+              "status": "complete"
+            },
+            "total_net_irrigation_liters": {
+              "value": 5750.0,
+              "dates": [
+                "2026-10-10"
+              ],
+              "covered_days": 1,
+              "requested_days": 1,
+              "status": "complete"
+            },
+            "total_gross_irrigation_liters": {
+              "value": 6388.888888888889,
+              "dates": [
+                "2026-10-10"
+              ],
+              "covered_days": 1,
+              "requested_days": 1,
+              "status": "complete"
+            },
+            "total_runtime_hours": {
+              "value": 3.1944444444444446,
+              "dates": [
+                "2026-10-10"
+              ],
+              "covered_days": 1,
+              "requested_days": 1,
+              "status": "complete"
+            }
+          }
+        },
+        "warnings": [],
+        "assumptions": [
+          "Crop stage/Kc is held constant over the assessed period; no crop calendar is inferred.",
+          "ETc estimates crop consumption under reference coefficient assumptions, not measured field water use.",
+          "Effective rain fraction and application efficiency are explicit caller assumptions, not validated drip-system properties.",
+          "Excess rain is not transferred between days; soil storage, groundwater, runoff, salinity and drainage are not modelled.",
+          "Volumes and runtime are planning estimates, not an exact irrigation schedule or continuous-run instruction.",
+          "Confirmed past irrigation is not subtracted from future demand without a dated soil-water balance."
+        ],
+        "units": {
+          "et0": "mm/day",
+          "etc": "mm/day",
+          "precipitation": "mm/day",
+          "effective_rain": "mm/day",
+          "net_irrigation_depth": "mm/day",
+          "volume": "liters",
+          "area": "m2",
+          "runtime": "hours",
+          "system_flow": "liters/hour",
+          "kc": "dimensionless"
+        }
+      },
+      "water_budget": {
+        "status": "calculated",
+        "period_days": 1,
+        "period_start_date": "2026-10-10",
+        "period_end_date": "2026-10-10",
+        "weather_provenance": {
+          "status": "live",
+          "source": "open-meteo",
+          "data_type": "forecast",
+          "timezone": "Asia/Amman",
+          "retrieved_at": "2026-10-10T09:00:00Z",
+          "valid_until": "2026-10-11T09:00:00Z",
+          "original_horizon_end": "2026-10-16",
+          "forecast_start_date": "2026-10-10",
+          "forecast_end_date": "2026-10-10",
+          "period_start_date": "2026-10-10",
+          "period_end_date": "2026-10-10",
+          "requested_days": 1
+        },
+        "water_required_liters": 6388.888888888889,
+        "water_available_liters": 5000.0,
+        "water_shortage_liters": 1388.888888888889,
+        "water_surplus_liters": 0.0,
+        "coverage_percentage": 78.26086956521739,
+        "water_status": "shortage",
+        "indicator": "Estimated water shortage: 1388.89 liters over the assessed period.",
+        "partial_assessment": null,
+        "warnings": [
+          "Available-water period was not independently supplied; caller must verify it matches the assessed forecast period."
+        ],
+        "assumptions": [
+          "Available water refers to the SAME upcoming period as estimated gross irrigation demand; scalar availability alone cannot verify this.",
+          "Surplus is an arithmetic excess over estimated demand, not a guarantee of storage or delivery capacity.",
+          "Water sufficiency does not guarantee crop safety or quantify crop stress/yield loss.",
+          "Zero required volume uses 100% coverage by convention; no division by zero is performed."
+        ],
+        "units": {
+          "volume": "liters",
+          "coverage": "percent"
+        }
+      }
+    }
+  },
+  "confirmed_records": {
+    "example_data_type": "hypothetical_farmer_records",
+    "request": [
+      {
+        "id": "actual_001",
+        "date": "2026-10-09",
+        "applied_liters": 5000,
+        "status": "confirmed"
+      },
+      {
+        "id": "plan_001",
+        "date": "2026-10-11",
+        "applied_liters": 9000,
+        "status": "planned"
+      }
+    ],
+    "response": {
+      "status": "summarized",
+      "confirmed_record_ids": [
+        "actual_001"
+      ],
+      "confirmed_applied_liters": 5000.0,
+      "confirmed_count": 1,
+      "unconfirmed_record_ids": [
+        "plan_001"
+      ],
+      "unconfirmed_proposed_liters": 9000.0,
+      "unconfirmed_count": 1,
+      "warnings": [
+        "Reported confirmed volume does not prove crop root-zone needs were satisfied; no past volume is credited against future demand."
+      ]
+    }
+  }
+}

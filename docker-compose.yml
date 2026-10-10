@@ -1,0 +1,49 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-smart_farm}
+      POSTGRES_USER: ${POSTGRES_USER:-sfa}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in the root .env file}
+    volumes:
+      - smart_farm_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-sfa} -d ${POSTGRES_DB:-smart_farm}"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+
+  api:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    environment:
+      SFA_DB_HOST: db
+      SFA_DB_PORT: 5432
+      SFA_DB_USER: ${POSTGRES_USER:-sfa}
+      SFA_DB_PASSWORD: ${POSTGRES_PASSWORD}
+      SFA_DB_NAME: ${POSTGRES_DB:-smart_farm}
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:5500,http://127.0.0.1:5500}
+      GROQ_API_KEY: ${GROQ_API_KEY:-}
+      GROQ_MODEL: ${GROQ_MODEL:-llama-3.3-70b-versatile}
+      AZURE_SPEECH_KEY: ${AZURE_SPEECH_KEY:-}
+      AZURE_SPEECH_REGION: ${AZURE_SPEECH_REGION:-}
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  frontend:
+    image: python:3.12-alpine
+    working_dir: /site
+    command: ["python", "-m", "http.server", "5500", "--bind", "0.0.0.0", "--directory", "/site"]
+    volumes:
+      - .:/site:ro
+    ports:
+      - "5500:5500"
+    depends_on:
+      - api
+
+volumes:
+  smart_farm_pgdata:

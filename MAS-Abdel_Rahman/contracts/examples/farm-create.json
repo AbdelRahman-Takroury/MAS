@@ -1,0 +1,18 @@
+{
+  "farm_id": "demo_farm_001",
+  "location_name": "Jordan Valley - sample farm",
+  "latitude": 32.19,
+  "longitude": 35.62,
+  "timezone": "Asia/Amman",
+  "area_m2": 1000,
+  "crop": "tomato",
+  "establishment_date": "2026-09-01",
+  "establishment_method": "transplanted",
+  "crop_stage": "mid_season",
+  "irrigation_method": "drip",
+  "irrigation_efficiency": 0.9,
+  "effective_rain_fraction": 0.8,
+  "system_flow_liters_per_hour": null,
+  "preferred_language": "ar",
+  "is_sample": true
+}
